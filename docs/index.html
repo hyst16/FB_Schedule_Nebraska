@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Husker Football — Auto Schedule</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+</head>
+<body>
+  <div id="view-next" class="view hidden">
+    <div class="bg" id="next-bg"></div>
+    <div class="next-card">
+      <div class="row logos">
+        <img id="ne-logo" class="logo" alt="Nebraska" />
+        <div class="vs" id="divider">vs.</div>
+        <img id="opp-logo" class="logo" alt="Opponent" />
+      </div>
+      <div id="next-opponent" class="opponent"></div>
+      <div id="next-datetime" class="detail"></div>
+      <div id="next-venue" class="detail"></div>
+      <div id="next-tv" class="detail"></div>
+    </div>
+  </div>
+
+  <div id="view-all" class="view hidden">
+    <div class="all-wrap">
+      <div class="table" id="schedule-table"></div>
+    </div>
+  </div>
+
+  <div id="debug" class="debug hidden"></div>
+
+  <script>
+    window.UI = {
+      theme: "classic-husker",
+      rotateSeconds: 15,
+      showDividerLiteral: true,
+      showCityOnly: true,
+      kenBurns: false
+    };
+    const params = new URLSearchParams(location.search);
+    const rot = parseInt(params.get("rot"),10);
+    if (!isNaN(rot) && rot > 0) window.UI.rotateSeconds = rot;
+    const lockView = params.get("view"); // "next" or "all"
+    const debug = params.get("debug") === "1";
+
+    window.DATA_URL = "data/huskers_schedule_normalized.json?v=" + Date.now();
+    window.MANIFEST_URL = "data/stadium_manifest.json?v=" + Date.now();
+  </script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
