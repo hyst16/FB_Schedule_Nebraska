@@ -1,0 +1,65 @@
+name: Nightly Husker Schedule
+
+on:
+  schedule:
+    # 2:00 AM America/Chicago:
+    # CDT (UTC-5) ≈ 07:00 UTC; CST (UTC-6) ≈ 08:00 UTC
+    - cron: '0 7 * * *'
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install scraper deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Scrape latest schedule
+        run: |
+          python scripts/scrape_huskers.py
+          test -s data/huskers_schedule.json && echo "Scrape ok" || (echo "Scrape produced no data"; exit 1)
+
+      - name: Normalize data
+        run: |
+          python scripts/normalize_schedule.py
+          test -s data/huskers_schedule_normalized.json && echo "Normalize ok" || (echo "Normalize failed"; exit 1)
+
+      - name: Generate stadium manifest
+        run: |
+          python scripts/generate_stadium_manifest.py
+          test -s data/stadium_manifest.json && echo "Manifest ok" || (echo "Manifest failed"; exit 1)
+
+      - name: Publish data to docs/data
+        run: |
+          mkdir -p docs/data
+          cp -f data/huskers_schedule.json docs/data/huskers_schedule.json
+          cp -f data/huskers_schedule_normalized.json docs/data/huskers_schedule_normalized.json
+          cp -f data/stadium_manifest.json docs/data/stadium_manifest.json
+          ls -l docs/data
+
+      - name: Auto-commit updated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: nightly schedule refresh"
+          file_pattern: |
+            data/huskers_schedule.json
+            data/huskers_schedule_normalized.json
+            data/stadium_manifest.json
+            docs/data/huskers_schedule.json
+            docs/data/huskers_schedule_normalized.json
+            docs/data/stadium_manifest.json
