@@ -113,11 +113,7 @@ function addGameRow(tbl, g) {
   const t = document.createElement("span"); t.textContent = " " + (g.opponent || "");
   d3.appendChild(t); tbl.appendChild(d3);
 
-  const d4 = document.createElement("div");
-  const han = abbrevVenue(g.home_away_neutral);
-  d4.className = `han ${han}`;
-  d4.textContent = han;
-  tbl.appendChild(d4);
+  const d4 = document.createElement("div"); d4.textContent = abbrevVenue(g.home_away_neutral); tbl.appendChild(d4);
   
   const d5 = document.createElement("div"); d5.textContent = g.city_display || "—"; tbl.appendChild(d5);
 
