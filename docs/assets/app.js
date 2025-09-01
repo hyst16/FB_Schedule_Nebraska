@@ -117,19 +117,26 @@ function setNextGameView(game) {
      </div>
 
      <div class="line">                        // main sentence of the row
+       <span class="result W">W 20–17</span>   // ← RESULT FIRST (right after date)
+
        <img class="mark ne"  src="...">
        <span class="divider">vs.</span>
        <img class="mark opp" src="...">
        <span class="opp-name">Akron</span>
 
-       <span class="chip time">6:30 PM CDT</span>   // “TBA” if TBA or TBD
+       <span class="chip time">6:30 PM CDT</span>  // hidden entirely if time is TBA/TBD/—
        <span class="chip city">Lincoln, NE</span>
        <span class="chip tv"><img src="logo.png"></span>
-
-       <span class="result W">W 20–17</span>       // only when final
      </div>
    </div>
 ================================================================ */
+
+/* Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip */
+function isTimeKnown(t) {
+  if (!t) return false;
+  const x = t.trim().toUpperCase();
+  return x !== "—" && x !== "TBA" && x !== "TBD";
+}
 
 function monthFromDateText(dateText) {
   // "Sep 6" → "Sep"; safe fallback if unexpected
@@ -181,9 +188,17 @@ function buildGameRow(g) {
   when.appendChild(dow);
   row.appendChild(when);
 
-  /* Main line: N {vs./at} [opp logo] Opponent + chips + result */
+  /* Main line: RESULT FIRST → then N {vs./at} [opp logo] Opponent + chips */
   const line = document.createElement("div");
   line.className = "line";
+
+  // 👉 Result FIRST, so it appears right after the date block
+  if (g.status === "final" && g.outcome && g.score) {
+    const r = document.createElement("span");
+    r.className = `result ${g.outcome}`; // W | L | T
+    r.textContent = `${g.outcome} ${g.score}`;
+    line.appendChild(r);
+  }
 
   // Nebraska mark (small; helps sentence read left→right)
   if (g.ne_logo) {
@@ -210,26 +225,16 @@ function buildGameRow(g) {
   opp.textContent = g.opponent || "TBD";
   line.appendChild(opp);
 
-  // Time chip — show “TBA” when time is unknown
-  const isTBA = !g.kickoff_display || g.kickoff_display === "—";
-  const timeChip = chip(isTBA ? "TBA" : g.kickoff_display, "time");
-  if (timeChip) line.appendChild(timeChip);
+  // Chips: time (only if known) • city • TV
+  if (isTimeKnown(g.kickoff_display)) {
+    line.appendChild(chip(g.kickoff_display, "time"));
+  }
 
-  // City chip (City, ST)
-  const cityChip = chip(g.city_display || "—", "city");
-  if (cityChip) line.appendChild(cityChip);
+  const cityChipEl = chip(g.city_display || "—", "city");
+  if (cityChipEl) line.appendChild(cityChipEl);
 
-  // TV chip (white capsule with the logo)
   const tvC = tvChip(g.tv_logo);
   if (tvC) line.appendChild(tvC);
-
-  // Result pill appears RIGHT AFTER the chips (per your preference)
-  if (g.status === "final" && g.outcome && g.score) {
-    const r = document.createElement("span");
-    r.className = `result ${g.outcome}`; // W | L | T
-    r.textContent = `${g.outcome} ${g.score}`;
-    line.appendChild(r);
-  }
 
   row.appendChild(line);
   return row;
