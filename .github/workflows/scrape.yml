@@ -2,14 +2,17 @@ name: Nightly Husker Schedule
 
 on:
   schedule:
-    # 2:00 AM America/Chicago:
-    # CDT (UTC-5) ≈ 07:00 UTC; CST (UTC-6) ≈ 08:00 UTC
+    # 2:00 AM America/Chicago (cover DST with two UTC times)
     - cron: '0 7 * * *'
     - cron: '0 8 * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: fb-schedule-nebraska
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -22,6 +25,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: 'pip'
 
       - name: Install scraper deps
         run: |
@@ -33,6 +37,14 @@ jobs:
         run: |
           python scripts/scrape_huskers.py
           test -s data/huskers_schedule.json && echo "Scrape ok" || (echo "Scrape produced no data"; exit 1)
+          # Sanity check: ensure we have some games
+          python - << 'PY'
+          import json,sys
+          d=json.load(open('data/huskers_schedule.json'))
+          n=len(d.get('games',[]))
+          print(f"games: {n}")
+          sys.exit(0 if n>=3 else 2)
+          PY
 
       - name: Normalize data
         run: |
@@ -52,14 +64,31 @@ jobs:
           cp -f data/stadium_manifest.json docs/data/stadium_manifest.json
           ls -l docs/data
 
-      - name: Auto-commit updated files
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore: nightly schedule refresh"
-          file_pattern: |
-            data/huskers_schedule.json
-            data/huskers_schedule_normalized.json
-            data/stadium_manifest.json
-            docs/data/huskers_schedule.json
-            docs/data/huskers_schedule_normalized.json
-            docs/data/stadium_manifest.json
+      - name: Show what changed (debug)
+        run: |
+          echo "=== pwd ==="; pwd
+          echo "=== branch ==="; git rev-parse --abbrev-ref HEAD
+          echo "=== remotes ==="; git remote -v
+          echo "=== data ==="; ls -la data || true
+          echo "=== docs/data ==="; ls -la docs/data || true
+          echo "=== git status (before add) ==="; git status --porcelain=v1
+
+      - name: Commit & push updated files (explicit)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data docs/data
+          echo "=== git status (after add) ==="; git status --porcelain=v1
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: nightly schedule refresh"
+            git push origin HEAD
+          fi
+
+      - name: List final repo state (debug)
+        run: |
+          echo "=== final data ==="; ls -la data || true
+          echo "=== final docs/data ==="; ls -la docs/data || true
