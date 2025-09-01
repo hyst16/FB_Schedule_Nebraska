@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""
-Generate a manifest of required background images using Trent's
-naming convention:
-
-    TeamName-Stadium-State.jpg
-
-- Reads:  data/huskers_schedule_normalized.json
-- Writes: data/stadium_manifest.json
-"""
-
 import json
 from pathlib import Path
 
@@ -21,21 +11,26 @@ def main():
         raise SystemExit(f"Missing {IN}")
     data = json.loads(IN.read_text())
 
-    existing = {p.name for p in IMAGES_DIR.glob("*.*")}  # exact filenames present
-    items = {}
+    existing = {p.name for p in IMAGES_DIR.glob("*.*")}  # exact filenames
+    items = {}  # bg_key -> {suggested_filename, exists, used_by: [...]}
 
     for g in data:
         key = g.get("bg_key") or "Unknown-Stadium-XX"
-        suggested = f"{key}.jpg"  # convention; png works too if you prefer
+        suggested = f"{key}.jpg"
         exists = (suggested in existing) or (f"{key}.png" in existing)
 
-        items[key] = {
-            "opponent": g.get("opponent"),
-            "venue": g.get("home_away_neutral"),
-            "date": g.get("date_text"),
+        entry = items.setdefault(key, {
             "suggested_filename": suggested,
-            "exists": exists
-        }
+            "exists": exists,
+            "used_by": []
+        })
+        # if any game has the file present, mark exists true
+        entry["exists"] = entry["exists"] or exists
+        entry["used_by"].append({
+            "date": g.get("date_text"),
+            "opponent": g.get("opponent"),
+            "venue": g.get("home_away_neutral")
+        })
 
     OUT.write_text(json.dumps({
         "images_directory": "images/stadiums",
