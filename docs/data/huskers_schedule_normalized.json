@@ -16,7 +16,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/x0HA6JX0sW4nx4tQFnFjwlcrpJLUH1fTjzr0nYdd.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Cincinnati-Arrowhead Stadium-MO",
-    "bg_filename": "Cincinnati-Arrowhead Stadium-MO.jpg",
+    "bg_file_basename": "Cincinnati-Arrowhead-Stadium-MO",
+    "bg_filename": "Cincinnati-Arrowhead-Stadium-MO.jpg",
     "links": [
       {
         "title": "Final Stats (PDF)",
@@ -57,7 +58,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/qiyDkomiF829arGteqOMYww0QITUNGaRSyvufu9f.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
       {
         "title": "Opens in a new window",
@@ -82,7 +84,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/Em7yr9sqhB1PwNThkAUUoRLK5e0TDJvTmmXiLmdU.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
       {
         "title": "Opens in a new window",
@@ -107,7 +110,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/VfZOPfPJ8Ps9IldV9Wlg3gdY47UFgUjU17DI6zZE.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
       {
         "title": "Opens in a new window",
@@ -132,7 +136,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": []
   },
   {
@@ -152,7 +157,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/ckTPjX0bKvYj5KB1p9hAJSOCO7AGA5nbrXGR4JD7.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Maryland-SECU Stadium-MD",
-    "bg_filename": "Maryland-SECU Stadium-MD.jpg",
+    "bg_file_basename": "Maryland-SECU-Stadium-MD",
+    "bg_filename": "Maryland-SECU-Stadium-MD.jpg",
     "links": []
   },
   {
@@ -172,7 +178,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/C3Z8GJ3Nxf8uQOj0yM8sNk4HpOGW5qVREe71F2Ao.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Minnesota-Huntington Bank Stadium-MN",
-    "bg_filename": "Minnesota-Huntington Bank Stadium-MN.jpg",
+    "bg_file_basename": "Minnesota-Huntington-Bank-Stadium-MN",
+    "bg_filename": "Minnesota-Huntington-Bank-Stadium-MN.jpg",
     "links": [
       {
         "title": "Opens in a new window",
@@ -197,7 +204,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/1UQISSq3eRDnRJIAjeXGWar8aTYdy9GWB56k0WDg.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": []
   },
   {
@@ -217,7 +225,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/UahJy09xytmTXBAdfHeKv65Npu0KNztpHnkwIgsh.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": []
   },
   {
@@ -237,7 +246,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/HRd1Q70l0yQpZeYQ1h4eRyyBye4Cp06Nn1icMkjm.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "UCLA-Rose Bowl-CA",
-    "bg_filename": "UCLA-Rose Bowl-CA.jpg",
+    "bg_file_basename": "UCLA-Rose-Bowl-CA",
+    "bg_filename": "UCLA-Rose-Bowl-CA.jpg",
     "links": []
   },
   {
@@ -257,7 +267,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/eSnEQOMzqgY8gAPCfxR90DNlJ0vOuXDQfhvTLM4h.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Penn State-Beaver Stadium-PA",
-    "bg_filename": "Penn State-Beaver Stadium-PA.jpg",
+    "bg_file_basename": "Penn-State-Beaver-Stadium-PA",
+    "bg_filename": "Penn-State-Beaver-Stadium-PA.jpg",
     "links": []
   },
   {
@@ -277,7 +288,8 @@
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9YsBNIeewYRZVuMYp8PzCPprdai9tksp5CFtqtT.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_filename": "Nebraska-Memorial Stadium-NE.jpg",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
       {
         "title": "Opens in a new window",
