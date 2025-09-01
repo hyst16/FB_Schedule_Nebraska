@@ -6,10 +6,11 @@ Normalize the raw scrape into a tiny, UI-friendly array.
 - Reads:  data/stadium_overrides.json (optional)
 - Writes: data/huskers_schedule_normalized.json
 
-Decisions baked in (per Trent):
-- Divider literal: use "vs." / "at"
+Decisions (per Trent):
+- Divider literal: "vs." / "at"
 - City only (no stadium names) in UI
 - Months short: Sep/Oct/Nov
+- Background image naming: TeamName-Stadium-State (no city-only)
 """
 
 import json, re
@@ -25,21 +26,18 @@ STATE_MAP = {
     "Neb": "NE", "Mo": "MO", "Md": "MD", "Minn": "MN", "Calif": "CA", "Pa": "PA"
 }
 
+# Only used when location doesn’t include a stadium; no city-only fallbacks.
 OPP_STADIUM_MAP = {
-    "Maryland":        {"city": "College Park",   "state": "MD", "stadium": "SECU Stadium"},
-    "Minnesota":       {"city": "Minneapolis",    "state": "MN", "stadium": "Huntington Bank Stadium"},
-    "UCLA":            {"city": "Pasadena",       "state": "CA", "stadium": "Rose Bowl"},
-    "Penn State":      {"city": "University Park","state": "PA", "stadium": "Beaver Stadium"},
-    "Nebraska":        {"city": "Lincoln",        "state": "NE", "stadium": "Memorial Stadium"},
+    "Maryland":        {"state": "MD", "stadium": "SECU Stadium"},
+    "Minnesota":       {"state": "MN", "stadium": "Huntington Bank Stadium"},
+    "UCLA":            {"state": "CA", "stadium": "Rose Bowl"},
+    "Penn State":      {"state": "PA", "stadium": "Beaver Stadium"},
+    "Nebraska":        {"state": "NE", "stadium": "Memorial Stadium"},
 }
 
-def short_month(mon: str) -> str:
-    # Convert AUG, SEP, OCT, NOV.. to Sep, Oct, Nov for display
-    m = mon.strip().title()
-    # If already like "Aug" "Sep", return as is
-    return m
-
 def parse_location(raw: str):
+    """Return (city, stateUSPS, stadium_or_none) from strings like:
+       'Kansas City, Mo. / Arrowhead Stadium' or 'Pasadena, Calif.'"""
     if not raw:
         return None, None, None
     parts = [p.strip() for p in raw.split("/")]
@@ -52,44 +50,54 @@ def parse_location(raw: str):
         state = STATE_MAP.get(state_raw, state_raw.upper())
     else:
         city, state = left, None
-    return city, state, stadium
+    return city or None, state or None, stadium or None
 
-def bg_key_for(venue_type, opponent, city, state, stadium):
-    # Build a normalized image key; UI uses City only, but backgrounds prefer stadium if known.
-    if venue_type == "HOME":
-        city, state, stadium = "Lincoln", "NE", "Memorial Stadium"
-    if stadium:
-        return f"{state or 'xx'}_{slug(city)}_{slug(stadium)}"
-    if venue_type in ("AWAY", "NEUTRAL") and opponent in OPP_STADIUM_MAP:
-        info = OPP_STADIUM_MAP[opponent]
-        return f"{info['state']}_{slug(info['city'])}_{slug(info['stadium'])}"
-    if city and state:
-        return f"{state}_{slug(city)}"
-    if city:
-        return f"xx_{slug(city)}"
-    return f"unknown_{slug(opponent) or 'tbd'}"
-
-def slug(s: str) -> str:
-    s = (s or "").lower().strip()
-    s = re.sub(r"[^a-z0-9]+","_", s)
-    return re.sub(r"_+","_", s).strip("_")
+def month_title_case(date_text: str) -> str:
+    # "SEP 6" -> "Sep 6", "OCT 11" -> "Oct 11"
+    parts = (date_text or "").split()
+    if len(parts) == 2:
+        return f"{parts[0].title()} {parts[1]}"
+    return (date_text or "").title()
 
 def build_game_key(year_guess: int, date_text: str, divider_text: str, opponent: str) -> str:
-    # Stable-ish key for overrides: "YYYY-MMM-DD vs. Opponent"
-    # date_text like "SEP 6" -> "SEP-06"
-    parts = date_text.split()
+    # Key format for overrides: "YYYY-MMM-DD <divider> <Opponent>"
+    parts = (date_text or "").split()
     if len(parts) == 2:
         mm = parts[0].upper()[:3]
         dd = parts[1].zfill(2)
         return f"{year_guess}-{mm}-{dd} {divider_text.strip()} {opponent}"
-    return f"{year_guess}-{date_text.strip()} {divider_text.strip()} {opponent}"
+    return f"{year_guess}-{(date_text or '').strip()} {divider_text.strip()} {opponent}"
+
+def compute_bg_fields(venue: str, opponent: str, city: str, state: str, location_stadium: str) -> tuple[str, str, str]:
+    """
+    Returns (team_name, stadium_name, state_code) following the required naming:
+    TeamName-Stadium-State
+    """
+    # HOME → Nebraska at Memorial Stadium, NE
+    if venue == "HOME":
+        return "Nebraska", "Memorial Stadium", "NE"
+
+    # AWAY/NEUTRAL
+    team = opponent or "Unknown"
+    # Prefer explicit stadium from location (right side after '/')
+    if location_stadium:
+        stadium = location_stadium
+        st = state or "XX"
+        return team, stadium, st
+
+    # Else try the opponent map
+    if opponent in OPP_STADIUM_MAP:
+        info = OPP_STADIUM_MAP[opponent]
+        return team, info["stadium"], info["state"]
+
+    # Last resort: we still require a stadium (no city-only); use generic "Stadium"
+    return team, "Stadium", (state or "XX")
 
 def normalize():
     if not RAW.exists():
         raise SystemExit(f"Missing {RAW}")
     raw = json.loads(RAW.read_text())
 
-    # year guess from scraped_at (UTC ISO)
     scraped_at = raw.get("scraped_at")
     year_guess = datetime.fromisoformat(scraped_at.replace("Z","+00:00")).year if scraped_at else datetime.utcnow().year
 
@@ -103,62 +111,61 @@ def normalize():
 
     out = []
     for g in raw.get("games", []):
-        venue = (g.get("venue_type") or "").upper().strip()               # HOME/AWAY/NEUTRAL
+        venue = (g.get("venue_type") or "").upper().strip()   # HOME/AWAY/NEUTRAL
         weekday = (g.get("weekday") or "").strip()
-        date_text = (g.get("date_text") or "").strip()                     # e.g., "SEP 6"
-        divider = (g.get("divider_text") or "vs.").strip()                 # literal "vs." / "at"
+        date_text = (g.get("date_text") or "").strip()
+        divider = (g.get("divider_text") or "vs.").strip()    # literal "vs." / "at"
         opponent = (g.get("opponent_name") or "").strip()
 
-        # date shortform normalization: keep e.g., "Sep 6"
-        try:
-            # Turn "SEP 6" into "Sep 6"
-            parts = date_text.split()
-            date_display = f"{parts[0].title()} {parts[1]}" if len(parts)==2 else date_text.title()
-        except Exception:
-            date_display = date_text.title()
+        date_display = month_title_case(date_text)
 
-        # kickoff display
         kickoff = g.get("kickoff") or "—"
-        if kickoff.upper() in ("TBA","TBD"):
-            kickoff_display = "—"
-        else:
-            kickoff_display = kickoff
+        kickoff_display = "—" if kickoff.upper() in ("TBA","TBD") else kickoff
 
-        # result/outcome
         status = g.get("status") or "tbd"
         outcome = g.get("result",{}).get("outcome") if status == "final" else None
-        score = g.get("result",{}).get("score") if status == "final" else None
+        score   = g.get("result",{}).get("score")   if status == "final" else None
 
-        # location → city/state/stadium
-        city, state, stadium = parse_location(g.get("location") or "")
-        # UI: City only ( + state )
+        city, state, stadium_from_loc = parse_location(g.get("location") or "")
         city_display = f"{city}{', ' + state if state else ''}" if city else "—"
 
-        # background key (with overrides)
-        k = build_game_key(year_guess, date_text, divider, opponent)
-        bg_key = None
-        if overrides.get(k):
-            bg_key = overrides[k]
-        else:
-            bg_key = bg_key_for(venue, opponent, city, state, stadium)
+        # Build override key and compute bg parts
+        override_key = build_game_key(year_guess, date_text, divider, opponent)
+        team_name, stadium_name, state_code = compute_bg_fields(venue, opponent, city, state, stadium_from_loc)
+
+        # Apply override if present (value should be "Team-Stadium-State")
+        if overrides.get(override_key):
+            # Accept exact override; parse it back into fields for consistency
+            ov = overrides[override_key]
+            # Try to split "Team-Stadium-State"
+            try:
+                t, s, st = ov.rsplit("-", 2)
+                team_name, stadium_name, state_code = t, s, st
+            except Exception:
+                # if not in expected form, just use it as the key body and keep current state_code
+                team_name, stadium_name = ov, stadium_name
+
+        bg_key = f"{team_name}-{stadium_name}-{state_code}"
+        bg_filename = f"{bg_key}.jpg"  # convention: .jpg (png also works on disk)
 
         out.append({
-            "date_text": date_display,                      # e.g., "Sep 6"
-            "weekday": weekday,                             # e.g., "SATURDAY"
-            "kickoff_display": kickoff_display,             # e.g., "6:30 PM CDT" or "—"
-            "status": status,                               # "final" | "upcoming" | "tbd"
-            "outcome": outcome,                             # "W" | "L" | "T" | null
-            "score": score,                                 # "20-17" | null
-            "home_away_neutral": venue,                     # HOME/AWAY/NEUTRAL
-            "divider": divider,                             # literal "vs." / "at"
+            "date_text": date_display,
+            "weekday": weekday,
+            "kickoff_display": kickoff_display,
+            "status": status,                 # "final" | "upcoming" | "tbd"
+            "outcome": outcome,               # "W" | "L" | "T" | null
+            "score": score,                   # "20-17" | null
+            "home_away_neutral": venue,       # HOME/AWAY/NEUTRAL
+            "divider": divider,               # literal "vs." / "at"
             "opponent": opponent,
-            "city": city,                                   # raw city (for future)
-            "state": state,                                 # raw state (USPS if mapped)
-            "city_display": city_display,                   # UI: City, ST (no stadium)
+            "city": city,
+            "state": state,
+            "city_display": city_display,     # UI uses City, ST (no stadium)
             "tv_logo": g.get("tv_network_logo_url"),
             "opp_logo": g.get("opponent_logo_url"),
             "ne_logo": g.get("nebraska_logo_url"),
-            "bg_key": bg_key,
+            "bg_key": bg_key,                 # Team-Stadium-State (no extension)
+            "bg_filename": bg_filename,       # Team-Stadium-State.jpg
             "links": g.get("links", [])
         })
 
