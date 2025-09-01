@@ -1,0 +1,47 @@
+{
+  "images_directory": "images/stadiums",
+  "items": {
+    "Cincinnati-Arrowhead Stadium-MO": {
+      "opponent": "Cincinnati",
+      "venue": "NEUTRAL",
+      "date": "Aug 28",
+      "suggested_filename": "Cincinnati-Arrowhead Stadium-MO.jpg",
+      "exists": false
+    },
+    "Nebraska-Memorial Stadium-NE": {
+      "opponent": "Iowa",
+      "venue": "HOME",
+      "date": "Nov 28",
+      "suggested_filename": "Nebraska-Memorial Stadium-NE.jpg",
+      "exists": true
+    },
+    "Maryland-SECU Stadium-MD": {
+      "opponent": "Maryland",
+      "venue": "AWAY",
+      "date": "Oct 11",
+      "suggested_filename": "Maryland-SECU Stadium-MD.jpg",
+      "exists": true
+    },
+    "Minnesota-Huntington Bank Stadium-MN": {
+      "opponent": "Minnesota",
+      "venue": "AWAY",
+      "date": "Oct 17",
+      "suggested_filename": "Minnesota-Huntington Bank Stadium-MN.jpg",
+      "exists": false
+    },
+    "UCLA-Rose Bowl-CA": {
+      "opponent": "UCLA",
+      "venue": "AWAY",
+      "date": "Nov 8",
+      "suggested_filename": "UCLA-Rose Bowl-CA.jpg",
+      "exists": false
+    },
+    "Penn State-Beaver Stadium-PA": {
+      "opponent": "Penn State",
+      "venue": "AWAY",
+      "date": "Nov 22",
+      "suggested_filename": "Penn State-Beaver Stadium-PA.jpg",
+      "exists": false
+    }
+  }
+}
