@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate a manifest of required background images.
+Generate a manifest of required background images using Trent's
+naming convention:
+
+    TeamName-Stadium-State.jpg
 
 - Reads:  data/huskers_schedule_normalized.json
 - Writes: data/stadium_manifest.json
-
-Each item shows which bg_key is expected and whether an image with that
-name (any extension) exists under images/stadiums/.
 """
 
 import json
@@ -21,21 +21,20 @@ def main():
         raise SystemExit(f"Missing {IN}")
     data = json.loads(IN.read_text())
 
-    have = {p.stem for p in IMAGES_DIR.glob("*.*")}  # stem = filename without extension
+    existing = {p.name for p in IMAGES_DIR.glob("*.*")}  # exact filenames present
     items = {}
+
     for g in data:
-        key = g.get("bg_key")
-        if not key: 
-            continue
-        fn = f"{key}.jpg"  # suggested; png also fine
+        key = g.get("bg_key") or "Unknown-Stadium-XX"
+        suggested = f"{key}.jpg"  # convention; png works too if you prefer
+        exists = (suggested in existing) or (f"{key}.png" in existing)
+
         items[key] = {
             "opponent": g.get("opponent"),
-            "date_text": g.get("date_text"),
-            "divider": g.get("divider"),
-            "home_away_neutral": g.get("home_away_neutral"),
-            "city_display": g.get("city_display"),
-            "suggested_filename": fn,
-            "exists": key in have
+            "venue": g.get("home_away_neutral"),
+            "date": g.get("date_text"),
+            "suggested_filename": suggested,
+            "exists": exists
         }
 
     OUT.write_text(json.dumps({
