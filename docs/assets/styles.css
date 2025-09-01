@@ -3,7 +3,7 @@
    Compact schedule styles are scoped under #view-all so the hero page stays untouched.
 */
 
-:root { --safe:48px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
+:root { --safe:25px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
 
 * { box-sizing: border-box; }
 html,body {
