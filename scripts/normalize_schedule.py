@@ -10,7 +10,9 @@ Decisions (per Trent):
 - Divider literal: "vs." / "at"
 - City only (no stadium names) in UI
 - Months short: Sep/Oct/Nov
-- Background image naming: TeamName-Stadium-State (no city-only)
+- Background image naming:
+  * Human key: TeamName-Stadium-State (bg_key, may contain spaces)
+  * File base: TeamName-Stadium-State with spaces -> dashes (bg_file_basename)
 """
 
 import json, re
@@ -28,12 +30,19 @@ STATE_MAP = {
 
 # Only used when location doesn’t include a stadium; no city-only fallbacks.
 OPP_STADIUM_MAP = {
-    "Maryland":        {"state": "MD", "stadium": "SECU Stadium"},
-    "Minnesota":       {"state": "MN", "stadium": "Huntington Bank Stadium"},
-    "UCLA":            {"state": "CA", "stadium": "Rose Bowl"},
-    "Penn State":      {"state": "PA", "stadium": "Beaver Stadium"},
-    "Nebraska":        {"state": "NE", "stadium": "Memorial Stadium"},
+    "Maryland":   {"state": "MD", "stadium": "SECU Stadium"},
+    "Minnesota":  {"state": "MN", "stadium": "Huntington Bank Stadium"},
+    "UCLA":       {"state": "CA", "stadium": "Rose Bowl"},
+    "Penn State": {"state": "PA", "stadium": "Beaver Stadium"},
+    "Nebraska":   {"state": "NE", "stadium": "Memorial Stadium"},
 }
+
+def dashify(s: str) -> str:
+    """Convert spaces to dashes and collapse repeats. Keep case & punctuation → dashes."""
+    s = (s or "").strip()
+    s = re.sub(r"\s+", "-", s)         # spaces → dash
+    s = re.sub(r"-{2,}", "-", s)       # collapse ---
+    return s
 
 def parse_location(raw: str):
     """Return (city, stateUSPS, stadium_or_none) from strings like:
@@ -70,8 +79,7 @@ def build_game_key(year_guess: int, date_text: str, divider_text: str, opponent:
 
 def compute_bg_fields(venue: str, opponent: str, city: str, state: str, location_stadium: str) -> tuple[str, str, str]:
     """
-    Returns (team_name, stadium_name, state_code) following the required naming:
-    TeamName-Stadium-State
+    Returns (team_name, stadium_name, state_code) for human bg_key: TeamName-Stadium-State
     """
     # HOME → Nebraska at Memorial Stadium, NE
     if venue == "HOME":
@@ -90,7 +98,7 @@ def compute_bg_fields(venue: str, opponent: str, city: str, state: str, location
         info = OPP_STADIUM_MAP[opponent]
         return team, info["stadium"], info["state"]
 
-    # Last resort: we still require a stadium (no city-only); use generic "Stadium"
+    # Last resort: no city-only allowed; use generic "Stadium"
     return team, "Stadium", (state or "XX")
 
 def normalize():
@@ -135,18 +143,18 @@ def normalize():
 
         # Apply override if present (value should be "Team-Stadium-State")
         if overrides.get(override_key):
-            # Accept exact override; parse it back into fields for consistency
             ov = overrides[override_key]
-            # Try to split "Team-Stadium-State"
             try:
                 t, s, st = ov.rsplit("-", 2)
                 team_name, stadium_name, state_code = t, s, st
             except Exception:
-                # if not in expected form, just use it as the key body and keep current state_code
-                team_name, stadium_name = ov, stadium_name
+                team_name = ov  # fallback
 
+        # Human key keeps spaces for readability
         bg_key = f"{team_name}-{stadium_name}-{state_code}"
-        bg_filename = f"{bg_key}.jpg"  # convention: .jpg (png also works on disk)
+        # File-safe base and filename (NO SPACES)
+        bg_file_basename = dashify(bg_key)
+        bg_filename = f"{bg_file_basename}.jpg"
 
         out.append({
             "date_text": date_display,
@@ -164,8 +172,9 @@ def normalize():
             "tv_logo": g.get("tv_network_logo_url"),
             "opp_logo": g.get("opponent_logo_url"),
             "ne_logo": g.get("nebraska_logo_url"),
-            "bg_key": bg_key,                 # Team-Stadium-State (no extension)
-            "bg_filename": bg_filename,       # Team-Stadium-State.jpg
+            "bg_key": bg_key,                 # human key (can contain spaces)
+            "bg_file_basename": bg_file_basename,  # e.g., Nebraska-Memorial-Stadium-NE
+            "bg_filename": bg_filename,       # e.g., Nebraska-Memorial-Stadium-NE.jpg
             "links": g.get("links", [])
         })
 
