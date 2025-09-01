@@ -1,20 +1,38 @@
+/* FB_Schedule_Nebraska — front-end
+   - Renders “Next Game” and “Full Schedule” views
+   - Chooses correct background image with graceful fallbacks
+   - Handles TV logos, result badges, and H/A/N pills
+*/
+
 const $  = (s)=>document.querySelector(s);
 const $$ = (s)=>document.querySelectorAll(s);
 
+// ---------- Config ----------
+window.UI = window.UI || {};
+if (typeof window.UI.rotateSeconds !== "number") {
+  window.UI.rotateSeconds = 15; // default rotation between views
+}
+
+// ---------- State ----------
 let schedule = [];
 let manifest = null;
 let viewIndex = 0;
-const views = ["#view-next","#view-all"];
+const views = ["#view-next", "#view-all"];
 
+// ---------- View rotation ----------
 function rotate() {
-  $$(".view").forEach(v=>v.classList.add("hidden"));
-  const target = window.lockView === "next" ? "#view-next"
-                : window.lockView === "all"  ? "#view-all"
-                : views[viewIndex];
-  $(target).classList.remove("hidden");
+  $$(".view").forEach(v => v.classList.add("hidden"));
+  const target =
+    window.lockView === "next" ? "#view-next" :
+    window.lockView === "all"  ? "#view-all"  :
+    views[viewIndex];
+
+  const el = $(target);
+  if (el) el.classList.remove("hidden");
   if (!window.lockView) viewIndex = (viewIndex + 1) % views.length;
 }
 
+// ---------- Helpers ----------
 function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
 }
@@ -32,11 +50,9 @@ function venueFallback(game) {
   return `images/stadiums/${name}.jpg`;
 }
 
+// Choose a background image; try multiple extensions; fall back by venue type
 function setBgWithFallbacks(game) {
-  // prefer precomputed dashified base from normalized JSON;
-  // otherwise dashify the human key here
   const base = (game.bg_file_basename || game.bg_key || "fallback").replace(/\s+/g, "-");
-
   const candidates = [
     `images/stadiums/${base}.jpg`,
     `images/stadiums/${base}.jpeg`,
@@ -44,28 +60,29 @@ function setBgWithFallbacks(game) {
   ];
   const fallbackUrl = venueFallback(game);
 
-  // if manifest says we don't have this, jump to venue fallback
+  // If manifest says we do NOT have this, jump straight to the venue fallback
   const has = manifest?.items?.[game.bg_key]?.exists;
   if (!has) {
     $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`;
     return;
   }
 
-  // try jpg → jpeg → png, then venue fallback
+  // Try jpg → jpeg → png, finally venue fallback
   let i = 0;
-  const img = new Image();
-  img.onload = () => { $("#next-bg").style.backgroundImage = `url("${candidates[i]}")`; };
-  img.onerror = () => {
+  const probe = new Image();
+  probe.onload = () => { $("#next-bg").style.backgroundImage = `url("${candidates[i]}")`; };
+  probe.onerror = () => {
     i += 1;
-    if (i < candidates.length) img.src = candidates[i];
+    if (i < candidates.length) probe.src = candidates[i];
     else $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`;
   };
-  img.src = candidates[i];
+  probe.src = candidates[i];
 }
 
+// ---------- Next Game view ----------
 function setNextGameView(game) {
   const oppName = game.opponent || "TBD";
-  const divider = (game.divider || "vs.").trim(); // literal
+  const divider = (game.divider || "vs.").trim();
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
   const cityStr = game.city_display || "—";
   const han = abbrevVenue(game.home_away_neutral);
@@ -75,16 +92,19 @@ function setNextGameView(game) {
   $("#next-datetime").textContent = dateStr;
   $("#next-venue").textContent = [han, cityStr].filter(Boolean).join(" • ");
 
-  // Logos
-  $("#ne-logo").src  = game.ne_logo  || "";
-  $("#opp-logo").src = game.opp_logo || "";
+  // Logos in the hero card
+  const ne = $("#ne-logo");
+  const op = $("#opp-logo");
+  if (ne) ne.src = game.ne_logo || "";
+  if (op) op.src = game.opp_logo || "";
 
-  // TV
+  // TV logo (show inside white chip)
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
     const img = document.createElement("img");
-    img.src = game.tv_logo; img.style.height="28px"; img.style.verticalAlign="middle";
+    img.src = game.tv_logo;
+    img.alt = "TV";
     tv.appendChild(img);
   } else {
     tv.textContent = "TV: TBD";
@@ -94,60 +114,104 @@ function setNextGameView(game) {
   setBgWithFallbacks(game);
 }
 
+// ---------- Full schedule (table) ----------
 function addHeaderRow(tbl) {
-  ["Date","Time","Opponent","H/A/N","City","TV","Result"]
-    .forEach(t => {
-      const d = document.createElement("div");
-      d.className = "header";
-      d.textContent = t;
-      tbl.appendChild(d);
-    });
+  ["Date","Time","Opponent","H/A/N","City","TV","Result"].forEach(t => {
+    const d = document.createElement("div");
+    d.className = "header";
+    d.textContent = t;
+    tbl.appendChild(d);
+  });
 }
 
 function addGameRow(tbl, g) {
-  const d1 = document.createElement("div"); d1.textContent = g.date_text || ""; tbl.appendChild(d1);
-  const d2 = document.createElement("div"); d2.textContent = g.kickoff_display || "—"; tbl.appendChild(d2);
+  // Date
+  const d1 = document.createElement("div");
+  d1.textContent = g.date_text || "";
+  tbl.appendChild(d1);
 
-  const d3 = document.createElement("div"); d3.className = "cell-opp"; d3.style.display="flex"; d3.style.alignItems="center";
-  if (g.opp_logo) { const i = document.createElement("img"); i.src = g.opp_logo; d3.appendChild(i); }
-  const t = document.createElement("span"); t.textContent = " " + (g.opponent || "");
-  d3.appendChild(t); tbl.appendChild(d3);
+  // Time
+  const d2 = document.createElement("div");
+  d2.textContent = g.kickoff_display || "—";
+  tbl.appendChild(d2);
 
-  const d4 = document.createElement("div"); d4.textContent = abbrevVenue(g.home_away_neutral); tbl.appendChild(d4);
-  
-  const d5 = document.createElement("div"); d5.textContent = g.city_display || "—"; tbl.appendChild(d5);
+  // Opponent (logo + name)
+  const d3 = document.createElement("div");
+  d3.className = "cell-opp";
+  d3.style.display = "flex";
+  d3.style.alignItems = "center";
+  if (g.opp_logo) {
+    const i = document.createElement("img");
+    i.src = g.opp_logo;
+    i.alt = g.opponent || "Opponent";
+    d3.appendChild(i);
+  }
+  const t = document.createElement("span");
+  t.textContent = " " + (g.opponent || "");
+  d3.appendChild(t);
+  tbl.appendChild(d3);
 
-  const d6 = document.createElement("div"); d6.className = "cell-tv";
-  if (g.tv_logo) { const i = document.createElement("img"); i.src = g.tv_logo; d6.appendChild(i); }
-  else { d6.textContent = "—"; }
+  // H/A/N pill
+  const d4 = document.createElement("div");
+  const han = abbrevVenue(g.home_away_neutral);
+  d4.className = `han ${han}`;
+  d4.textContent = han;
+  tbl.appendChild(d4);
+
+  // City
+  const d5 = document.createElement("div");
+  d5.textContent = g.city_display || "—";
+  tbl.appendChild(d5);
+
+  // TV
+  const d6 = document.createElement("div");
+  d6.className = "cell-tv";
+  if (g.tv_logo) {
+    const i = document.createElement("img");
+    i.src = g.tv_logo;
+    i.alt = "TV";
+    d6.appendChild(i);
+  }
   tbl.appendChild(d6);
 
+  // Result
   const d7 = document.createElement("div");
   if (g.status === "final" && g.outcome && g.score) {
-    const b = document.createElement("span"); b.className = `badge ${g.outcome}`; b.textContent = `${g.outcome} ${g.score}`;
+    const b = document.createElement("span");
+    b.className = `badge ${g.outcome}`;
+    b.textContent = `${g.outcome} ${g.score}`;
     d7.appendChild(b);
-  } else { d7.textContent = "—"; }
+  }
   tbl.appendChild(d7);
 }
 
+// ---------- Boot ----------
 async function load() {
   const [s, m] = await Promise.all([
-    fetch("data/huskers_schedule_normalized.json", {cache:"no-store"}).then(r=>r.json()),
-    fetch("data/stadium_manifest.json", {cache:"no-store"}).then(r=>r.json())
+    fetch("data/huskers_schedule_normalized.json", { cache: "no-store" }).then(r => r.json()),
+    fetch("data/stadium_manifest.json",           { cache: "no-store" }).then(r => r.json())
   ]);
-  schedule = s; manifest = m;
 
+  schedule = s;
+  manifest = m;
+
+  // Next Game
   const next = pickNextGame(schedule);
   if (next) setNextGameView(next);
 
+  // Full schedule
   const tbl = $("#schedule-table");
+  tbl.innerHTML = "";
   addHeaderRow(tbl);
   schedule.forEach(g => addGameRow(tbl, g));
 
-  if (debug) {
+  // Debug helper
+  if (window.debug) {
     const d = $("#debug");
-    d.classList.remove("hidden");
-    d.textContent = `Loaded ${new Date().toLocaleString()} • games=${schedule.length}`;
+    if (d) {
+      d.classList.remove("hidden");
+      d.textContent = `Loaded ${new Date().toLocaleString()} • games=${schedule.length}`;
+    }
   }
 
   rotate();
@@ -155,10 +219,14 @@ async function load() {
 }
 
 (function init() {
-  window.lockView = (new URLSearchParams(location.search)).get("view");
-  window.debug = (new URLSearchParams(location.search)).get("debug") === "1";
-  window.addEventListener("keydown", (e)=>{
+  const qs = new URLSearchParams(location.search);
+  window.lockView = qs.get("view");                 // "next" | "all" | null
+  window.debug    = qs.get("debug") === "1";
+
+  // quick refresh
+  window.addEventListener("keydown", (e) => {
     if (e.key.toLowerCase() === "r") load().catch(console.error);
   });
+
   load().catch(console.error);
 })();
