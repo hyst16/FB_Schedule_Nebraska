@@ -2,46 +2,100 @@
   "images_directory": "images/stadiums",
   "items": {
     "Cincinnati-Arrowhead Stadium-MO": {
-      "opponent": "Cincinnati",
-      "venue": "NEUTRAL",
-      "date": "Aug 28",
       "suggested_filename": "Cincinnati-Arrowhead Stadium-MO.jpg",
-      "exists": false
+      "exists": false,
+      "used_by": [
+        {
+          "date": "Aug 28",
+          "opponent": "Cincinnati",
+          "venue": "NEUTRAL"
+        }
+      ]
     },
     "Nebraska-Memorial Stadium-NE": {
-      "opponent": "Iowa",
-      "venue": "HOME",
-      "date": "Nov 28",
       "suggested_filename": "Nebraska-Memorial Stadium-NE.jpg",
-      "exists": true
+      "exists": true,
+      "used_by": [
+        {
+          "date": "Sep 6",
+          "opponent": "Akron",
+          "venue": "HOME"
+        },
+        {
+          "date": "Sep 13",
+          "opponent": "Houston Christian",
+          "venue": "HOME"
+        },
+        {
+          "date": "Sep 20",
+          "opponent": "Michigan",
+          "venue": "HOME"
+        },
+        {
+          "date": "Oct 4",
+          "opponent": "Michigan State",
+          "venue": "HOME"
+        },
+        {
+          "date": "Oct 25",
+          "opponent": "Northwestern",
+          "venue": "HOME"
+        },
+        {
+          "date": "Nov 1",
+          "opponent": "USC",
+          "venue": "HOME"
+        },
+        {
+          "date": "Nov 28",
+          "opponent": "Iowa",
+          "venue": "HOME"
+        }
+      ]
     },
     "Maryland-SECU Stadium-MD": {
-      "opponent": "Maryland",
-      "venue": "AWAY",
-      "date": "Oct 11",
       "suggested_filename": "Maryland-SECU Stadium-MD.jpg",
-      "exists": true
+      "exists": true,
+      "used_by": [
+        {
+          "date": "Oct 11",
+          "opponent": "Maryland",
+          "venue": "AWAY"
+        }
+      ]
     },
     "Minnesota-Huntington Bank Stadium-MN": {
-      "opponent": "Minnesota",
-      "venue": "AWAY",
-      "date": "Oct 17",
       "suggested_filename": "Minnesota-Huntington Bank Stadium-MN.jpg",
-      "exists": false
+      "exists": false,
+      "used_by": [
+        {
+          "date": "Oct 17",
+          "opponent": "Minnesota",
+          "venue": "AWAY"
+        }
+      ]
     },
     "UCLA-Rose Bowl-CA": {
-      "opponent": "UCLA",
-      "venue": "AWAY",
-      "date": "Nov 8",
       "suggested_filename": "UCLA-Rose Bowl-CA.jpg",
-      "exists": false
+      "exists": false,
+      "used_by": [
+        {
+          "date": "Nov 8",
+          "opponent": "UCLA",
+          "venue": "AWAY"
+        }
+      ]
     },
     "Penn State-Beaver Stadium-PA": {
-      "opponent": "Penn State",
-      "venue": "AWAY",
-      "date": "Nov 22",
       "suggested_filename": "Penn State-Beaver Stadium-PA.jpg",
-      "exists": false
+      "exists": false,
+      "used_by": [
+        {
+          "date": "Nov 22",
+          "opponent": "Penn State",
+          "venue": "AWAY"
+        }
+      ]
     }
   }
 }
