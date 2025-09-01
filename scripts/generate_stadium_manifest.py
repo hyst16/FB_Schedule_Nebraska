@@ -11,20 +11,21 @@ def main():
         raise SystemExit(f"Missing {IN}")
     data = json.loads(IN.read_text())
 
-    existing = {p.name for p in IMAGES_DIR.glob("*.*")}  # exact filenames
-    items = {}  # bg_key -> {suggested_filename, exists, used_by: [...]}
+    existing = {p.name for p in IMAGES_DIR.glob("*.*")}  # existing files
+    items = {}  # human bg_key -> {suggested_filename, exists, used_by: [...]}
 
     for g in data:
-        key = g.get("bg_key") or "Unknown-Stadium-XX"
-        suggested = f"{key}.jpg"
-        exists = (suggested in existing) or (f"{key}.png" in existing)
+        human_key = g.get("bg_key") or "Unknown-Stadium-XX"
+        base = g.get("bg_file_basename") or human_key.replace(" ", "-")
+        suggested_jpg = f"{base}.jpg"
+        suggested_png = f"{base}.png"
+        exists = (suggested_jpg in existing) or (suggested_png in existing)
 
-        entry = items.setdefault(key, {
-            "suggested_filename": suggested,
+        entry = items.setdefault(human_key, {
+            "suggested_filename": suggested_jpg,
             "exists": exists,
             "used_by": []
         })
-        # if any game has the file present, mark exists true
         entry["exists"] = entry["exists"] or exists
         entry["used_by"].append({
             "date": g.get("date_text"),
