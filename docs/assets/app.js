@@ -19,32 +19,48 @@ function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
 }
 
-function bgUrlFor(game) {
-  const key = game.bg_key || "fallback";
-  const item = manifest?.items?.[key];
-
-  if (item?.exists) {
-    // Try multiple extensions
-    const exts = [".jpg", ".jpeg", ".png"];
-    for (const ext of exts) {
-      const url = `images/stadiums/${key}${ext}`;
-      if (item.suggested_filename.endsWith(ext)) return url;
-    }
-    // Default fallback if manifest exists but extension mismatch
-    return `images/stadiums/${item.suggested_filename}`;
-  }
-
-  // Fall back by venue type
-  const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
-  const fallback = typ === "HOME" ? "fallback_home"
-                 : typ === "AWAY" ? "fallback_away"
-                 : "fallback_neutral";
-  return `images/stadiums/${fallback}.jpg`;
-}
-
 function abbrevVenue(v) {
   const t = (v || "").toUpperCase();
   return t.startsWith("H") ? "H" : t.startsWith("A") ? "A" : "N";
+}
+
+function venueFallback(game) {
+  const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
+  const name = typ === "HOME" ? "fallback_home"
+            : typ === "AWAY" ? "fallback_away"
+            : "fallback_neutral";
+  return `images/stadiums/${name}.jpg`;
+}
+
+function setBgWithFallbacks(game) {
+  // prefer precomputed dashified base from normalized JSON;
+  // otherwise dashify the human key here
+  const base = (game.bg_file_basename || game.bg_key || "fallback").replace(/\s+/g, "-");
+
+  const candidates = [
+    `images/stadiums/${base}.jpg`,
+    `images/stadiums/${base}.jpeg`,
+    `images/stadiums/${base}.png`,
+  ];
+  const fallbackUrl = venueFallback(game);
+
+  // if manifest says we don't have this, jump to venue fallback
+  const has = manifest?.items?.[game.bg_key]?.exists;
+  if (!has) {
+    $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`;
+    return;
+  }
+
+  // try jpg → jpeg → png, then venue fallback
+  let i = 0;
+  const img = new Image();
+  img.onload = () => { $("#next-bg").style.backgroundImage = `url("${candidates[i]}")`; };
+  img.onerror = () => {
+    i += 1;
+    if (i < candidates.length) img.src = candidates[i];
+    else $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`;
+  };
+  img.src = candidates[i];
 }
 
 function setNextGameView(game) {
@@ -75,7 +91,7 @@ function setNextGameView(game) {
   }
 
   // Background (no Ken Burns)
-  $("#next-bg").style.backgroundImage = `url("${bgUrlFor(game)}")`;
+  setBgWithFallbacks(game);
 }
 
 function addHeaderRow(tbl) {
