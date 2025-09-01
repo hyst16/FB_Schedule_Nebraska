@@ -19,21 +19,42 @@ function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
 }
 
-function bgUrlFor(game) {
-  const key = game.bg_key || "fallback";
-  // Prefer provided image; else fallback by venue type
-  const has = manifest?.items?.[key]?.exists;
-  if (has) return `../images/stadiums/${key}.jpg`;
-  const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
-  const fallback = typ === "HOME" ? "fallback_home"
-                 : typ === "AWAY" ? "fallback_away"
-                 : "fallback_neutral";
-  return `../images/stadiums/${fallback}.jpg`;
-}
-
 function abbrevVenue(v) {
   const t = (v || "").toUpperCase();
   return t.startsWith("H") ? "H" : t.startsWith("A") ? "A" : "N";
+}
+
+function venueFallback(game) {
+  const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
+  const name = typ === "HOME" ? "fallback_home"
+            : typ === "AWAY" ? "fallback_away"
+            : "fallback_neutral";
+  return `../images/stadiums/${name}.jpg`;
+}
+
+function setBgWithFallbacks(game) {
+  const base = game.bg_file_basename || (game.bg_key || "").replace(/\s+/g, "-");
+  const jpgUrl = `../images/stadiums/${base}.jpg`;
+  const pngUrl = `../images/stadiums/${base}.png`;
+  const fallUrl = venueFallback(game);
+
+  // Only try custom if manifest says we have it
+  const has = manifest?.items?.[game.bg_key]?.exists;
+  if (!has) {
+    $("#next-bg").style.backgroundImage = `url("${fallUrl}")`;
+    return;
+  }
+
+  // Try JPG then PNG
+  const img = new Image();
+  img.onload = () => { $("#next-bg").style.backgroundImage = `url("${jpgUrl}")`; };
+  img.onerror = () => {
+    const img2 = new Image();
+    img2.onload = () => { $("#next-bg").style.backgroundImage = `url("${pngUrl}")`; };
+    img2.onerror = () => { $("#next-bg").style.backgroundImage = `url("${fallUrl}")`; };
+    img2.src = pngUrl;
+  };
+  img.src = jpgUrl;
 }
 
 function setNextGameView(game) {
@@ -64,7 +85,7 @@ function setNextGameView(game) {
   }
 
   // Background (no Ken Burns)
-  $("#next-bg").style.backgroundImage = `url("${bgUrlFor(game)}")`;
+  setBgWithFallbacks(game);
 }
 
 function addHeaderRow(tbl) {
