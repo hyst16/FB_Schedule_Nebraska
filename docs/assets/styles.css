@@ -1,57 +1,184 @@
-:root { --safe:48px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
+/* FB_Schedule_Nebraska — visual styles
+   - Polished dark theme for Next Game + Table views
+   - White chips behind logos (TV & opponent) so dark marks (e.g. CBS) are visible
+   - H/A/N badges, result badges, zebra striping, responsive table
+*/
+
+:root{
+  --safe: 48px;
+  --bg: #000;
+  --fg: #f6f7f9;
+  --muted: #c9c9c9;
+  --panel: rgba(255,255,255,.03);
+  --panel-2: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.15);
+  --husker: #d00000;
+  --row-odd: rgba(255,255,255,0.02);
+  --row-even: rgba(255,255,255,0.05);
+
+  --win: #1fb26b;
+  --loss: #ff4d4f;
+  --tie: #8c8c8c;
+}
 
 * { box-sizing: border-box; }
-html,body { margin:0; height:100%; background:var(--bg); color:var(--fg);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif; }
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
 
-.hidden { display:none; }
-.view { position:relative; width:100vw; height:100vh; overflow:hidden; }
-.bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
+.hidden { display: none; }
 
+/* -------- Views -------- */
+.view { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+.bg   { position: absolute; inset: 0; background: #000 center/cover no-repeat; filter: brightness(0.5); }
+
+/* -------- Next Game (hero) -------- */
 .next-card {
-  position:absolute; left:var(--safe); right:auto; bottom:var(--safe);
-  padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
-  border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
+  position: absolute; left: var(--safe); right: auto; bottom: var(--safe);
+  padding: 16px 18px; background: rgba(0,0,0,.55); backdrop-filter: blur(2px);
+  border: 1px solid var(--border); border-radius: 16px; max-width: 760px;
 }
+
 .row.logos { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
-.logo { width:72px; height:72px; object-fit:contain; }
-.vs { font-weight:800; font-size:32px; letter-spacing:.5px; }
-.opponent { font-size:40px; font-weight:800; line-height:1.1; }
-.detail { font-size:22px; color:var(--muted); }
 
-.all-wrap { padding:var(--safe); }
-.table {
-  display:grid;
-  grid-template-columns: 110px 105px 1fr 70px 420px 120px 110px;
-  gap:8px; align-items:center;
-}
-.table > div {
-  padding:8px 10px; border:1px solid rgba(255,255,255,.15);
-  border-radius:10px; min-height:48px; display:flex; align-items:center;
-  overflow:hidden; white-space:nowrap; text-overflow:ellipsis;
-  background:rgba(255,255,255,.03);
-}
-.header { background:rgba(255,255,255,.08); font-weight:700; }
-.cell-opp { gap:8px; }
-.cell-opp img { width:28px; height:28px; object-fit:contain; flex:0 0 auto; }
-.cell-tv img { height:22px; object-fit:contain; }
-
-.badge { padding:2px 8px; border-radius:6px; border:1px solid rgba(255,255,255,.2); font-size:16px; }
-.badge.W { background:#124e18; }
-.badge.L { background:#551a1a; }
-.badge.T { background:#3a3f4b; }
-
-.debug {
-  position:fixed; right:8px; bottom:8px; padding:6px 8px; font:12px/1.2 monospace;
-  background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.2); border-radius:8px; color:#ddd;
+/* Constrain hero logos */
+.logo {
+  width: 72px; height: 72px;
+  object-fit: contain; display: inline-block;
+  background: #fff;          /* white chip so dark logos are visible */
+  border-radius: 8px;
+  padding: 4px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06);
 }
 
+.vs        { font-weight: 800; font-size: 32px; letter-spacing: .5px; }
+.opponent  { font-size: 40px; font-weight: 800; line-height: 1.1; }
+.detail    { font-size: 22px; color: var(--muted); }
+
+/* TV logo chip in hero */
+#next-tv img {
+  height: 24px; object-fit: contain;
+  background: #fff; border-radius: 6px; padding: 2px 6px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06);
+}
+
+/* -------- Full Schedule (table) -------- */
+.all-wrap { padding: var(--safe); }
+
+#schedule-table {
+  display: grid;
+  grid-template-columns: 110px 105px minmax(320px,1fr) 78px 260px 120px 120px;
+  gap: 8px; align-items: center;
+}
+
+/* Cells */
+#schedule-table > div {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  min-height: 48px;
+  display: flex; align-items: center;
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  background: var(--panel);
+}
+
+/* Header cells (first 7 after an empty table) */
+#schedule-table > .header {
+  background: var(--panel-2);
+  font-weight: 700;
+  position: sticky; top: 0; z-index: 2;
+}
+
+/* Zebra striping per row (groups of 7 cells) */
+#schedule-table > div:nth-child(14n+1),
+#schedule-table > div:nth-child(14n+2),
+#schedule-table > div:nth-child(14n+3),
+#schedule-table > div:nth-child(14n+4),
+#schedule-table > div:nth-child(14n+5),
+#schedule-table > div:nth-child(14n+6),
+#schedule-table > div:nth-child(14n+7) {
+  background: var(--row-odd);
+}
+#schedule-table > div:nth-child(14n+8),
+#schedule-table > div:nth-child(14n+9),
+#schedule-table > div:nth-child(14n+10),
+#schedule-table > div:nth-child(14n+11),
+#schedule-table > div:nth-child(14n+12),
+#schedule-table > div:nth-child(14n+13),
+#schedule-table > div:nth-child(14n+14) {
+  background: var(--row-even);
+}
+
+/* Opponent cell */
+.cell-opp { gap: 10px; font-weight: 650; }
+.cell-opp img {
+  width: 26px; height: 26px; object-fit: contain; display: inline-block;
+  background: #fff; border-radius: 6px; padding: 2px 4px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.06);
+}
+
+/* H/A/N pill */
+.han { font-weight: 700; font-size: 14px; border-radius: 999px; padding: 6px 10px; letter-spacing: .02em; justify-content: center; }
+.han.H { background: var(--husker); color: #fff; }
+.han.A { background: #ededed; color: #111; }
+.han.N { background: #ffd666; color: #111; }
+
+/* City + Time subtle */
+#schedule-table > div:nth-child(7n+2), /* time cells */
+#schedule-table > div:nth-child(7n+5)  /* city cells */ { color: #d0d0d0; }
+
+/* TV column — white chip */
+.cell-tv { justify-content: flex-start; }
+.cell-tv img {
+  max-height: 20px; object-fit: contain;
+  background: #fff; border-radius: 6px; padding: 2px 6px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 6px 12px rgba(0,0,0,.15);
+}
+
+/* Result badges */
+.badge { font-weight: 800; border-radius: 999px; padding: 6px 10px; font-size: 13px; letter-spacing: .02em; }
+.badge.W { background: var(--win);  color: #081; }
+.badge.L { background: var(--loss); color: #300; }
+.badge.T { background: var(--tie);  color: #111; }
+
+/* When empty, show an em dash */
+.cell-tv:empty::after,
+#schedule-table > div:empty::after { content: "—"; color: rgba(255,255,255,.45); }
+
+/* -------- Responsive tweaks -------- */
+@media (max-width: 1100px) {
+  #schedule-table {
+    grid-template-columns: 96px 98px minmax(260px,1fr) 68px 1fr 100px 100px;
+  }
+}
+
+@media (max-width: 820px) {
+  /* Hide City column for compact screens */
+  #schedule-table {
+    grid-template-columns: 90px 96px minmax(220px,1fr) 64px 0px 96px 100px;
+  }
+  #schedule-table > .header:nth-child(5),
+  #schedule-table > div:nth-child(7n+5) { display: none; }
+}
+
+/* 4K-ish scaling for hero and table */
 @media (min-width: 2560px) {
-  :root { --safe:64px; }
-  .logo { width:96px; height:96px; }
-  .vs { font-size:40px; }
-  .opponent { font-size:48px; }
-  .detail { font-size:26px; }
-  .table { grid-template-columns: 130px 120px 1fr 80px 520px 140px 130px; }
-  .badge { font-size:18px; }
+  :root { --safe: 64px; }
+  .logo { width: 96px; height: 96px; }
+  .vs { font-size: 40px; }
+  .opponent { font-size: 48px; }
+  .detail { font-size: 26px; }
+  #schedule-table { grid-template-columns: 130px 120px minmax(380px,1fr) 90px 320px 140px 140px; }
+  .badge { font-size: 15px; }
+}
+
+/* Optional debug pill */
+#debug {
+  position: fixed; right: 8px; bottom: 8px; padding: 6px 8px; font: 12px/1.2 monospace;
+  background: rgba(0,0,0,.65); border: 1px solid var(--border); border-radius: 8px; color: #ddd;
 }
