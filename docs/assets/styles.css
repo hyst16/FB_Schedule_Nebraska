@@ -36,7 +36,7 @@ html,body {
 #view-all .rows {
   display: flex;
   flex-direction: column;
-  gap: 6px;                 /* ↓ tighter vertical rhythm (was 8px) */
+  gap: 2px;                 /* ↓ tighter vertical rhythm (was 8px) */
 }
 
 /* Entire row is one “card” — no explicit columns */
