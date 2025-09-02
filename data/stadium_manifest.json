@@ -12,15 +12,21 @@
         }
       ]
     },
-    "Nebraska-Memorial Stadium-NE": {
-      "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-      "exists": true,
+    "Maryland-SECU-Stadium-MD": {
+      "suggested_filename": "Maryland-SECU-Stadium-MD.jpg",
+      "exists": false,
       "used_by": [
         {
           "date": "Sep 6",
           "opponent": "Akron",
           "venue": "HOME"
-        },
+        }
+      ]
+    },
+    "Nebraska-Memorial Stadium-NE": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
+      "exists": false,
+      "used_by": [
         {
           "date": "Sep 13",
           "opponent": "Houston Christian",
@@ -55,7 +61,7 @@
     },
     "Maryland-SECU Stadium-MD": {
       "suggested_filename": "Maryland-SECU-Stadium-MD.jpg",
-      "exists": true,
+      "exists": false,
       "used_by": [
         {
           "date": "Oct 11",
