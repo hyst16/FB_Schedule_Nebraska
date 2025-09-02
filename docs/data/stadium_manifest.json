@@ -12,8 +12,8 @@
         }
       ]
     },
-    "Nebraska-Memorial-Stadium-NE-DAYGAME": {
-      "suggested_filename": "Nebraska-Memorial-Stadium-NE-DAYGAME.jpg",
+    "Nebraska-Memorial-Stadium-NE-NIGHTGAME": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE-NIGHTGAME.jpg",
       "exists": true,
       "used_by": [
         {
@@ -33,11 +33,6 @@
           "venue": "HOME"
         },
         {
-          "date": "Sep 20",
-          "opponent": "Michigan",
-          "venue": "HOME"
-        },
-        {
           "date": "Oct 4",
           "opponent": "Michigan State",
           "venue": "HOME"
@@ -50,6 +45,17 @@
         {
           "date": "Nov 1",
           "opponent": "USC",
+          "venue": "HOME"
+        }
+      ]
+    },
+    "Nebraska-Memorial-Stadium-NE-DAYGAME": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE-DAYGAME.jpg",
+      "exists": true,
+      "used_by": [
+        {
+          "date": "Sep 20",
+          "opponent": "Michigan",
           "venue": "HOME"
         },
         {
