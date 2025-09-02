@@ -1,6 +1,6 @@
 /* assets/styles.css
    Global + hero styles remain as you had them.
-   The schedule (view-all) gets a scale-to-fit wrapper so it always fits on screen.
+   Compact schedule styles are scoped under #view-all so the hero page stays untouched.
 */
 
 :root { --safe:25px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
@@ -20,67 +20,56 @@ html,body {
 
 .next-card {
   position:absolute; left:var(--safe); right:auto; top:var(--safe);
-  padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
+  /* ↑ Move the card – change top/bottom/left as you like; keep one of top/bottom set */
+  padding:16px 18px;                               /* ← inner space of the card */
+  background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
   border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
 }
 
-/* Center the logos + "vs." at the top of the card */
-.row.logos { display:flex; align-items:center; justify-content: center; gap:12px; margin-bottom:8px; }
+.row.logos {
+  display:flex;
+  align-items:center;           /* vertical centering within the row */
+  justify-content: center;      /* ⬅️ center the logos + “vs.” horizontally */
+  gap:12px;                     /* ← space between Husker logo, “vs.”, opponent logo */
+  margin-bottom:8px;            /* ← space below this row before the opponent name */
+}
 .logo { width:72px; height:72px; object-fit:contain; }
 .vs { font-weight:800; font-size:32px; letter-spacing:.5px; }
 .opponent { font-size:40px; font-weight:800; line-height:1.1; }
 .detail { font-size:22px; color:var(--muted); }
 
-/* Make the TV logo look like a white "chip" */
-.detail.chip-tv {
-  display:inline-flex; align-items:center; gap:8px;
-  background:#fff; color:#000; border:1px solid rgba(0,0,0,0.2);
-  border-radius:999px; padding:4px 10px;
+/* TV chip inside the hero card */
+.next-card .tv-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;                /* ← chip padding (top/bottom, left/right) */
+  border-radius: 999px;             /* ← full “pill” shape */
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.2);
 }
-.detail.chip-tv img { height:22px; width:auto; display:block; }
-
-/* ---------------- SCHEDULE (view-all) ----------------
-   We give #view-all a fixed, padded "stage" area and scale the content to fit inside it.
-*/
-
-/* The padded stage; we’ll fit content inside this box. */
-#view-all .all-wrap {
-  /* full viewport height minus top+bottom safe padding */
-  height: calc(100vh - (var(--safe) * 2));
-  padding: var(--safe);
+.next-card .tv-chip img {
+  height: 20px;                     /* ← TV logo size inside the chip */
+  width: auto;
+  display: block;
 }
 
-/* Scale viewport: we position/size this to the stage and center the scaled content inside. */
-#view-all .scale-viewport {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;          /* no scrollbars; we’re scaling to fit */
-  background: transparent;   /* keep background from hero showing here */
-}
+/* ---------------- COMPACT SCHEDULE (one row per game) ---------------- */
 
-/* The thing we actually scale. We’ll set transform/left/top via JS. */
-#view-all .scale-target {
-  position: absolute;        /* JS will place/center this after scaling */
-  left: 0;
-  top: 0;
-  transform-origin: top left;/* scaling is calculated from this corner */
-}
+#view-all .all-wrap { padding: var(--safe); }  /* ← outer page padding around the rows list */
 
-/* The list of rows (inside the scale-target). Tweak spacing here. */
 #view-all .rows {
   display: flex;
   flex-direction: column;
-  gap: 2px;                  /* vertical space between rows */
+  gap: 2px;                 /* ← vertical gap BETWEEN rows (make smaller = tighter stack) */
 }
 
-/* Each row is a compact “card”. Tweak vertical density here. */
+/* Entire row is one “card” — no explicit columns */
 #view-all .game-row {
   display: flex;
-  gap: 10px;                 /* horizontal spacing between date & line */
+  gap: 10px;                /* ← horizontal gap BETWEEN the left date block and main line */
   align-items: center;
-  min-height: 52px;          /* overall row height floor */
-  padding: 2px 12px;         /* inner padding of each row */
+  min-height: 52px;         /* ← row minimum height (reduce to compact further) */
+  padding: 2px 12px;        /* ← inner padding INSIDE each row (top/bottom, left/right) */
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
@@ -92,7 +81,7 @@ html,body {
   content:"";
   position:absolute;
   left:0; top:0; bottom:0;
-  width: 3px;
+  width: 3px;                              /* ← thickness of the left accent bar */
   border-radius: 12px 0 0 12px;
   background: rgba(255,255,255,0.20);
 }
@@ -111,7 +100,7 @@ html,body {
 
 /* Left cap: stacked date + weekday, narrow footprint */
 #view-all .when {
-  width: 72px;              /* reduce to pack rows tighter horizontally */
+  width: 72px;              /* ← how wide the date block is */
   display:flex; flex-direction:column; align-items:flex-start;
   line-height: 1.1;
 }
@@ -120,18 +109,19 @@ html,body {
 
 /* Main sentence line (flexes to fill remaining width) */
 #view-all .line {
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; gap: 6px;   /* ← spacing BETWEEN items in the sentence */
   min-width: 0; /* allow children to ellipsis */
   flex: 1;
 }
 
-/* Tiny marks (logos) with a faint backplate so dark marks stay visible */
+/* Tiny marks (logos) flanking the divider / opponent)
+   Add a subtle backplate so dark logos stay visible on dark rows */
 #view-all .line .mark {
   height: 22px; width: 22px; object-fit: contain; flex: 0 0 auto;
-  padding: 2px;                              /* space for backplate */
+  padding: 2px;                              /* ← inner pad so the backplate shows */
   border-radius: 6px;
-  background: rgba(255,255,255,0.10);        /* faint neutral plate */
-  border: 1px solid rgba(255,255,255,0.18);  /* subtle edge */
+  background: rgba(255,255,255,0.10);        /* ← faint neutral plate under dark logos */
+  border: 1px solid rgba(255,255,255,0.18);  /* ← subtle edge */
 }
 
 /* Divider + opponent name */
@@ -139,13 +129,13 @@ html,body {
 #view-all .line .opp-name {
   font-weight: 600;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  max-width: 26ch; /* prevent long names from eating the row */
+  max-width: 26ch; /* ← prevents long opponent names from eating the whole row */
 }
 
 /* Micro chips for time/city; white chip for TV */
 #view-all .chip {
   font-size: 13px;
-  padding: 4px 8px;
+  padding: 4px 8px;                          /* ← chip interior padding */
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.18);
   background: rgba(255,255,255,0.06);
@@ -160,13 +150,13 @@ html,body {
 }
 #view-all .chip.tv img { display:block; height: 18px; width:auto; }
 
-/* Result pill appears right after the date block */
+/* Result pill appears RIGHT AFTER THE DATE block (so give it right margin) */
 #view-all .result {
   font-size: 14px;
   padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.2);
-  margin: 0 8px 0 0;         /* space to the right of the pill */
+  margin: 0 8px 0 0;         /* ← space to the RIGHT of the result pill */
 }
 #view-all .result.W { background:#1a6123; }
 #view-all .result.L { background:#6b1b1b; }
