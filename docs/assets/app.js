@@ -1,8 +1,7 @@
-
 /* assets/app.js
    Husker Schedule — dual views:
    - #view-next : hero/next-game card
-   - #view-all  : compact single-row-per-game schedule
+   - #view-all  : compact single-row-per-game schedule with auto-scaling
 
    Notes:
    • All schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
@@ -26,6 +25,9 @@ function rotate() {
                 : views[viewIndex];
   $(target).classList.remove("hidden");
   if (!window.lockView) viewIndex = (viewIndex + 1) % views.length;
+
+  // Re-apply scaling any time we show the schedule view
+  if ($(target).id === "view-all") applyScheduleScale();
 }
 
 /* ---------------- Helpers shared across views ---------------- */
@@ -77,16 +79,14 @@ function setNextGameView(game) {
   // Literal from the site — already "vs." or "at"
   const divider = (game.divider || "vs.").trim();
 
-  // 🆕 Build “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
+  // “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
   const matchupStr = `Nebraska ${divider} ${oppName}`;
 
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
   const cityStr = game.city_display || "—";
-  const han = abbrevVenue(game.home_away_neutral);
 
-  // Top logo row still shows N • divider • Opponent logo
   $("#divider").textContent = divider;
-  $("#next-opponent").textContent = matchupStr;   // <- use our matchup string here
+  $("#next-opponent").textContent = matchupStr;
   $("#next-datetime").textContent = dateStr;
   $("#next-venue").textContent = cityStr || "—";
 
@@ -113,28 +113,7 @@ function setNextGameView(game) {
 }
 
 /* ================================================================
-   Schedule view (one compact row per game)
-   ----------------------------------------------------------------
-   Structure:
-
-   <div class="game-row is-home|is-away">      // whole row is one card
-     <div class="when">                        // narrow left cap
-       <div class="date">Sep 6</div>
-       <div class="dow">Sat</div>
-     </div>
-
-     <div class="line">                        // main sentence of the row
-       <span class="result W">W 20–17</span>   // result (only if final)
-       <img class="mark ne"  src="...">
-       <span class="divider">vs.</span>
-       <img class="mark opp" src="...">
-       <span class="opp-name">Akron</span>
-
-       <span class="chip time">6:30 PM CDT</span>  // shown only if time known
-       <span class="chip city">Lincoln, NE</span>
-       <span class="chip tv"><img src="logo.png"></span>
-     </div>
-   </div>
+   Schedule view (one compact row per game) + SCALING
 ================================================================ */
 
 function isTimeKnown(t) {
@@ -189,11 +168,10 @@ function buildGameRow(g) {
   when.appendChild(dow);
   row.appendChild(when);
 
-  /* Main line: RESULT FIRST → then N {vs./at} [opp logo] Opponent + chips */
+  /* Main line: result (if final) → N {vs./at} [opp logo] Opponent + chips */
   const line = document.createElement("div");
   line.className = "line";
 
-  // Result FIRST, so it appears right after the date block
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`; // W | L | T
@@ -201,7 +179,6 @@ function buildGameRow(g) {
     line.appendChild(r);
   }
 
-  // Nebraska mark
   if (g.ne_logo) {
     const ne = document.createElement("img");
     ne.className = "mark ne";
@@ -240,17 +217,57 @@ function buildGameRow(g) {
   return row;
 }
 
-/* Render all games into #view-all (compact rows) */
+/* Render all games into #view-all:
+   - Wrap the rows in a .scale-frame so we can scale the whole block. */
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
   wrap.innerHTML = ""; // clear any previous content
+
+  const frame = document.createElement("div");
+  frame.className = "scale-frame";  // ← this is what we scale
 
   const list = document.createElement("div");
   list.className = "rows";
 
   games.forEach(g => list.appendChild(buildGameRow(g)));
 
-  wrap.appendChild(list);
+  frame.appendChild(list);
+  wrap.appendChild(frame);
+
+  // After first render, compute scale so everything fits the screen
+  applyScheduleScale();
+}
+
+/* Compute a scale factor so .scale-frame fits within the visible
+   area of #view-all .all-wrap (both width AND height).
+   - We only ever scale down (never above 1) to keep crispness.
+   - Call this on load, on resize, and when switching to the schedule view.
+*/
+function applyScheduleScale() {
+  const stage = $("#view-all .all-wrap");      // the flex container with padding
+  const frame = $("#view-all .scale-frame");   // the thing we scale
+  if (!stage || !frame) return;
+
+  // Reset any previous scaling before measuring
+  frame.style.transform = "scale(1)";
+
+  // Available size inside the stage (client* includes padding; that’s fine)
+  const availW = stage.clientWidth;
+  const availH = stage.clientHeight;
+
+  // Content’s natural size
+  const contentW = frame.scrollWidth;
+  const contentH = frame.scrollHeight;
+
+  // If content is already smaller than stage, keep scale=1
+  // Otherwise scale down by the tighter axis.
+  const scale = Math.min(availW / contentW, availH / contentH, 1);
+
+  frame.style.transform = `scale(${scale})`;
+
+  // Optional: if you want the scaled block vertically centered when scaled down,
+  // switch the align-items based on whether we scaled.
+  // stage.style.alignItems = (scale < 1) ? 'center' : 'flex-start';
 }
 
 /* ---------------- Load + boot ---------------- */
@@ -282,6 +299,9 @@ async function load() {
   rotate();
   setInterval(rotate, window.UI.rotateSeconds * 1000);
 }
+
+// Re-scale on window resize (e.g., someone changes TV zoom or rotates screen)
+window.addEventListener("resize", applyScheduleScale);
 
 (function init() {
   window.lockView = (new URLSearchParams(location.search)).get("view");
