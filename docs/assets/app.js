@@ -264,7 +264,7 @@ function applyScheduleScale() {
   const scale = Math.min(availW / contentW, availH / contentH, 1);
 
    // Nudge: bias the scale slightly smaller so we never risk a 1–2px overflow
-  const SCALE_BIAS = 0.95; // try 0.98 → 0.95 if needed
+  const SCALE_BIAS = 0.85; // try 0.98 → 0.95 if needed
   frame.style.transform = `scale(${scale * SCALE_BIAS})`;
 
    
