@@ -263,6 +263,11 @@ function applyScheduleScale() {
   // Otherwise scale down by the tighter axis.
   const scale = Math.min(availW / contentW, availH / contentH, 1);
 
+   // Nudge: bias the scale slightly smaller so we never risk a 1–2px overflow
+  const SCALE_BIAS = 0.95; // try 0.98 → 0.95 if needed
+  frame.style.transform = `scale(${scale * SCALE_BIAS})`;
+
+   
   frame.style.transform = `scale(${scale})`;
 
   // Optional: if you want the scaled block vertically centered when scaled down,
