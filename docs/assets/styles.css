@@ -1,140 +1,86 @@
 /* assets/styles.css
-   Global + hero styles (unchanged in spirit)
-   NEW: density-driven tokens for the compact schedule (#view-all).
+   Global + hero styles remain as you had them.
+   The schedule (view-all) gets a scale-to-fit wrapper so it always fits on screen.
 */
 
-:root {
-  /* Global tokens */
-  --safe: 25px;
-  --fg: #fff;
-  --bg: #000;
-  --muted: #c9c9c9;
+:root { --safe:25px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
 
-  /* ===== Schedule density tokens (defaults = "normal") =====
-     These variables drive the size/spacing of the schedule rows.
-     JS will toggle #view-all[data-density="..."] to change these.
-  */
-  --row-gap: 2px;            /* vertical space between rows */
-  --row-pad-y: 2px;          /* row top/bottom padding */
-  --row-pad-x: 12px;         /* row left/right padding */
-  --row-min-h: 52px;         /* minimum card height (row height floor) */
-
-  --when-w: 72px;            /* width of the date/weekday block */
-
-  --mark-size: 22px;         /* tiny logo size in line */
-  --mark-radius: 6px;        /* backplate rounding */
-
-  --line-gap: 6px;           /* inline gap between bits (divider, chips, etc.) */
-
-  --chip-font: 13px;
-  --chip-pad-y: 4px;
-  --chip-pad-x: 8px;
-
-  --tv-chip-img: 18px;       /* TV logo height inside the white chip */
-
-  --result-font: 14px;
-  --result-pad-y: 4px;
-  --result-pad-x: 10px;
-}
-
-/* ===== Density overrides =====
-   Make rows progressively denser when they don't fit. 
-   Adjust these numbers to taste.
-*/
-#view-all[data-density="compact"] {
-  --row-gap: 1px;
-  --row-pad-y: 1px;
-  --row-pad-x: 10px;
-  --row-min-h: 46px;
-
-  --when-w: 66px;
-
-  --mark-size: 20px;
-  --line-gap: 5px;
-
-  --chip-font: 12px;
-  --chip-pad-y: 3px;
-  --chip-pad-x: 7px;
-
-  --tv-chip-img: 16px;
-
-  --result-font: 13px;
-  --result-pad-y: 3px;
-  --result-pad-x: 8px;
-}
-
-#view-all[data-density="ultra"] {
-  --row-gap: 0px;
-  --row-pad-y: 0px;
-  --row-pad-x: 8px;
-  --row-min-h: 42px;
-
-  --when-w: 60px;
-
-  --mark-size: 18px;
-  --line-gap: 4px;
-
-  --chip-font: 11px;
-  --chip-pad-y: 2px;
-  --chip-pad-x: 6px;
-
-  --tv-chip-img: 14px;
-
-  --result-font: 12px;
-  --result-pad-y: 2px;
-  --result-pad-x: 7px;
-}
-
-/* ===== Base ===== */
 * { box-sizing: border-box; }
-html, body {
-  margin: 0; height: 100%;
-  background: var(--bg); color: var(--fg);
+html,body {
+  margin:0; height:100%;
+  background:var(--bg); color:var(--fg);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 }
 
-.hidden { display: none; }
-.view { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+.hidden { display:none; }
+.view { position:relative; width:100vw; height:100vh; overflow:hidden; }
 
 /* ---------------- HERO (next-game) ---------------- */
 .bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
 
-/* Card lives at safe-top/left; logos are centered across the top row */
 .next-card {
-  position: absolute; left: var(--safe); right: auto; top: var(--safe);
-  padding: 16px 18px; background: rgba(0,0,0,.55); backdrop-filter: blur(2px);
-  border: 1px solid rgba(255,255,255,.15); border-radius: 16px; max-width: 760px;
+  position:absolute; left:var(--safe); right:auto; top:var(--safe);
+  padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
+  border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
 }
-.row.logos { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 8px; }
-.logo { width: 72px; height: 72px; object-fit: contain; }
-.vs { font-weight: 800; font-size: 32px; letter-spacing: .5px; }
-.opponent { font-size: 40px; font-weight: 800; line-height: 1.1; }
-.detail { font-size: 22px; color: var(--muted); }
 
-/* Make the hero TV logo look like a chip */
-.detail .tv-chip {
-  display: inline-flex; align-items: center;
-  gap: 6px; padding: 2px 8px; border-radius: 999px;
-  background: #fff; color: #000;
-  border: 1px solid rgba(0,0,0,.2);
+/* Center the logos + "vs." at the top of the card */
+.row.logos { display:flex; align-items:center; justify-content: center; gap:12px; margin-bottom:8px; }
+.logo { width:72px; height:72px; object-fit:contain; }
+.vs { font-weight:800; font-size:32px; letter-spacing:.5px; }
+.opponent { font-size:40px; font-weight:800; line-height:1.1; }
+.detail { font-size:22px; color:var(--muted); }
+
+/* Make the TV logo look like a white "chip" */
+.detail.chip-tv {
+  display:inline-flex; align-items:center; gap:8px;
+  background:#fff; color:#000; border:1px solid rgba(0,0,0,0.2);
+  border-radius:999px; padding:4px 10px;
 }
-.detail .tv-chip img { display:block; height: 22px; width: auto; }
+.detail.chip-tv img { height:22px; width:auto; display:block; }
 
-/* ---------------- COMPACT SCHEDULE (one row per game) ---------------- */
+/* ---------------- SCHEDULE (view-all) ----------------
+   We give #view-all a fixed, padded "stage" area and scale the content to fit inside it.
+*/
 
-#view-all .all-wrap { padding: var(--safe); }
+/* The padded stage; we’ll fit content inside this box. */
+#view-all .all-wrap {
+  /* full viewport height minus top+bottom safe padding */
+  height: calc(100vh - (var(--safe) * 2));
+  padding: var(--safe);
+}
 
-/* A single column of rows, with adjustable gap via tokens */
+/* Scale viewport: we position/size this to the stage and center the scaled content inside. */
+#view-all .scale-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;          /* no scrollbars; we’re scaling to fit */
+  background: transparent;   /* keep background from hero showing here */
+}
+
+/* The thing we actually scale. We’ll set transform/left/top via JS. */
+#view-all .scale-target {
+  position: absolute;        /* JS will place/center this after scaling */
+  left: 0;
+  top: 0;
+  transform-origin: top left;/* scaling is calculated from this corner */
+}
+
+/* The list of rows (inside the scale-target). Tweak spacing here. */
 #view-all .rows {
-  display: flex; flex-direction: column;
-  gap: var(--row-gap);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;                  /* vertical space between rows */
 }
 
-/* Row card (everything is one card; no grid columns) */
+/* Each row is a compact “card”. Tweak vertical density here. */
 #view-all .game-row {
-  display: flex; gap: 10px; align-items: center;
-  min-height: var(--row-min-h);
-  padding: var(--row-pad-y) var(--row-pad-x);
+  display: flex;
+  gap: 10px;                 /* horizontal spacing between date & line */
+  align-items: center;
+  min-height: 52px;          /* overall row height floor */
+  padding: 2px 12px;         /* inner padding of each row */
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
@@ -144,7 +90,9 @@ html, body {
 /* Left accent for venue (small but readable) */
 #view-all .game-row::before {
   content:"";
-  position:absolute; left:0; top:0; bottom:0; width: 3px;
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width: 3px;
   border-radius: 12px 0 0 12px;
   background: rgba(255,255,255,0.20);
 }
@@ -155,7 +103,7 @@ html, body {
 }
 #view-all .game-row.is-home::before { background: rgba(196,0,0,0.9); }
 
-/* AWAY/NEUTRAL: graphite wash + gray accent */
+/* AWAY/NEUTRAL: graphite wash + gray accent (neutral treated like away) */
 #view-all .game-row.is-away {
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
 }
@@ -163,25 +111,27 @@ html, body {
 
 /* Left cap: stacked date + weekday, narrow footprint */
 #view-all .when {
-  width: var(--when-w);
-  display:flex; flex-direction:column; align-items:flex-start; line-height: 1.1;
+  width: 72px;              /* reduce to pack rows tighter horizontally */
+  display:flex; flex-direction:column; align-items:flex-start;
+  line-height: 1.1;
 }
 #view-all .when .date { font-weight: 700; font-size: 16px; }
 #view-all .when .dow  { color: var(--muted); font-size: 13px; margin-top: 2px; }
 
-/* Main sentence line (flex grows to fill remaining width) */
+/* Main sentence line (flexes to fill remaining width) */
 #view-all .line {
-  display: flex; align-items: center; gap: var(--line-gap);
-  min-width: 0; flex: 1;
+  display: flex; align-items: center; gap: 6px;
+  min-width: 0; /* allow children to ellipsis */
+  flex: 1;
 }
 
-/* Tiny marks (logos) with faint backplate for dark marks */
+/* Tiny marks (logos) with a faint backplate so dark marks stay visible */
 #view-all .line .mark {
-  height: var(--mark-size); width: var(--mark-size);
-  object-fit: contain; flex: 0 0 auto;
-  padding: 2px; border-radius: var(--mark-radius);
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.18);
+  height: 22px; width: 22px; object-fit: contain; flex: 0 0 auto;
+  padding: 2px;                              /* space for backplate */
+  border-radius: 6px;
+  background: rgba(255,255,255,0.10);        /* faint neutral plate */
+  border: 1px solid rgba(255,255,255,0.18);  /* subtle edge */
 }
 
 /* Divider + opponent name */
@@ -189,34 +139,34 @@ html, body {
 #view-all .line .opp-name {
   font-weight: 600;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  max-width: 26ch;
+  max-width: 26ch; /* prevent long names from eating the row */
 }
 
 /* Micro chips for time/city; white chip for TV */
 #view-all .chip {
-  font-size: var(--chip-font);
-  padding: var(--chip-pad-y) var(--chip-pad-x);
+  font-size: 13px;
+  padding: 4px 8px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.18);
   background: rgba(255,255,255,0.06);
   color: var(--fg);
   white-space: nowrap;
 }
-#view-all .chip.city { color: var(--muted); }
+#view-all .chip.city { color: var(--muted); } /* city a bit softer */
 #view-all .chip.tv {
-  background: #fff; color: #000;
+  background: #fff;
   border-color: rgba(0,0,0,0.2);
-  padding: 2px var(--chip-pad-x);
+  padding: 2px 8px;
 }
-#view-all .chip.tv img { display:block; height: var(--tv-chip-img); width:auto; }
+#view-all .chip.tv img { display:block; height: 18px; width:auto; }
 
-/* Result pill appears RIGHT AFTER THE DATE block */
+/* Result pill appears right after the date block */
 #view-all .result {
-  font-size: var(--result-font);
-  padding: var(--result-pad-y) var(--result-pad-x);
+  font-size: 14px;
+  padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.2);
-  margin: 0 8px 0 0;
+  margin: 0 8px 0 0;         /* space to the right of the pill */
 }
 #view-all .result.W { background:#1a6123; }
 #view-all .result.L { background:#6b1b1b; }
@@ -228,8 +178,18 @@ html, body {
   background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.2); border-radius:8px; color:#ddd;
 }
 
-/* 4K-ish bump — you can keep if you want, density still applies */
+/* 4K-ish bump */
 @media (min-width: 2560px) {
+  :root { --safe:64px; }
   .logo { width:96px; height:96px; } /* hero */
   .vs { font-size:40px; } .opponent { font-size:48px; } .detail { font-size:26px; }
+
+  #view-all .game-row { min-height: 56px; padding: 10px 14px; }
+  #view-all .when { width: 84px; }
+  #view-all .when .date { font-size: 18px; }
+  #view-all .when .dow  { font-size: 14px; }
+  #view-all .line .mark { height: 24px; width: 24px; }
+  #view-all .chip { font-size: 14px; }
+  #view-all .chip.tv img { height: 20px; }
+  #view-all .result { font-size: 15px; }
 }
