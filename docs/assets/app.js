@@ -87,7 +87,7 @@ function setNextGameView(game) {
   $("#divider").textContent = divider;
   $("#next-opponent").textContent = matchupStr;   // <- use our matchup string here
   $("#next-datetime").textContent = dateStr;
-  $("#next-venue").textContent = [han, cityStr].filter(Boolean).join(" • ");
+  $("#next-venue").textContent = cityStr || "—";
 
   // Logos
   $("#ne-logo").src  = game.ne_logo  || "";
