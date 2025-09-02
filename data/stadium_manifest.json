@@ -12,9 +12,9 @@
         }
       ]
     },
-    "Nebraska-Memorial-Stadium-NE-DAYGAME": {
-      "suggested_filename": "Nebraska-Memorial-Stadium-NE-DAYGAME.jpg",
-      "exists": true,
+    "Nebraska-Memorial-Stadium-NE-NIGHTGAME": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE-NIGHTGAME.jpg",
+      "exists": false,
       "used_by": [
         {
           "date": "Sep 6",
