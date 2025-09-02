@@ -1,12 +1,6 @@
 /* assets/app.js
-   Husker Schedule — dual views:
-   - #view-next : hero/next-game card
-   - #view-all  : compact single-row-per-game schedule
-
-   Notes:
-   • All schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
-   • Background image logic and manifest fallback remain intact.
-   • Respects window.DATA_URL / window.MANIFEST_URL (set in index.html).
+   Husker Schedule — dual views (hero + compact schedule).
+   NEW: Auto-density fitter for the schedule rows (#view-all).
 */
 
 const $  = (s)=>document.querySelector(s);
@@ -32,13 +26,7 @@ function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
 }
 
-function abbrevVenue(v) {
-  const t = (v || "").toUpperCase();
-  return t.startsWith("H") ? "H" : t.startsWith("A") ? "A" : "N";
-}
-
 function venueFallback(game) {
-  // Used by hero background if a stadium photo is missing
   const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
   const name = typ === "HOME" ? "fallback_home"
             : typ === "AWAY" ? "fallback_away"
@@ -72,28 +60,22 @@ function setBgWithFallbacks(game) {
 
 /* ---------------- Hero (next-game) view ---------------- */
 function setNextGameView(game) {
+  // Title: "Nebraska vs. <Opponent>" or "Nebraska at <Opponent>"
   const oppName = game.opponent || "TBD";
-  // Literal from the site — already "vs." or "at"
   const divider = (game.divider || "vs.").trim();
-
-  // 🆕 Build “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
-  const matchupStr = `Nebraska ${divider} ${oppName}`;
-
+  const title = `Nebraska ${divider} ${oppName}`;
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
-  const cityStr = game.city_display || "—";
-  const han = abbrevVenue(game.home_away_neutral);
 
-  // Top logo row still shows N • divider • Opponent logo
   $("#divider").textContent = divider;
-  $("#next-opponent").textContent = matchupStr;   // <- use our matchup string here
+  $("#next-opponent").textContent = title;   // <- Full title line
   $("#next-datetime").textContent = dateStr;
-  $("#next-venue").textContent = cityStr || "—";
+  $("#next-venue").textContent = game.city_display || "—";
 
   // Logos
   $("#ne-logo").src  = game.ne_logo  || "";
   $("#opp-logo").src = game.opp_logo || "";
 
-  // TV (chip style if CSS defines .tv-chip; otherwise harmless)
+  // TV chip
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
@@ -103,52 +85,23 @@ function setNextGameView(game) {
     img.src = game.tv_logo;
     chip.appendChild(img);
     tv.appendChild(chip);
-  } else {
-    tv.textContent = "TV: TBD";
   }
 
-  // Stadium background (no Ken Burns)
+  // Stadium background
   setBgWithFallbacks(game);
 }
 
 /* ================================================================
    Schedule view (one compact row per game)
-   ----------------------------------------------------------------
-   Structure:
-
-   <div class="game-row is-home|is-away">      // whole row is one card
-     <div class="when">                        // narrow left cap
-       <div class="date">Sep 6</div>
-       <div class="dow">Sat</div>
-     </div>
-
-     <div class="line">                        // main sentence of the row
-       <span class="result W">W 20–17</span>   // result (only if final)
-       <img class="mark ne"  src="...">
-       <span class="divider">vs.</span>
-       <img class="mark opp" src="...">
-       <span class="opp-name">Akron</span>
-
-       <span class="chip time">6:30 PM CDT</span>  // shown only if time known
-       <span class="chip city">Lincoln, NE</span>
-       <span class="chip tv"><img src="logo.png"></span>
-     </div>
-   </div>
 ================================================================ */
 
 function isTimeKnown(t) {
-  // Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip
   if (!t) return false;
   const x = t.trim().toUpperCase();
   return x !== "—" && x !== "TBA" && x !== "TBD";
 }
 
-function dowFromText(weekday) {
-  // "SATURDAY" → "Sat"
-  return (weekday || "").slice(0,3).charAt(0).toUpperCase() + (weekday || "").slice(1,3).toLowerCase();
-}
-
-/* Create a tiny chip span; if content is falsy, returns null (caller can skip). */
+/* Tiny chip helpers */
 function chip(text, extraClass) {
   if (!text) return null;
   const s = document.createElement("span");
@@ -156,8 +109,6 @@ function chip(text, extraClass) {
   s.textContent = text;
   return s;
 }
-
-/* Create a white TV chip that houses the TV logo if available. */
 function tvChip(logoUrl) {
   if (!logoUrl) return null;
   const s = document.createElement("span");
@@ -171,7 +122,6 @@ function tvChip(logoUrl) {
 /* Build a single compact row for game g. */
 function buildGameRow(g) {
   const row = document.createElement("div");
-  // Venue-driven background theme (HOME red wash, AWAY/NEU gray wash)
   const ven = (g.home_away_neutral || "").toUpperCase();
   row.className = `game-row ${ven === "HOME" ? "is-home" : "is-away"}`;
 
@@ -183,16 +133,15 @@ function buildGameRow(g) {
   date.textContent = g.date_text || "";
   const dow  = document.createElement("div");
   dow.className = "dow";
-  dow.textContent = dowFromText(g.weekday || "");
-  when.appendChild(date);
-  when.appendChild(dow);
+  dow.textContent = (g.weekday || "").slice(0,3).toLowerCase().replace(/^\w/, c=>c.toUpperCase());
+  when.appendChild(date); when.appendChild(dow);
   row.appendChild(when);
 
-  /* Main line: RESULT FIRST → then N {vs./at} [opp logo] Opponent + chips */
+  /* Main line */
   const line = document.createElement("div");
   line.className = "line";
 
-  // Result FIRST, so it appears right after the date block
+  // Result FIRST (shown only when final)
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`; // W | L | T
@@ -208,11 +157,13 @@ function buildGameRow(g) {
     line.appendChild(ne);
   }
 
+  // "vs." or "at"
   const divSpan = document.createElement("span");
   divSpan.className = "divider";
-  divSpan.textContent = (g.divider || "vs.").trim(); // literal from scrape
+  divSpan.textContent = (g.divider || "vs.").trim();
   line.appendChild(divSpan);
 
+  // Opponent mark
   if (g.opp_logo) {
     const ol = document.createElement("img");
     ol.className = "mark opp";
@@ -220,6 +171,7 @@ function buildGameRow(g) {
     line.appendChild(ol);
   }
 
+  // Opponent name
   const opp = document.createElement("span");
   opp.className = "opp-name";
   opp.textContent = g.opponent || "TBD";
@@ -231,7 +183,6 @@ function buildGameRow(g) {
   }
   const cityChipEl = chip(g.city_display || "—", "city");
   if (cityChipEl) line.appendChild(cityChipEl);
-
   const tvC = tvChip(g.tv_logo);
   if (tvC) line.appendChild(tvC);
 
@@ -242,14 +193,65 @@ function buildGameRow(g) {
 /* Render all games into #view-all (compact rows) */
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
-  wrap.innerHTML = ""; // clear any previous content
+  wrap.innerHTML = "";
 
   const list = document.createElement("div");
   list.className = "rows";
-
   games.forEach(g => list.appendChild(buildGameRow(g)));
 
   wrap.appendChild(list);
+}
+
+/* ======================= AUTO-DENSITY FITTER =======================
+   Goal: Ensure the schedule rows fit vertically in the viewport.
+   Strategy:
+     1) Start with "normal" (no data-density attribute)
+     2) If too tall → set data-density="compact"
+     3) If still tall → set data-density="ultra"
+   Nothing scales; we only tighten spacing/fonts via CSS tokens.
+=================================================================== */
+function getSafePx() {
+  // Read the CSS --safe value (in px) from :root
+  const root = getComputedStyle(document.documentElement);
+  const val = root.getPropertyValue('--safe').trim();
+  // Accept "25px" or just "25"
+  const n = parseFloat(val);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function applyDensity(level) {
+  const viewAll = $("#view-all");
+  if (!viewAll) return;
+  if (level === "normal") viewAll.removeAttribute("data-density");
+  else viewAll.setAttribute("data-density", level);
+}
+
+function measureScheduleHeight() {
+  const list = $("#view-all .rows");
+  if (!list) return 0;
+  // getBoundingClientRect height gives the on-screen size including gaps
+  return list.getBoundingClientRect().height;
+}
+
+function availableScheduleHeight() {
+  // We want the visible height inside the safe padding
+  const safe = getSafePx();
+  return window.innerHeight - (safe * 2);
+}
+
+function fitSchedule() {
+  // Try densities in order until it fits
+  const order = ["normal", "compact", "ultra"];
+  for (const level of order) {
+    applyDensity(level);
+    // Force a reflow so the CSS var changes take effect before we measure.
+    // eslint-disable-next-line no-unused-expressions
+    document.body.offsetHeight;
+    const needed = measureScheduleHeight();
+    const avail  = availableScheduleHeight();
+    if (needed <= avail) return; // fits at this level
+  }
+  // If even "ultra" doesn't fit, we stay at "ultra".
 }
 
 /* ---------------- Load + boot ---------------- */
@@ -272,6 +274,9 @@ async function load() {
   // Compact schedule list
   renderScheduleView(schedule);
 
+  // Fit rows to viewport
+  fitSchedule();
+
   if (debug) {
     const d = $("#debug");
     d.classList.remove("hidden");
@@ -285,8 +290,16 @@ async function load() {
 (function init() {
   window.lockView = (new URLSearchParams(location.search)).get("view");
   window.debug = (new URLSearchParams(location.search)).get("debug") === "1";
+
   window.addEventListener("keydown", (e)=>{
     if (e.key.toLowerCase() === "r") load().catch(console.error);
   });
+
+  // Re-fit on resize/orientation changes (e.g., 1080p ↔︎ 4K, kiosk modes, etc.)
+  window.addEventListener("resize", () => {
+    // Only affects the schedule view; hero remains untouched
+    fitSchedule();
+  });
+
   load().catch(console.error);
 })();
