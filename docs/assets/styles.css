@@ -23,7 +23,7 @@ html,body {
   padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
   border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
 }
-.row.logos { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.row.logos { display:flex; align-items:center; justify-content: center; gap:12px; margin-bottom:8px; }
 .logo { width:72px; height:72px; object-fit:contain; }
 .vs { font-weight:800; font-size:32px; letter-spacing:.5px; }
 .opponent { font-size:40px; font-weight:800; line-height:1.1; }
