@@ -19,7 +19,7 @@ html,body {
 .bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
 
 .next-card {
-  position:absolute; left:var(--safe); right:auto; bottom:var(--safe);
+  position:absolute; left:var(--safe); right:auto; top:var(--safe);
   padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
   border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
 }
