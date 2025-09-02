@@ -2,5 +2,6 @@
   "//": "Map a specific game to a background key. Keys are 'YYYY-MMM-DD <divider> <Opponent>'. Example:",
   "//example": "2025-SEP-06 vs. Akron",
   "overrides": {
+    "2025-SEP-06 vs. Akron": "Maryland-SECU-Stadium-MD"
   }
 }
