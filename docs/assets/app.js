@@ -1,10 +1,11 @@
 /* assets/app.js
    Husker Schedule — dual views:
    - #view-next : hero/next-game card
-   - #view-all  : compact single-row-per-game schedule with auto-scaling
+   - #view-all  : compact single-row-per-game schedule (now scales to fit)
 
    Notes:
-   • All schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
+   • Schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
+   • We render all rows inside a .fitbox and scale that box to fit the viewport.
    • Background image logic and manifest fallback remain intact.
    • Respects window.DATA_URL / window.MANIFEST_URL (set in index.html).
 */
@@ -26,8 +27,8 @@ function rotate() {
   $(target).classList.remove("hidden");
   if (!window.lockView) viewIndex = (viewIndex + 1) % views.length;
 
-  // Re-apply scaling any time we show the schedule view
-  if ($(target).id === "view-all") applyScheduleScale();
+  // When we show the schedule view, ensure scale is up-to-date
+  if (target === "#view-all") requestAnimationFrame(scaleSchedule);
 }
 
 /* ---------------- Helpers shared across views ---------------- */
@@ -79,12 +80,13 @@ function setNextGameView(game) {
   // Literal from the site — already "vs." or "at"
   const divider = (game.divider || "vs.").trim();
 
-  // “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
+  // Build “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
   const matchupStr = `Nebraska ${divider} ${oppName}`;
 
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
   const cityStr = game.city_display || "—";
 
+  // Top logo row still shows N • divider • Opponent logo
   $("#divider").textContent = divider;
   $("#next-opponent").textContent = matchupStr;
   $("#next-datetime").textContent = dateStr;
@@ -94,7 +96,7 @@ function setNextGameView(game) {
   $("#ne-logo").src  = game.ne_logo  || "";
   $("#opp-logo").src = game.opp_logo || "";
 
-  // TV (chip style if CSS defines .tv-chip; otherwise harmless)
+  // TV (chip style if CSS defines .tv-chip)
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
@@ -113,7 +115,7 @@ function setNextGameView(game) {
 }
 
 /* ================================================================
-   Schedule view (one compact row per game) + SCALING
+   Schedule view (one compact row per game)
 ================================================================ */
 
 function isTimeKnown(t) {
@@ -172,6 +174,7 @@ function buildGameRow(g) {
   const line = document.createElement("div");
   line.className = "line";
 
+  // Result FIRST, so it appears right after the date block
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`; // W | L | T
@@ -179,6 +182,7 @@ function buildGameRow(g) {
     line.appendChild(r);
   }
 
+  // Nebraska mark
   if (g.ne_logo) {
     const ne = document.createElement("img");
     ne.className = "mark ne";
@@ -217,62 +221,51 @@ function buildGameRow(g) {
   return row;
 }
 
-/* Render all games into #view-all:
-   - Wrap the rows in a .scale-frame so we can scale the whole block. */
+/* Render all games into #view-all (compact rows) inside a scale-to-fit box */
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
   wrap.innerHTML = ""; // clear any previous content
 
-  const frame = document.createElement("div");
-  frame.className = "scale-frame";  // ← this is what we scale
+  // Create the fitbox wrapper that we will scale as a single unit
+  const fit = document.createElement("div");
+  fit.className = "fitbox";
 
   const list = document.createElement("div");
   list.className = "rows";
 
   games.forEach(g => list.appendChild(buildGameRow(g)));
 
-  frame.appendChild(list);
-  wrap.appendChild(frame);
+  fit.appendChild(list);
+  wrap.appendChild(fit);
 
-  // After first render, compute scale so everything fits the screen
-  applyScheduleScale();
+  // After DOM is in place, run initial scaling
+  requestAnimationFrame(scaleSchedule);
 }
 
-/* Compute a scale factor so .scale-frame fits within the visible
-   area of #view-all .all-wrap (both width AND height).
-   - We only ever scale down (never above 1) to keep crispness.
-   - Call this on load, on resize, and when switching to the schedule view.
-*/
-function applyScheduleScale() {
-  const stage = $("#view-all .all-wrap");      // the flex container with padding
-  const frame = $("#view-all .scale-frame");   // the thing we scale
-  if (!stage || !frame) return;
+/* Scale the schedule to fit the viewport without cropping */
+function scaleSchedule() {
+  const view = $("#view-all");
+  const fit  = $("#view-all .fitbox");
+  if (!view || !fit) return;
 
-  // Reset any previous scaling before measuring
-  frame.style.transform = "scale(1)";
+  // Reset transform to measure natural size
+  fit.style.transform = "none";
 
-  // Available size inside the stage (client* includes padding; that’s fine)
-  const availW = stage.clientWidth;
-  const availH = stage.clientHeight;
+  // Measure natural content size (rows are inside .fitbox)
+  const rect = fit.getBoundingClientRect();
+  const vw = view.clientWidth;
+  const vh = view.clientHeight;
 
-  // Content’s natural size
-  const contentW = frame.scrollWidth;
-  const contentH = frame.scrollHeight;
+  const scaleX = vw / rect.width;
+  const scaleY = vh / rect.height;
+  let scale = Math.min(scaleX, scaleY);
 
-  // If content is already smaller than stage, keep scale=1
-  // Otherwise scale down by the tighter axis.
-  const scale = Math.min(availW / contentW, availH / contentH, 1);
+  // Clamp so it never scales UP beyond 1 (keeps text crisp).
+  // If you want it to scale up on smaller schedules, remove Math.min(1, ...).
+  scale = Math.min(1, scale);
 
-   // Nudge: bias the scale slightly smaller so we never risk a 1–2px overflow
-  const SCALE_BIAS = 0.85; // try 0.98 → 0.95 if needed
-  frame.style.transform = `scale(${scale * SCALE_BIAS})`;
-
-   
-  frame.style.transform = `scale(${scale})`;
-
-  // Optional: if you want the scaled block vertically centered when scaled down,
-  // switch the align-items based on whether we scaled.
-  // stage.style.alignItems = (scale < 1) ? 'center' : 'flex-start';
+  // Apply scale and horizontally center the box
+  fit.style.transform = `translateX(-50%) scale(${scale})`;
 }
 
 /* ---------------- Load + boot ---------------- */
@@ -305,14 +298,25 @@ async function load() {
   setInterval(rotate, window.UI.rotateSeconds * 1000);
 }
 
-// Re-scale on window resize (e.g., someone changes TV zoom or rotates screen)
-window.addEventListener("resize", applyScheduleScale);
-
 (function init() {
   window.lockView = (new URLSearchParams(location.search)).get("view");
   window.debug = (new URLSearchParams(location.search)).get("debug") === "1";
+
+  // Reload data on R
   window.addEventListener("keydown", (e)=>{
     if (e.key.toLowerCase() === "r") load().catch(console.error);
   });
+
+  // Recompute scale on window resize/orientation changes (throttled)
+  window.addEventListener("resize", () => {
+    clearTimeout(window.__scaleTimer);
+    window.__scaleTimer = setTimeout(scaleSchedule, 50);
+  });
+
+  // Re-scale after fonts finish loading (text metrics can change)
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(scaleSchedule).catch(()=>{});
+  }
+
   load().catch(console.error);
 })();
