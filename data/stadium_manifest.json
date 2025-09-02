@@ -14,7 +14,7 @@
     },
     "Maryland-SECU-Stadium-MD": {
       "suggested_filename": "Maryland-SECU-Stadium-MD.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Sep 6",
@@ -25,7 +25,7 @@
     },
     "Nebraska-Memorial Stadium-NE": {
       "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Sep 13",
@@ -61,7 +61,7 @@
     },
     "Maryland-SECU Stadium-MD": {
       "suggested_filename": "Maryland-SECU-Stadium-MD.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Oct 11",
@@ -72,7 +72,7 @@
     },
     "Minnesota-Huntington Bank Stadium-MN": {
       "suggested_filename": "Minnesota-Huntington-Bank-Stadium-MN.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Oct 17",
@@ -83,7 +83,7 @@
     },
     "UCLA-Rose Bowl-CA": {
       "suggested_filename": "UCLA-Rose-Bowl-CA.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Nov 8",
@@ -94,7 +94,7 @@
     },
     "Penn State-Beaver Stadium-PA": {
       "suggested_filename": "Penn-State-Beaver-Stadium-PA.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Nov 22",
