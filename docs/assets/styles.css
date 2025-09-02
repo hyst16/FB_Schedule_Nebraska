@@ -1,6 +1,6 @@
 /* assets/styles.css
-   Global + hero styles remain as you had them.
-   Compact schedule styles are scoped under #view-all so the hero page stays untouched.
+   Global + hero styles stay as you had them.
+   New scale-to-fit wrapper is scoped to #view-all so the hero page is unaffected.
 */
 
 :root { --safe:25px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
@@ -16,15 +16,11 @@ html,body {
 .view { position:relative; width:100vw; height:100vh; overflow:hidden; }
 
 /* ---------------- HERO (next-game) ---------------- */
-.bg {
-  position:absolute; inset:0;
-  background:#000 center/cover no-repeat;
-  filter:brightness(0.5);
-}
+.bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
 
 .next-card {
   position:absolute; left:var(--safe); right:auto; top:var(--safe);
-  /* ↑ Move the card – change top/bottom/left as you like; keep one of top/bottom set */
+  /* ↑ Move the card by changing top/bottom/left; keep either top or bottom set */
   padding:16px 18px;                               /* ← inner space of the card */
   background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
   border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
@@ -59,35 +55,34 @@ html,body {
 
 /* ---------------- COMPACT SCHEDULE (one row per game) ---------------- */
 
-/* OUTER schedule container (flex “stage” we scale within) */
-#view-all .all-wrap {
-  padding: var(--safe);             /* ← outer page padding around the schedule */
-  height: 100%;                     /* ← ensure we can measure full viewport height */
-  display: flex;                    /* ← center the scaled content horizontally */
-  justify-content: center;
-  align-items: flex-start;          /* ← stick to the top; change to 'center' to vertically center */
-}
+#view-all .all-wrap { padding: var(--safe); }  /* ← outer padding around schedule */
 
-/* The element we actually scale to fit the screen */
-#view-all .scale-frame {
-  transform-origin: top left;       /* scaling starts top-left */
-  will-change: transform;           /* perf hint */
+/* === Scale-to-fit wrapper ==============================================
+   We render the entire rows list INSIDE .fitbox and scale that box as a
+   single unit so the whole schedule fits on screen. */
+#view-all { position: relative; overflow: hidden; }
+#view-all .fitbox {
+  position: absolute;
+  top: var(--safe);
+  left: 50%;
+  transform-origin: top center;  /* scale from the top center */
+  /* transform: translateX(-50%) scale(?) is applied by JS */
 }
+/* ====================================================================== */
 
-/* The list of rows (inside scale-frame) */
 #view-all .rows {
   display: flex;
   flex-direction: column;
-  gap: 2px;                         /* ← vertical gap between rows (smaller = tighter) */
+  gap: 2px;                 /* ← vertical gap BETWEEN rows (smaller = tighter stack) */
 }
 
 /* Entire row is one “card” — no explicit columns */
 #view-all .game-row {
   display: flex;
-  gap: 10px;                        /* ← horizontal gap between date block and main line */
+  gap: 10px;                /* ← horizontal gap BETWEEN the date block and main line */
   align-items: center;
-  min-height: 52px;                 /* ← row min height (lower = more compact) */
-  padding: 2px 12px;                /* ← inner padding inside each row (Y X) */
+  min-height: 52px;         /* ← row minimum height (lower = more rows on screen) */
+  padding: 2px 12px;        /* ← inner padding INSIDE each row (top/bottom, left/right) */
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
@@ -133,7 +128,7 @@ html,body {
 }
 
 /* Tiny marks (logos) flanking the divider / opponent)
-   Add a subtle backplate so dark logos stay visible on dark rows */
+   Backplate keeps dark logos visible on dark rows */
 #view-all .line .mark {
   height: 22px; width: 22px; object-fit: contain; flex: 0 0 auto;
   padding: 2px;                              /* ← inner pad so the backplate shows */
