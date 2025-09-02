@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Use the whole screen, even behind notches / rounded corners -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Husker Football — Auto Schedule</title>
-  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Cache-bust CSS so the player can’t serve an old copy -->
+  <link rel="stylesheet" href="assets/styles.css?v=2025-09-02-1" />
+
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
@@ -26,9 +30,7 @@
   </div>
 
   <div id="view-all" class="view hidden">
-    <div class="all-wrap">
-      <div class="table" id="schedule-table"></div>
-    </div>
+    <div class="all-wrap"><!-- JS injects .rows and .game-row here --></div>
   </div>
 
   <div id="debug" class="debug hidden"></div>
@@ -47,9 +49,12 @@
     const lockView = params.get("view"); // "next" or "all"
     const debug = params.get("debug") === "1";
 
+    // Cache-bust data fetches
     window.DATA_URL = "data/huskers_schedule_normalized.json?v=" + Date.now();
     window.MANIFEST_URL = "data/stadium_manifest.json?v=" + Date.now();
   </script>
-  <script src="assets/app.js"></script>
+
+  <!-- Cache-bust JS so new scaling logic definitely loads -->
+  <script src="assets/app.js?v=2025-09-02-1"></script>
 </body>
 </html>
