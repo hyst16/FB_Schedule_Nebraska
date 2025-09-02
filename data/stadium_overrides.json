@@ -3,6 +3,8 @@
   "//example": "2025-SEP-06 vs. Akron",
   "overrides": {
     "2025-SEP-06 vs. Akron": "Nebraska-Memorial-Stadium-NE-NIGHTGAME",
-    "2025-SEP-11 vs. Houston Christian": "Nebraska-Memorial-Stadium-NE-DAYGAME"
+    "2025-SEP-11 vs. Houston Christian": "Nebraska-Memorial-Stadium-NE-DAYGAME",
+    "2025-SEP-20 vs. Michigan": "Nebraska-Memorial-Stadium-NE-DAYGAME",
+    "2025-NOV-28 vs. Iowa": "Nebraska-Memorial-Stadium-NE-DAYGAME"
   }
 }
