@@ -4,8 +4,7 @@
    - #view-all  : compact single-row-per-game schedule
 
    Notes:
-   • All schedule-specific styles/markup are scoped under #view-all so we never
-     affect the hero view.
+   • All schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
    • Background image logic and manifest fallback remain intact.
    • Respects window.DATA_URL / window.MANIFEST_URL (set in index.html).
 */
@@ -74,13 +73,19 @@ function setBgWithFallbacks(game) {
 /* ---------------- Hero (next-game) view ---------------- */
 function setNextGameView(game) {
   const oppName = game.opponent || "TBD";
-  const divider = (game.divider || "vs.").trim(); // literal from site
+  // Literal from the site — already "vs." or "at"
+  const divider = (game.divider || "vs.").trim();
+
+  // 🆕 Build “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
+  const matchupStr = `Nebraska ${divider} ${oppName}`;
+
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
   const cityStr = game.city_display || "—";
   const han = abbrevVenue(game.home_away_neutral);
 
+  // Top logo row still shows N • divider • Opponent logo
   $("#divider").textContent = divider;
-  $("#next-opponent").textContent = oppName;
+  $("#next-opponent").textContent = matchupStr;   // <- use our matchup string here
   $("#next-datetime").textContent = dateStr;
   $("#next-venue").textContent = [han, cityStr].filter(Boolean).join(" • ");
 
@@ -88,16 +93,14 @@ function setNextGameView(game) {
   $("#ne-logo").src  = game.ne_logo  || "";
   $("#opp-logo").src = game.opp_logo || "";
 
-  // TV (show logo inside a chip, or “TV: TBD”)
+  // TV (chip style if CSS defines .tv-chip; otherwise harmless)
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
     const chip = document.createElement("span");
-    chip.className = "tv-chip";      // styled in CSS to look like a pill
-
+    chip.className = "tv-chip";
     const img = document.createElement("img");
     img.src = game.tv_logo;
-
     chip.appendChild(img);
     tv.appendChild(chip);
   } else {
@@ -110,10 +113,31 @@ function setNextGameView(game) {
 
 /* ================================================================
    Schedule view (one compact row per game)
+   ----------------------------------------------------------------
+   Structure:
+
+   <div class="game-row is-home|is-away">      // whole row is one card
+     <div class="when">                        // narrow left cap
+       <div class="date">Sep 6</div>
+       <div class="dow">Sat</div>
+     </div>
+
+     <div class="line">                        // main sentence of the row
+       <span class="result W">W 20–17</span>   // result (only if final)
+       <img class="mark ne"  src="...">
+       <span class="divider">vs.</span>
+       <img class="mark opp" src="...">
+       <span class="opp-name">Akron</span>
+
+       <span class="chip time">6:30 PM CDT</span>  // shown only if time known
+       <span class="chip city">Lincoln, NE</span>
+       <span class="chip tv"><img src="logo.png"></span>
+     </div>
+   </div>
 ================================================================ */
 
-/* Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip */
 function isTimeKnown(t) {
+  // Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip
   if (!t) return false;
   const x = t.trim().toUpperCase();
   return x !== "—" && x !== "TBA" && x !== "TBD";
@@ -168,7 +192,7 @@ function buildGameRow(g) {
   const line = document.createElement("div");
   line.className = "line";
 
-  // 👉 Result FIRST, so it appears right after the date block
+  // Result FIRST, so it appears right after the date block
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`; // W | L | T
@@ -176,7 +200,7 @@ function buildGameRow(g) {
     line.appendChild(r);
   }
 
-  // Nebraska mark (small; helps sentence read left→right)
+  // Nebraska mark
   if (g.ne_logo) {
     const ne = document.createElement("img");
     ne.className = "mark ne";
@@ -186,7 +210,7 @@ function buildGameRow(g) {
 
   const divSpan = document.createElement("span");
   divSpan.className = "divider";
-  divSpan.textContent = (g.divider || "vs.").trim(); // literal
+  divSpan.textContent = (g.divider || "vs.").trim(); // literal from scrape
   line.appendChild(divSpan);
 
   if (g.opp_logo) {
