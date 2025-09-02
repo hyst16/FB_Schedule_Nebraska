@@ -4,7 +4,7 @@ from pathlib import Path
 
 IN = Path("data/huskers_schedule_normalized.json")
 OUT = Path("data/stadium_manifest.json")
-IMAGES_DIR = Path("images/stadiums")
+IMAGES_DIR = Path("docs/images/stadiums")
 
 def main():
     if not IN.exists():
