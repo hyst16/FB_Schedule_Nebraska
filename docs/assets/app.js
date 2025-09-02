@@ -1,7 +1,7 @@
 /* assets/app.js
    Husker Schedule — dual views:
-   - #view-next : hero/next-game card (unchanged)
-   - #view-all  : compact single-row-per-game schedule (new layout)
+   - #view-next : hero/next-game card
+   - #view-all  : compact single-row-per-game schedule
 
    Notes:
    • All schedule-specific styles/markup are scoped under #view-all so we never
@@ -71,7 +71,7 @@ function setBgWithFallbacks(game) {
   img.src = candidates[i];
 }
 
-/* ---------------- Hero (next-game) view — unchanged ---------------- */
+/* ---------------- Hero (next-game) view ---------------- */
 function setNextGameView(game) {
   const oppName = game.opponent || "TBD";
   const divider = (game.divider || "vs.").trim(); // literal from site
@@ -88,15 +88,18 @@ function setNextGameView(game) {
   $("#ne-logo").src  = game.ne_logo  || "";
   $("#opp-logo").src = game.opp_logo || "";
 
-  // TV (show logo or “TV: TBD”)
+  // TV (show logo inside a chip, or “TV: TBD”)
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
+    const chip = document.createElement("span");
+    chip.className = "tv-chip";      // styled in CSS to look like a pill
+
     const img = document.createElement("img");
     img.src = game.tv_logo;
-    img.style.height="28px";
-    img.style.verticalAlign="middle";
-    tv.appendChild(img);
+
+    chip.appendChild(img);
+    tv.appendChild(chip);
   } else {
     tv.textContent = "TV: TBD";
   }
@@ -107,28 +110,6 @@ function setNextGameView(game) {
 
 /* ================================================================
    Schedule view (one compact row per game)
-   ----------------------------------------------------------------
-   Structure:
-
-   <div class="game-row is-home|is-away">      // whole row is one card
-     <div class="when">                        // narrow left cap
-       <div class="date">Sep 6</div>
-       <div class="dow">Sat</div>
-     </div>
-
-     <div class="line">                        // main sentence of the row
-       <span class="result W">W 20–17</span>   // ← RESULT FIRST (right after date)
-
-       <img class="mark ne"  src="...">
-       <span class="divider">vs.</span>
-       <img class="mark opp" src="...">
-       <span class="opp-name">Akron</span>
-
-       <span class="chip time">6:30 PM CDT</span>  // hidden entirely if time is TBA/TBD/—
-       <span class="chip city">Lincoln, NE</span>
-       <span class="chip tv"><img src="logo.png"></span>
-     </div>
-   </div>
 ================================================================ */
 
 /* Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip */
@@ -136,11 +117,6 @@ function isTimeKnown(t) {
   if (!t) return false;
   const x = t.trim().toUpperCase();
   return x !== "—" && x !== "TBA" && x !== "TBD";
-}
-
-function monthFromDateText(dateText) {
-  // "Sep 6" → "Sep"; safe fallback if unexpected
-  return (String(dateText || "").split(" ")[0] || "").slice(0,3);
 }
 
 function dowFromText(weekday) {
@@ -229,7 +205,6 @@ function buildGameRow(g) {
   if (isTimeKnown(g.kickoff_display)) {
     line.appendChild(chip(g.kickoff_display, "time"));
   }
-
   const cityChipEl = chip(g.city_display || "—", "city");
   if (cityChipEl) line.appendChild(cityChipEl);
 
