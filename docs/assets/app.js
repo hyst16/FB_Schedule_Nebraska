@@ -1,6 +1,13 @@
 /* assets/app.js
-   Husker Schedule — dual views (hero + compact schedule).
-   NEW: Auto-density fitter for the schedule rows (#view-all).
+   Husker Schedule — dual views:
+   - #view-next : hero/next-game card
+   - #view-all  : compact single-row-per-game schedule (scale-to-fit)
+
+   Scale-to-fit strategy (schedule only):
+   1) Render rows at "natural" size inside .scale-target
+   2) Measure target W/H vs the available stage (.scale-viewport)
+   3) scale = min(stageW/targetW, stageH/targetH, 1)  // shrink-only
+   4) Apply transform: scale(scale) and center within the stage
 */
 
 const $  = (s)=>document.querySelector(s);
@@ -24,6 +31,11 @@ function rotate() {
 /* ---------------- Helpers shared across views ---------------- */
 function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
+}
+
+function abbrevVenue(v) {
+  const t = (v || "").toUpperCase();
+  return t.startsWith("H") ? "H" : t.startsWith("A") ? "A" : "N";
 }
 
 function venueFallback(game) {
@@ -60,39 +72,37 @@ function setBgWithFallbacks(game) {
 
 /* ---------------- Hero (next-game) view ---------------- */
 function setNextGameView(game) {
-  // Title: "Nebraska vs. <Opponent>" or "Nebraska at <Opponent>"
   const oppName = game.opponent || "TBD";
-  const divider = (game.divider || "vs.").trim();
-  const title = `Nebraska ${divider} ${oppName}`;
+  const divider = (game.divider || "vs.").trim(); // literal from site
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
+  const cityStr = game.city_display || "—";
+  const han = abbrevVenue(game.home_away_neutral);
 
   $("#divider").textContent = divider;
-  $("#next-opponent").textContent = title;   // <- Full title line
+  $("#next-opponent").textContent = `Nebraska ${divider} ${oppName}`; // display both names
   $("#next-datetime").textContent = dateStr;
-  $("#next-venue").textContent = game.city_display || "—";
 
-  // Logos
-  $("#ne-logo").src  = game.ne_logo  || "";
-  $("#opp-logo").src = game.opp_logo || "";
+  // Remove the venue abbrev & bullet as requested: show only city
+  $("#next-venue").textContent = cityStr;
 
-  // TV chip
+  // TV: present as a "chip" if we have a logo; else hide the chip entirely
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
-    const chip = document.createElement("span");
-    chip.className = "tv-chip";
+    tv.classList.add("chip-tv");
     const img = document.createElement("img");
     img.src = game.tv_logo;
-    chip.appendChild(img);
-    tv.appendChild(chip);
+    tv.appendChild(img);
+  } else {
+    tv.classList.remove("chip-tv");
   }
 
-  // Stadium background
+  // Stadium background (no Ken Burns)
   setBgWithFallbacks(game);
 }
 
 /* ================================================================
-   Schedule view (one compact row per game)
+   Schedule view (one compact row per game) + SCALE TO FIT
 ================================================================ */
 
 function isTimeKnown(t) {
@@ -101,7 +111,11 @@ function isTimeKnown(t) {
   return x !== "—" && x !== "TBA" && x !== "TBD";
 }
 
-/* Tiny chip helpers */
+function dowFromText(weekday) {
+  return (weekday || "").slice(0,3).charAt(0).toUpperCase() + (weekday || "").slice(1,3).toLowerCase();
+}
+
+/* Tiny general chip */
 function chip(text, extraClass) {
   if (!text) return null;
   const s = document.createElement("span");
@@ -109,6 +123,8 @@ function chip(text, extraClass) {
   s.textContent = text;
   return s;
 }
+
+/* White TV chip with logo */
 function tvChip(logoUrl) {
   if (!logoUrl) return null;
   const s = document.createElement("span");
@@ -125,7 +141,7 @@ function buildGameRow(g) {
   const ven = (g.home_away_neutral || "").toUpperCase();
   row.className = `game-row ${ven === "HOME" ? "is-home" : "is-away"}`;
 
-  /* Left cap: narrow date + weekday (stacked) */
+  /* Left cap: date + weekday (stacked) */
   const when = document.createElement("div");
   when.className = "when";
   const date = document.createElement("div");
@@ -133,15 +149,16 @@ function buildGameRow(g) {
   date.textContent = g.date_text || "";
   const dow  = document.createElement("div");
   dow.className = "dow";
-  dow.textContent = (g.weekday || "").slice(0,3).toLowerCase().replace(/^\w/, c=>c.toUpperCase());
-  when.appendChild(date); when.appendChild(dow);
+  dow.textContent = dowFromText(g.weekday || "");
+  when.appendChild(date);
+  when.appendChild(dow);
   row.appendChild(when);
 
-  /* Main line */
+  /* Main line: result (if final) → marks/divider → opponent → chips */
   const line = document.createElement("div");
   line.className = "line";
 
-  // Result FIRST (shown only when final)
+  // Result pill right after date block
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`; // W | L | T
@@ -157,13 +174,11 @@ function buildGameRow(g) {
     line.appendChild(ne);
   }
 
-  // "vs." or "at"
   const divSpan = document.createElement("span");
   divSpan.className = "divider";
-  divSpan.textContent = (g.divider || "vs.").trim();
+  divSpan.textContent = (g.divider || "vs.").trim(); // literal
   line.appendChild(divSpan);
 
-  // Opponent mark
   if (g.opp_logo) {
     const ol = document.createElement("img");
     ol.className = "mark opp";
@@ -171,7 +186,6 @@ function buildGameRow(g) {
     line.appendChild(ol);
   }
 
-  // Opponent name
   const opp = document.createElement("span");
   opp.className = "opp-name";
   opp.textContent = g.opponent || "TBD";
@@ -183,6 +197,7 @@ function buildGameRow(g) {
   }
   const cityChipEl = chip(g.city_display || "—", "city");
   if (cityChipEl) line.appendChild(cityChipEl);
+
   const tvC = tvChip(g.tv_logo);
   if (tvC) line.appendChild(tvC);
 
@@ -190,68 +205,61 @@ function buildGameRow(g) {
   return row;
 }
 
-/* Render all games into #view-all (compact rows) */
+/* Render all games into #view-all (compact rows), wrapped in scale containers. */
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
-  wrap.innerHTML = "";
+  wrap.innerHTML = ""; // clear any previous content
+
+  // Build: scale-viewport → scale-target → rows → game-rows
+  const viewport = document.createElement("div");
+  viewport.className = "scale-viewport";
+
+  const target = document.createElement("div");
+  target.className = "scale-target";
 
   const list = document.createElement("div");
   list.className = "rows";
+
   games.forEach(g => list.appendChild(buildGameRow(g)));
 
-  wrap.appendChild(list);
+  target.appendChild(list);
+  viewport.appendChild(target);
+  wrap.appendChild(viewport);
 }
 
-/* ======================= AUTO-DENSITY FITTER =======================
-   Goal: Ensure the schedule rows fit vertically in the viewport.
-   Strategy:
-     1) Start with "normal" (no data-density attribute)
-     2) If too tall → set data-density="compact"
-     3) If still tall → set data-density="ultra"
-   Nothing scales; we only tighten spacing/fonts via CSS tokens.
-=================================================================== */
-function getSafePx() {
-  // Read the CSS --safe value (in px) from :root
-  const root = getComputedStyle(document.documentElement);
-  const val = root.getPropertyValue('--safe').trim();
-  // Accept "25px" or just "25"
-  const n = parseFloat(val);
-  return Number.isFinite(n) ? n : 0;
-}
+/* Compute and apply a uniform scale so the schedule fits inside the stage. */
+function scaleScheduleToFit() {
+  const viewport = $("#view-all .scale-viewport");
+  const target   = $("#view-all .scale-target");
+  if (!viewport || !target) return;
 
-function applyDensity(level) {
-  const viewAll = $("#view-all");
-  if (!viewAll) return;
-  if (level === "normal") viewAll.removeAttribute("data-density");
-  else viewAll.setAttribute("data-density", level);
-}
+  // Reset transform to measure "natural" size
+  target.style.transform = "none";
+  target.style.left = "0px";
+  target.style.top  = "0px";
 
-function measureScheduleHeight() {
-  const list = $("#view-all .rows");
-  if (!list) return 0;
-  // getBoundingClientRect height gives the on-screen size including gaps
-  return list.getBoundingClientRect().height;
-}
+  // Available stage size (already inside safe paddings)
+  const stageW = viewport.clientWidth;
+  const stageH = viewport.clientHeight;
 
-function availableScheduleHeight() {
-  // We want the visible height inside the safe padding
-  const safe = getSafePx();
-  return window.innerHeight - (safe * 2);
-}
+  // Natural content size
+  const naturalW = target.offsetWidth;
+  const naturalH = target.offsetHeight;
 
-function fitSchedule() {
-  // Try densities in order until it fits
-  const order = ["normal", "compact", "ultra"];
-  for (const level of order) {
-    applyDensity(level);
-    // Force a reflow so the CSS var changes take effect before we measure.
-    // eslint-disable-next-line no-unused-expressions
-    document.body.offsetHeight;
-    const needed = measureScheduleHeight();
-    const avail  = availableScheduleHeight();
-    if (needed <= avail) return; // fits at this level
-  }
-  // If even "ultra" doesn't fit, we stay at "ultra".
+  // Shrink-only scale
+  const scale = Math.min(stageW / naturalW, stageH / naturalH, 1);
+
+  // Apply transform
+  target.style.transformOrigin = "top left";
+  target.style.transform = `scale(${scale})`;
+
+  // Center the scaled box visually inside the stage
+  const visualW = naturalW * scale;
+  const visualH = naturalH * scale;
+  const left = Math.max(0, (stageW - visualW) / 2);
+  const top  = Math.max(0, (stageH - visualH) / 2);
+  target.style.left = `${left}px`;
+  target.style.top  = `${top}px`;
 }
 
 /* ---------------- Load + boot ---------------- */
@@ -271,13 +279,13 @@ async function load() {
   const next = pickNextGame(schedule);
   if (next) setNextGameView(next);
 
-  // Compact schedule list
+  // Schedule list
   renderScheduleView(schedule);
 
-  // Fit rows to viewport
-  fitSchedule();
+  // First scale pass
+  scaleScheduleToFit();
 
-  if (debug) {
+  if (window.debug) {
     const d = $("#debug");
     d.classList.remove("hidden");
     d.textContent = `Loaded ${new Date().toLocaleString()} • games=${schedule.length}`;
@@ -287,18 +295,23 @@ async function load() {
   setInterval(rotate, window.UI.rotateSeconds * 1000);
 }
 
+// Re-scale on resize/orientation change. Debounced to avoid thrash.
+let _resizeTimer = null;
+function handleResize() {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(scaleScheduleToFit, 100);
+}
+
 (function init() {
   window.lockView = (new URLSearchParams(location.search)).get("view");
   window.debug = (new URLSearchParams(location.search)).get("debug") === "1";
 
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("orientationchange", handleResize);
+
+  // Quick keyboard reload (handy while tuning)
   window.addEventListener("keydown", (e)=>{
     if (e.key.toLowerCase() === "r") load().catch(console.error);
-  });
-
-  // Re-fit on resize/orientation changes (e.g., 1080p ↔︎ 4K, kiosk modes, etc.)
-  window.addEventListener("resize", () => {
-    // Only affects the schedule view; hero remains untouched
-    fitSchedule();
   });
 
   load().catch(console.error);
