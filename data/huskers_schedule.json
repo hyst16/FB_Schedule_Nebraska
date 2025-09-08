@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-07T08:53:48.952085+00:00",
+  "scraped_at": "2025-09-08T07:24:37.819220+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -59,10 +59,6 @@
       "tv_network_logo_url": null,
       "links": [
         {
-          "title": "Stats",
-          "href": "https://stats.statbroadcast.com/broadcast/?id=604790"
-        },
-        {
           "title": "Final Stats (PDF)",
           "href": "https://huskers.com/documents/bcf6bf10-1743-4f64-a2ae-0d237214262a.pdf"
         },
@@ -73,6 +69,10 @@
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/c57adfc6-dbd4-4ae0-b734-6d521d72c537.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/4243"
         },
         {
           "title": "Recap",
