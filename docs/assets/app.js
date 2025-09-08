@@ -180,45 +180,36 @@ function buildGameRow(g) {
   return row;
 }
 
-/* ---------------- Render: 1 column or 2 columns ---------------- */
-
+/* ---------------- Render: ALWAYS 2 columns ---------------- */
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
   wrap.innerHTML = "";
 
-  const colsWanted = Number.isFinite(window.UI?.cols) ? window.UI.cols
-                    : parseInt(new URLSearchParams(location.search).get("cols") || "1", 10);
+  const colsWanted = 2; // <- force two columns
 
-  if (colsWanted >= 2) {
-    // Split list in reading order: left col gets first half, right col gets second half
-    const mid = Math.ceil(games.length / 2);
-    const left  = games.slice(0, mid);
-    const right = games.slice(mid);
+  // Split list in reading order: left col gets first half, right col gets second half
+  const mid = Math.ceil(games.length / 2);
+  const left  = games.slice(0, mid);
+  const right = games.slice(mid);
 
-    const grid = document.createElement("div");
-    grid.className = "cols";
+  const grid = document.createElement("div");
+  grid.className = "cols";          // MUST match CSS
 
-    const colL = document.createElement("div");
-    colL.className = "col";
-    left.forEach(g => colL.appendChild(buildGameRow(g)));
+  const colL = document.createElement("div");
+  colL.className = "col";
+  left.forEach(g => colL.appendChild(buildGameRow(g)));
 
-    const colR = document.createElement("div");
-    colR.className = "col";
-    right.forEach(g => colR.appendChild(buildGameRow(g)));
+  const colR = document.createElement("div");
+  colR.className = "col";
+  right.forEach(g => colR.appendChild(buildGameRow(g)));
 
-    grid.appendChild(colL);
-    grid.appendChild(colR);
-    wrap.appendChild(grid);
-  } else {
-    // Original single column
-    const list = document.createElement("div");
-    list.className = "rows";
-    games.forEach(g => list.appendChild(buildGameRow(g)));
-    wrap.appendChild(list);
-  }
+  grid.appendChild(colL);
+  grid.appendChild(colR);
+  wrap.appendChild(grid);
 }
 
-/* ---------------- Load + boot ---------------- */
+/* ---------------- Load + boot (unchanged except calls renderScheduleView) ---------------- */
+
 async function load() {
   const dataUrl     = window.DATA_URL     || "data/huskers_schedule_normalized.json";
   const manifestUrl = window.MANIFEST_URL || "data/stadium_manifest.json";
@@ -249,13 +240,6 @@ async function load() {
   const params = new URLSearchParams(location.search);
   window.lockView = params.get("view");
   window.debug = params.get("debug") === "1";
-
-  // Allow ?cols=2 to force two columns (or set window.UI.cols in index.html)
-  const qpCols = parseInt(params.get("cols") || "", 10);
-  if (!isNaN(qpCols)) {
-    window.UI = window.UI || {};
-    window.UI.cols = qpCols;
-  }
 
   window.addEventListener("keydown", (e)=>{
     if (e.key.toLowerCase() === "r") load().catch(console.error);
