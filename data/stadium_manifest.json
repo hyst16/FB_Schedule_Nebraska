@@ -23,8 +23,8 @@
         }
       ]
     },
-    "Nebraska-Memorial Stadium-NE": {
-      "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
+    "Nebraska-Memorial-Stadium-NE-DAYGAME": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE-DAYGAME.jpg",
       "exists": true,
       "used_by": [
         {
@@ -32,6 +32,22 @@
           "opponent": "Houston Christian",
           "venue": "HOME"
         },
+        {
+          "date": "Sep 20",
+          "opponent": "Michigan",
+          "venue": "HOME"
+        },
+        {
+          "date": "Nov 28",
+          "opponent": "Iowa",
+          "venue": "HOME"
+        }
+      ]
+    },
+    "Nebraska-Memorial Stadium-NE": {
+      "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
+      "exists": true,
+      "used_by": [
         {
           "date": "Oct 4",
           "opponent": "Michigan State",
@@ -45,22 +61,6 @@
         {
           "date": "Nov 1",
           "opponent": "USC",
-          "venue": "HOME"
-        }
-      ]
-    },
-    "Nebraska-Memorial-Stadium-NE-DAYGAME": {
-      "suggested_filename": "Nebraska-Memorial-Stadium-NE-DAYGAME.jpg",
-      "exists": true,
-      "used_by": [
-        {
-          "date": "Sep 20",
-          "opponent": "Michigan",
-          "venue": "HOME"
-        },
-        {
-          "date": "Nov 28",
-          "opponent": "Iowa",
           "venue": "HOME"
         }
       ]
