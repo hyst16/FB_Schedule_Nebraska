@@ -1,141 +1,146 @@
 /* assets/styles.css
-   Global + hero styles remain as you had them.
-   Compact schedule styles are scoped under #view-all so the hero page stays untouched.
+   Hero (next-game) + Compact Schedule (rows) + 2-column layout
+   ------------------------------------------------------------------
+   TUNING KNOBS (edit these first if you want different sizing):
+   - --col-width : width of each schedule column
+   - --cols-gap  : gap between the two columns
+   - --schedule-side-pad : left/right padding around the schedule area
 */
 
-:root { --safe:25px; --fg:#fff; --bg:#000; --muted:#c9c9c9; }
+:root {
+  /* Global theme */
+  --safe: 25px;
+  --fg: #fff;
+  --bg: #000;
+  --muted: #c9c9c9;
+
+  /* ===== Two-column controls (schedule page) ===== */
+  --col-width: 640px;        /* ← make each column wider/narrower */
+  --cols-gap: 28px;          /* ← space between columns */
+  --schedule-side-pad: 24px; /* ← padding on left/right of schedule area */
+}
 
 * { box-sizing: border-box; }
-html,body {
-  margin:0; height:100%;
-  background:var(--bg); color:var(--fg);
+html, body {
+  margin: 0; height: 100%;
+  background: var(--bg); color: var(--fg);
   font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 }
 
-.hidden { display:none; }
-.view { position:relative; width:100vw; height:100vh; overflow:hidden; }
+.hidden { display: none; }
+.view { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
 
 /* ---------------- HERO (next-game) ---------------- */
-.bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
+.bg {
+  position: absolute; inset: 0;
+  background: #000 center/cover no-repeat;
+  filter: brightness(0.5);
+}
 
 .next-card {
-  position:absolute; left:var(--safe); right:auto; top:var(--safe);
-  /* ↑ Move the card – change top/bottom/left as you like; keep one of top/bottom set */
-  padding:16px 18px;                               /* ← inner space of the card */
-  background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
-  border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
+  position: absolute; left: var(--safe); right: auto; top: var(--safe);
+  /* ↑ Change top/bottom/left as you like; keep one of top/bottom set */
+  padding: 16px 18px;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 16px;
+  max-width: 760px;
 }
 
 .row.logos {
-  display:flex;
-  align-items:center;           /* vertical centering within the row */
-  justify-content: center;      /* ⬅️ center the logos + “vs.” horizontally */
-  gap:12px;                     /* ← space between Husker logo, “vs.”, opponent logo */
-  margin-bottom:8px;            /* ← space below this row before the opponent name */
+  display: flex;
+  align-items: center;        /* vertical centering inside this row */
+  justify-content: center;    /* center the logos + “vs.” horizontally */
+  gap: 12px;                  /* space between logos and “vs.” */
+  margin-bottom: 8px;         /* space below the logo row */
 }
-.logo { width:72px; height:72px; object-fit:contain; }
-.vs { font-weight:800; font-size:32px; letter-spacing:.5px; }
-.opponent { font-size:40px; font-weight:800; line-height:1.1; }
-.detail { font-size:22px; color:var(--muted); }
+
+.logo { width: 72px; height: 72px; object-fit: contain; }
+.vs { font-weight: 800; font-size: 32px; letter-spacing: .5px; }
+.opponent { font-size: 40px; font-weight: 800; line-height: 1.1; }
+.detail { font-size: 22px; color: var(--muted); }
 
 /* TV chip inside the hero card */
 .next-card .tv-chip {
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;                /* ← chip padding (top/bottom, left/right) */
-  border-radius: 999px;             /* ← full “pill” shape */
+  padding: 4px 10px;          /* (top/bottom) (left/right) */
+  border-radius: 999px;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.2);
+  border: 1px solid rgba(0,0,0,.2);
 }
 .next-card .tv-chip img {
-  height: 20px;                     /* ← TV logo size inside the chip */
-  width: auto;
-  display: block;
+  height: 20px; width: auto; display: block;
 }
 
 /* ---------------- COMPACT SCHEDULE (one row per game) ---------------- */
 
-#view-all .all-wrap { padding: var(--safe); }
+#view-all .all-wrap {
+  /* Outer page padding around the schedule area */
+  padding-left: var(--schedule-side-pad);
+  padding-right: var(--schedule-side-pad);
+  padding-top: var(--safe);
+  padding-bottom: var(--safe);
+}
 
-/* Default = single-column stack of rows */
+/* If you render a simple one-column list, use .rows */
 #view-all .rows {
   display: flex;
   flex-direction: column;
-  gap: 2px;                 /* vertical gap BETWEEN rows */
+  gap: 2px;                   /* vertical gap BETWEEN rows */
 }
 
-/* === Two-column layout support ===
-   When JS renders two <div class="col"> inside <div class="cols">:
-   - .cols → grid with 2 equal columns
-   - .col  → each column stacks rows vertically
-*/
-#view-all .cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;   /* two equal-width columns */
-  gap: 14px;                        /* gap between the two columns */
-  align-items: start;
-}
-
-#view-all .col {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;                         /* vertical gap inside each column */
-}
-
-#view-all .col .game-row { width: 100%; }
-
-/* ---------------- Row styling (unchanged from your compact layout) ---------------- */
+/* Entire row is one “card” — no explicit columns */
 #view-all .game-row {
   display: flex;
-  gap: 10px;                /* gap between left date block and main line */
+  gap: 10px;                  /* space between date block and main line */
   align-items: center;
-  min-height: 52px;         /* row minimum height */
-  padding: 2px 12px;        /* inner padding top/bottom, left/right */
+  min-height: 52px;           /* row minimum height */
+  padding: 2px 12px;          /* inner padding of each row */
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.12);
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
   position: relative;
 }
 
-/* Left accent bar */
+/* Left accent for venue */
 #view-all .game-row::before {
-  content:"";
-  position:absolute;
-  left:0; top:0; bottom:0;
-  width: 3px;
-  border-radius: 12px 0 0 12px;
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; border-radius: 12px 0 0 12px;
   background: rgba(255,255,255,0.20);
 }
 
-/* HOME red wash */
+/* HOME: subtle Husker red wash + red accent */
 #view-all .game-row.is-home {
   background: linear-gradient(180deg, rgba(196,0,0,0.12), rgba(196,0,0,0.06));
 }
 #view-all .game-row.is-home::before { background: rgba(196,0,0,0.9); }
 
-/* AWAY/NEUTRAL gray wash */
+/* AWAY/NEUTRAL: graphite wash + gray accent */
 #view-all .game-row.is-away {
   background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
 }
 #view-all .game-row.is-away::before { background: rgba(140,140,140,0.8); }
 
-/* Date + weekday block */
+/* Date block (stacked) */
 #view-all .when {
-  width: 72px;
-  display:flex; flex-direction:column; align-items:flex-start;
+  width: 72px;                /* how wide the date block is */
+  display: flex; flex-direction: column; align-items: flex-start;
   line-height: 1.1;
 }
 #view-all .when .date { font-weight: 700; font-size: 16px; }
 #view-all .when .dow  { color: var(--muted); font-size: 13px; margin-top: 2px; }
 
-/* Main line */
+/* Main sentence (flexes to fill remaining width) */
 #view-all .line {
   display: flex; align-items: center; gap: 6px;
-  min-width: 0;
+  min-width: 0;              /* let children ellipsis */
   flex: 1;
 }
 
-/* Logos (with faint backplate) */
+/* Tiny logo “marks” with a faint backplate so dark logos stay visible */
 #view-all .line .mark {
   height: 22px; width: 22px; object-fit: contain; flex: 0 0 auto;
   padding: 2px;
@@ -149,10 +154,10 @@ html,body {
 #view-all .line .opp-name {
   font-weight: 600;
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  max-width: 26ch;
+  max-width: 26ch;           /* prevent very long names from eating the row */
 }
 
-/* Chips */
+/* Chips: time/city/tv */
 #view-all .chip {
   font-size: 13px;
   padding: 4px 8px;
@@ -162,39 +167,85 @@ html,body {
   color: var(--fg);
   white-space: nowrap;
 }
-#view-all .chip.city { color: var(--muted); }
+#view-all .chip.city { color: var(--muted); } /* city a bit softer */
 #view-all .chip.tv {
   background: #fff;
   border-color: rgba(0,0,0,0.2);
   padding: 2px 8px;
 }
-#view-all .chip.tv img { display:block; height: 18px; width:auto; }
+#view-all .chip.tv img { display: block; height: 18px; width: auto; }
 
-/* Result pill */
+/* Result pill (when final) */
 #view-all .result {
   font-size: 14px;
   padding: 4px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.2);
-  margin: 0 8px 0 0;
+  margin: 0 8px 0 0;          /* space to the RIGHT of the result pill */
 }
-#view-all .result.W { background:#1a6123; }
-#view-all .result.L { background:#6b1b1b; }
-#view-all .result.T { background:#3a3f4b; }
+#view-all .result.W { background: #1a6123; }
+#view-all .result.L { background: #6b1b1b; }
+#view-all .result.T { background: #3a3f4b; }
 
-/* Debug badge */
+/* ---------------- TWO-COLUMN LAYOUT (centered, fixed widths) ----------------
+   This is used when the JS renders:
+   <div class="two-col">
+     <div class="col">…rows…</div>
+     <div class="col">…rows…</div>
+   </div>
+*/
+
+#view-all .two-col{
+  display: grid;
+
+  /* Exactly two columns of fixed width that YOU control via --col-width */
+  grid-template-columns: repeat(2, var(--col-width));
+
+  /* Middle gap between columns */
+  column-gap: var(--cols-gap);
+
+  /* Center the two-column block */
+  justify-content: center;
+
+  /* Make the grid width match the two columns + the gap
+     so it doesn't stretch full-bleed */
+  width: calc((2 * var(--col-width)) + var(--cols-gap));
+
+  /* Keep the block centered horizontally */
+  margin: 0 auto;
+}
+
+#view-all .two-col .col{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;  /* vertical spacing between game rows inside a column */
+}
+
+/* 1-column fallback on narrow viewports */
+@media (max-width: calc((2 * var(--col-width)) + var(--cols-gap) + (2 * var(--schedule-side-pad)))){
+  #view-all .two-col{
+    grid-template-columns: 1fr; /* collapse to one column */
+    width: auto;
+    column-gap: 0;
+  }
+}
+
+/* ---------------- Debug badge ---------------- */
 .debug {
-  position:fixed; right:8px; bottom:8px; padding:6px 8px; font:12px/1.2 monospace;
-  background:rgba(0,0,0,.65); border:1px solid rgba(255,255,255,.2); border-radius:8px; color:#ddd;
+  position: fixed; right: 8px; bottom: 8px;
+  padding: 6px 8px; font: 12px/1.2 monospace;
+  background: rgba(0,0,0,.65);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 8px; color: #ddd;
 }
 
-/* 4K bump */
+/* ---------------- 4K-ish bump ---------------- */
 @media (min-width: 2560px) {
-  :root { --safe:64px; }
-  .logo { width:96px; height:96px; }
-  .vs { font-size:40px; }
-  .opponent { font-size:48px; }
-  .detail { font-size:26px; }
+  :root { --safe: 64px; }
+  .logo { width: 96px; height: 96px; }       /* hero */
+  .vs { font-size: 40px; }
+  .opponent { font-size: 48px; }
+  .detail { font-size: 26px; }
 
   #view-all .game-row { min-height: 56px; padding: 10px 14px; }
   #view-all .when { width: 84px; }
