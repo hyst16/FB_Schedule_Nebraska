@@ -10,9 +10,8 @@
   --muted:#c9c9c9; 
 
   /* Schedule layout tuning */
-  --col-width: 780px;      /* width of each column */
-  --cols-gap: 40px;        /* gap between the two columns */
-  --schedule-side-pad: 60px; /* side padding around the grid */
+  --col-width: 780px;          /* width of each column */
+  --cols-gap: 40px;            /* gap between the two columns */
 }
 
 * { box-sizing: border-box; }
@@ -69,7 +68,8 @@ html,body {
   justify-content: center; 
 }
 
-#view-all .two-col {
+/* IMPORTANT: This must match the class used in JS */
+#view-all .cols {
   display: grid;
   grid-template-columns: var(--col-width) var(--col-width); /* always 2 columns */
   column-gap: var(--cols-gap);
@@ -78,10 +78,11 @@ html,body {
   margin: 0 auto;
 }
 
-#view-all .rows {
+/* Each column stacks its game rows vertically with small gaps */
+#view-all .col {
   display: flex;
   flex-direction: column;
-  gap: 2px;                 
+  gap: 2px; /* vertical gap between rows inside a column */
 }
 
 /* Entire row is one “card” — no explicit columns */
