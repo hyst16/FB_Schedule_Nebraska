@@ -10,8 +10,9 @@
   --muted:#c9c9c9; 
 
   /* Schedule layout tuning */
-  --col-width: 780px;          /* width of each column */
-  --cols-gap: 40px;            /* gap between the two columns */
+  --col-width: 780px;      /* width of each column (large screen baseline) */
+  --cols-gap: 40px;        /* gap between the two columns */
+  --schedule-side-pad: 60px; /* side padding around the grid */
 }
 
 * { box-sizing: border-box; }
@@ -68,21 +69,24 @@ html,body {
   justify-content: center; 
 }
 
-/* IMPORTANT: This must match the class used in JS */
+/* Two-column wrapper (always 2 cols, scaled to fit) */
 #view-all .cols {
+  width: min(calc((2 * var(--col-width)) + var(--cols-gap)), 96vw);
+  max-width: 96vw;
+
   display: grid;
-  grid-template-columns: var(--col-width) var(--col-width); /* always 2 columns */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--cols-gap);
-  justify-content: center; /* center the two-column block */
-  width: calc((2 * var(--col-width)) + var(--cols-gap));
+
+  justify-content: center;
   margin: 0 auto;
 }
 
-/* Each column stacks its game rows vertically with small gaps */
+/* Each column stacks rows vertically */
 #view-all .col {
   display: flex;
   flex-direction: column;
-  gap: 2px; /* vertical gap between rows inside a column */
+  gap: 2px;
 }
 
 /* Entire row is one “card” — no explicit columns */
@@ -203,4 +207,12 @@ html,body {
   #view-all .chip { font-size: 14px; }
   #view-all .chip.tv img { height: 20px; }
   #view-all .result { font-size: 15px; }
+}
+
+/* Smaller TV screens (e.g., 1366x768) — shrink cols */
+@media (max-width: 1600px) {
+  :root {
+    --col-width: 560px;   /* tighter col width */
+    --cols-gap: 24px;     /* narrower gap */
+  }
 }
