@@ -1,13 +1,11 @@
 /* assets/app.js
    Husker Schedule — dual views:
    - #view-next : hero/next-game card
-   - #view-all  : compact single-row-per-game schedule (now scales to fit)
+   - #view-all  : compact schedule (now supports 1 or 2 columns)
 
    Notes:
-   • Schedule-specific DOM/CSS is scoped under #view-all so the hero view stays untouched.
-   • We render all rows inside a .fitbox and scale that box to fit the viewport.
-   • Background image logic and manifest fallback remain intact.
-   • Respects window.DATA_URL / window.MANIFEST_URL (set in index.html).
+   • Two-column mode is opt-in via URL (?cols=2) or window.UI.cols = 2 in index.html.
+   • Columns preserve reading order: left column first, then right column.
 */
 
 const $  = (s)=>document.querySelector(s);
@@ -26,9 +24,6 @@ function rotate() {
                 : views[viewIndex];
   $(target).classList.remove("hidden");
   if (!window.lockView) viewIndex = (viewIndex + 1) % views.length;
-
-  // When we show the schedule view, ensure scale is up-to-date
-  if (target === "#view-all") requestAnimationFrame(scaleSchedule);
 }
 
 /* ---------------- Helpers shared across views ---------------- */
@@ -42,7 +37,6 @@ function abbrevVenue(v) {
 }
 
 function venueFallback(game) {
-  // Used by hero background if a stadium photo is missing
   const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
   const name = typ === "HOME" ? "fallback_home"
             : typ === "AWAY" ? "fallback_away"
@@ -50,7 +44,7 @@ function venueFallback(game) {
   return `images/stadiums/${name}.jpg`;
 }
 
-/* Try jpg → jpeg → png for a given bg base; fall back by venue type if none. */
+/* Try jpg → jpeg → png; fallback by venue type if manifest says we don't have it */
 function setBgWithFallbacks(game) {
   const base = (game.bg_file_basename || game.bg_key || "fallback").replace(/\s+/g, "-");
   const candidates = [
@@ -77,26 +71,20 @@ function setBgWithFallbacks(game) {
 /* ---------------- Hero (next-game) view ---------------- */
 function setNextGameView(game) {
   const oppName = game.opponent || "TBD";
-  // Literal from the site — already "vs." or "at"
   const divider = (game.divider || "vs.").trim();
-
-  // Build “Nebraska vs. Opponent” (or “Nebraska at Opponent”) using the divider
   const matchupStr = `Nebraska ${divider} ${oppName}`;
 
   const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
   const cityStr = game.city_display || "—";
 
-  // Top logo row still shows N • divider • Opponent logo
   $("#divider").textContent = divider;
   $("#next-opponent").textContent = matchupStr;
   $("#next-datetime").textContent = dateStr;
   $("#next-venue").textContent = cityStr || "—";
 
-  // Logos
   $("#ne-logo").src  = game.ne_logo  || "";
   $("#opp-logo").src = game.opp_logo || "";
 
-  // TV (chip style if CSS defines .tv-chip)
   const tv = $("#next-tv");
   tv.innerHTML = "";
   if (game.tv_logo) {
@@ -110,27 +98,21 @@ function setNextGameView(game) {
     tv.textContent = "TV: TBD";
   }
 
-  // Stadium background (no Ken Burns)
   setBgWithFallbacks(game);
 }
 
-/* ================================================================
-   Schedule view (one compact row per game)
-================================================================ */
+/* ---------------- Schedule row builder ---------------- */
 
 function isTimeKnown(t) {
-  // Treat "—", "TBA", "TBD" (any casing) as unknown -> hide the time chip
   if (!t) return false;
   const x = t.trim().toUpperCase();
   return x !== "—" && x !== "TBA" && x !== "TBD";
 }
 
 function dowFromText(weekday) {
-  // "SATURDAY" → "Sat"
   return (weekday || "").slice(0,3).charAt(0).toUpperCase() + (weekday || "").slice(1,3).toLowerCase();
 }
 
-/* Create a tiny chip span; if content is falsy, returns null (caller can skip). */
 function chip(text, extraClass) {
   if (!text) return null;
   const s = document.createElement("span");
@@ -139,7 +121,6 @@ function chip(text, extraClass) {
   return s;
 }
 
-/* Create a white TV chip that houses the TV logo if available. */
 function tvChip(logoUrl) {
   if (!logoUrl) return null;
   const s = document.createElement("span");
@@ -150,14 +131,11 @@ function tvChip(logoUrl) {
   return s;
 }
 
-/* Build a single compact row for game g. */
 function buildGameRow(g) {
   const row = document.createElement("div");
-  // Venue-driven background theme (HOME red wash, AWAY/NEU gray wash)
   const ven = (g.home_away_neutral || "").toUpperCase();
   row.className = `game-row ${ven === "HOME" ? "is-home" : "is-away"}`;
 
-  /* Left cap: narrow date + weekday (stacked) */
   const when = document.createElement("div");
   when.className = "when";
   const date = document.createElement("div");
@@ -166,54 +144,35 @@ function buildGameRow(g) {
   const dow  = document.createElement("div");
   dow.className = "dow";
   dow.textContent = dowFromText(g.weekday || "");
-  when.appendChild(date);
-  when.appendChild(dow);
+  when.appendChild(date); when.appendChild(dow);
   row.appendChild(when);
 
-  /* Main line: result (if final) → N {vs./at} [opp logo] Opponent + chips */
   const line = document.createElement("div");
   line.className = "line";
 
-  // Result FIRST, so it appears right after the date block
+  // result (only if final)
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
-    r.className = `result ${g.outcome}`; // W | L | T
+    r.className = `result ${g.outcome}`;
     r.textContent = `${g.outcome} ${g.score}`;
     line.appendChild(r);
   }
 
-  // Nebraska mark
-  if (g.ne_logo) {
-    const ne = document.createElement("img");
-    ne.className = "mark ne";
-    ne.src = g.ne_logo;
-    line.appendChild(ne);
-  }
-
+  if (g.ne_logo) { const ne = document.createElement("img"); ne.className = "mark ne"; ne.src = g.ne_logo; line.appendChild(ne); }
   const divSpan = document.createElement("span");
   divSpan.className = "divider";
-  divSpan.textContent = (g.divider || "vs.").trim(); // literal from scrape
+  divSpan.textContent = (g.divider || "vs.").trim();
   line.appendChild(divSpan);
-
-  if (g.opp_logo) {
-    const ol = document.createElement("img");
-    ol.className = "mark opp";
-    ol.src = g.opp_logo;
-    line.appendChild(ol);
-  }
+  if (g.opp_logo) { const ol = document.createElement("img"); ol.className = "mark opp"; ol.src = g.opp_logo; line.appendChild(ol); }
 
   const opp = document.createElement("span");
   opp.className = "opp-name";
   opp.textContent = g.opponent || "TBD";
   line.appendChild(opp);
 
-  // Chips: time (only if known) • city • TV
-  if (isTimeKnown(g.kickoff_display)) {
-    line.appendChild(chip(g.kickoff_display, "time"));
-  }
+  if (isTimeKnown(g.kickoff_display)) line.appendChild(chip(g.kickoff_display, "time"));
   const cityChipEl = chip(g.city_display || "—", "city");
   if (cityChipEl) line.appendChild(cityChipEl);
-
   const tvC = tvChip(g.tv_logo);
   if (tvC) line.appendChild(tvC);
 
@@ -221,51 +180,42 @@ function buildGameRow(g) {
   return row;
 }
 
-/* Render all games into #view-all (compact rows) inside a scale-to-fit box */
+/* ---------------- Render: 1 column or 2 columns ---------------- */
+
 function renderScheduleView(games) {
   const wrap = $("#view-all .all-wrap");
-  wrap.innerHTML = ""; // clear any previous content
+  wrap.innerHTML = "";
 
-  // Create the fitbox wrapper that we will scale as a single unit
-  const fit = document.createElement("div");
-  fit.className = "fitbox";
+  const colsWanted = Number.isFinite(window.UI?.cols) ? window.UI.cols
+                    : parseInt(new URLSearchParams(location.search).get("cols") || "1", 10);
 
-  const list = document.createElement("div");
-  list.className = "rows";
+  if (colsWanted >= 2) {
+    // Split list in reading order: left col gets first half, right col gets second half
+    const mid = Math.ceil(games.length / 2);
+    const left  = games.slice(0, mid);
+    const right = games.slice(mid);
 
-  games.forEach(g => list.appendChild(buildGameRow(g)));
+    const grid = document.createElement("div");
+    grid.className = "cols";
 
-  fit.appendChild(list);
-  wrap.appendChild(fit);
+    const colL = document.createElement("div");
+    colL.className = "col";
+    left.forEach(g => colL.appendChild(buildGameRow(g)));
 
-  // After DOM is in place, run initial scaling
-  requestAnimationFrame(scaleSchedule);
-}
+    const colR = document.createElement("div");
+    colR.className = "col";
+    right.forEach(g => colR.appendChild(buildGameRow(g)));
 
-/* Scale the schedule to fit the viewport without cropping */
-function scaleSchedule() {
-  const view = $("#view-all");
-  const fit  = $("#view-all .fitbox");
-  if (!view || !fit) return;
-
-  // Reset transform to measure natural size
-  fit.style.transform = "none";
-
-  // Measure natural content size (rows are inside .fitbox)
-  const rect = fit.getBoundingClientRect();
-  const vw = view.clientWidth;
-  const vh = view.clientHeight;
-
-  const scaleX = vw / rect.width;
-  const scaleY = vh / rect.height;
-  let scale = Math.min(scaleX, scaleY);
-
-  // Clamp so it never scales UP beyond 1 (keeps text crisp).
-  // If you want it to scale up on smaller schedules, remove Math.min(1, ...).
-  scale = Math.min(1, scale);
-
-  // Apply scale and horizontally center the box
-  fit.style.transform = `translateX(-50%) scale(${scale})`;
+    grid.appendChild(colL);
+    grid.appendChild(colR);
+    wrap.appendChild(grid);
+  } else {
+    // Original single column
+    const list = document.createElement("div");
+    list.className = "rows";
+    games.forEach(g => list.appendChild(buildGameRow(g)));
+    wrap.appendChild(list);
+  }
 }
 
 /* ---------------- Load + boot ---------------- */
@@ -278,17 +228,14 @@ async function load() {
     fetch(manifestUrl, { cache:"no-store" }).then(r=>r.json())
   ]);
 
-  schedule = s;
-  manifest = m;
+  schedule = s; manifest = m;
 
-  // Hero (next-game)
   const next = pickNextGame(schedule);
   if (next) setNextGameView(next);
 
-  // Compact schedule list
   renderScheduleView(schedule);
 
-  if (debug) {
+  if (window.debug) {
     const d = $("#debug");
     d.classList.remove("hidden");
     d.textContent = `Loaded ${new Date().toLocaleString()} • games=${schedule.length}`;
@@ -299,24 +246,19 @@ async function load() {
 }
 
 (function init() {
-  window.lockView = (new URLSearchParams(location.search)).get("view");
-  window.debug = (new URLSearchParams(location.search)).get("debug") === "1";
+  const params = new URLSearchParams(location.search);
+  window.lockView = params.get("view");
+  window.debug = params.get("debug") === "1";
 
-  // Reload data on R
+  // Allow ?cols=2 to force two columns (or set window.UI.cols in index.html)
+  const qpCols = parseInt(params.get("cols") || "", 10);
+  if (!isNaN(qpCols)) {
+    window.UI = window.UI || {};
+    window.UI.cols = qpCols;
+  }
+
   window.addEventListener("keydown", (e)=>{
     if (e.key.toLowerCase() === "r") load().catch(console.error);
   });
-
-  // Recompute scale on window resize/orientation changes (throttled)
-  window.addEventListener("resize", () => {
-    clearTimeout(window.__scaleTimer);
-    window.__scaleTimer = setTimeout(scaleSchedule, 50);
-  });
-
-  // Re-scale after fonts finish loading (text metrics can change)
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(scaleSchedule).catch(()=>{});
-  }
-
   load().catch(console.error);
 })();
