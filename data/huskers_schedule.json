@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-08T15:16:46.838215+00:00",
+  "scraped_at": "2025-09-09T07:24:25.567866+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -97,6 +97,10 @@
         {
           "title": "Opens in a new window",
           "href": "https://www.foxsports.com/live"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://stats.statbroadcast.com/broadcast/?id=604792"
         }
       ]
     },
