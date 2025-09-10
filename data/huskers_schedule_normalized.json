@@ -110,6 +110,10 @@
       {
         "title": "Live Stats",
         "href": "https://stats.statbroadcast.com/broadcast/?id=604792"
+      },
+      {
+        "title": "Sold Out! Buy on SeatGeek",
+        "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-13-11-am/17307264?aid=16101&pid=sell_out_page_social&rid=45913&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
       }
     ]
   },
@@ -136,6 +140,10 @@
       {
         "title": "Opens in a new window",
         "href": "https://www.cbs.com/"
+      },
+      {
+        "title": "Sold Out! Buy on SeatGeek",
+        "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-20-2-30-pm/17307266?aid=16101&pid=sell_out_page_social&rid=45920&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
       }
     ]
   },
@@ -247,7 +255,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Sold Out! Buy on SeatGeek",
+        "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-11-01-3-30-am/17307274?aid=16101&pid=sell_out_page_social&rid=45962&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
+      }
+    ]
   },
   {
     "date_text": "Nov 8",

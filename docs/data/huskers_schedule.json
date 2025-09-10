@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-09T08:34:47.885259+00:00",
+  "scraped_at": "2025-09-10T07:23:22.024935+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -101,6 +101,10 @@
         {
           "title": "Live Stats",
           "href": "https://stats.statbroadcast.com/broadcast/?id=604792"
+        },
+        {
+          "title": "Sold Out! Buy on SeatGeek",
+          "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-13-11-am/17307264?aid=16101&pid=sell_out_page_social&rid=45913&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
         }
       ]
     },
@@ -121,6 +125,10 @@
         {
           "title": "Opens in a new window",
           "href": "https://www.cbs.com/"
+        },
+        {
+          "title": "Sold Out! Buy on SeatGeek",
+          "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-20-2-30-pm/17307266?aid=16101&pid=sell_out_page_social&rid=45920&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
         }
       ]
     },
@@ -202,7 +210,12 @@
       "opponent_name": "USC",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Sold Out! Buy on SeatGeek",
+          "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-11-01-3-30-am/17307274?aid=16101&pid=sell_out_page_social&rid=45962&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
