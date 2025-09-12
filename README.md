@@ -1,32 +1,52 @@
 # FB_Schedule_Nebraska
 
-Daily-updating Husker Football schedule display for PosterBooking.
+A super simple, no-server web page that shows the Nebraska Huskers **football** schedule.  
+It’s built to run on GitHub Pages and is great for TVs/digital signage (PosterBooking, etc.).
 
-- Scrapes: https://huskers.com/sports/football/schedule
-- Nightly refresh around **2:00 AM America/Chicago** (dual UTC crons)
-- GitHub Pages site (auto-rotates views): `docs/` → Settings → Pages → Deploy from branch (main /docs)
+---
 
-## How to use (no Terminal)
+## What you get
 
-1. Create this folder structure and files in GitHub (Add file → Create new file).
-2. In **Settings → Pages**, set:
-   - Build and deployment: **Deploy from a branch**
-   - Branch: **main**, Folder: **/docs**
-3. In **Actions**, run **Nightly Husker Schedule** → **Run workflow** (first-time build).
-4. Add stadium images to `images/stadiums/` using names suggested in `data/stadium_manifest.json`.
-5. Point PosterBooking to: `https://<your-username>.github.io/FB_Schedule_Nebraska/`
+- **Two views**
+  - **Next Game** – hero background with a compact info overlay (opponent, date/time, city, TV).
+  - **Full Schedule** – a one-screen grid of the whole season.
+- **Automatic nightly update** – the repo refreshes data each night and republishes the page.
+- **Zero setup on your computer** – everything runs in GitHub.
 
-## Views
+---
 
-- **Next Game**: Stadium background + compact overlay (logos, `vs.`/`at`, opponent, date/time, city, TV).
-- **Full Schedule**: Single-screen grid (Date | Time | Opponent | H/A/N | City | TV | Result).
+## Quick start (no Terminal needed)
 
-## Options (URL params)
+1. **Fork or create** this repo in your GitHub account.
+2. **Enable GitHub Pages**
+   - Go to **Settings → Pages**
+   - **Build and deployment**: “Deploy from a branch”
+   - **Branch**: `main` • **Folder**: `/docs`
+3. **Run the first build**
+   - Open the **Actions** tab → run the “Nightly Husker Schedule” workflow once (this seeds data and publishes the site).
+4. **(Optional) Add stadium photos**
+   - Put images in `docs/images/stadiums/`
+   - Use the keys/filenames that the app expects (see `data/stadium_manifest.json`).
+5. **Open your site**
+   - `https://<YOUR-USERNAME>.github.io/FB_Schedule_Nebraska/`
 
-- `?rot=10` → rotate every 10s (default 15).
-- `?view=next` or `?view=all` → lock a single view.
-- `?debug=1` → tiny debug overlay.
+---
 
-## Stadium overrides (optional)
+## Using on a TV/signage player
 
-Edit `data/stadium_overrides.json` to force a specific background key per game.
+Point your signage browser at your GitHub Pages URL.  
+You can tweak screen behavior with **URL parameters** (below).
+
+**Examples**
+- Always show next game:  
+  `.../FB_Schedule_Nebraska/?view=next`
+- Always show the full schedule:  
+  `.../FB_Schedule_Nebraska/?view=all`
+- Auto-rotate views every 10s:  
+  `.../FB_Schedule_Nebraska/?rot=10`
+
+---
+
+## URL parameters (options)
+
+Add options after a `?` and separate multiples with `&
