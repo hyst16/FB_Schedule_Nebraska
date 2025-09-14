@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-13T08:34:19.930772+00:00",
+  "scraped_at": "2025-09-14T07:19:48.964503+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -84,27 +84,42 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "SEP 13",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:00 AM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "59-7"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/Em7yr9sqhB1PwNThkAUUoRLK5e0TDJvTmmXiLmdU.svg",
       "opponent_name": "Houston Christian",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": "https://huskers.com/imgproxy/PIVROnKwSt44Qly7Uo0wRyQ_q5z1s_yPZ4RnQMIs-3k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
+      "tv_network_logo_url": null,
       "links": [
         {
-          "title": "Opens in a new window",
-          "href": "https://www.foxsports.com/live"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/4baa6232-bd3c-4f49-9b9d-bb5c30d954c2.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/9/13/fb-vs-houston-christian-photo"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/bee054ed-2f4e-4f7f-80c0-2dc287ec51d9.pdf"
         },
         {
           "title": "Live Stats",
           "href": "https://stats.statbroadcast.com/broadcast/?id=604792"
         },
         {
-          "title": "Sold Out! Buy on SeatGeek",
-          "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-13-11-am/17307264?aid=16101&pid=sell_out_page_social&rid=45913&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/4245"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2025/09/13/huskers-race-past-huskies"
         }
       ]
     },
