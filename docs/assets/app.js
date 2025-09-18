@@ -1,248 +1,292 @@
-/* assets/app.js
-   Husker Schedule — dual views:
-   - #view-next : hero/next-game card
-   - #view-all  : compact schedule (now supports 1 or 2 columns)
+(async function () {
+  const $ = (sel, el = document) => el.querySelector(sel);
 
-   Notes:
-   • Two-column mode is opt-in via URL (?cols=2) or window.UI.cols = 2 in index.html.
-   • Columns preserve reading order: left column first, then right column.
-*/
+  // Data endpoints set in index.html (with cache-bust)
+  const DATA_URL = window.DATA_URL || "data/vb_schedule_normalized.json";
+  const MANIFEST_URL = window.MANIFEST_URL || "data/arena_manifest.json";
+  const UI = window.UI || { rotateSeconds: 15, showDividerLiteral: true, showCityOnly: true };
 
-const $  = (s)=>document.querySelector(s);
-const $$ = (s)=>document.querySelectorAll(s);
-
-let schedule = [];
-let manifest = null;
-let viewIndex = 0;
-const views = ["#view-next","#view-all"];
-
-/* ---------------- Rotation between views ---------------- */
-function rotate() {
-  $$(".view").forEach(v=>v.classList.add("hidden"));
-  const target = window.lockView === "next" ? "#view-next"
-                : window.lockView === "all"  ? "#view-all"
-                : views[viewIndex];
-  $(target).classList.remove("hidden");
-  if (!window.lockView) viewIndex = (viewIndex + 1) % views.length;
-}
-
-/* ---------------- Helpers shared across views ---------------- */
-function pickNextGame(games) {
-  return games.find(g => g.status !== "final") || games[games.length - 1] || null;
-}
-
-function abbrevVenue(v) {
-  const t = (v || "").toUpperCase();
-  return t.startsWith("H") ? "H" : t.startsWith("A") ? "A" : "N";
-}
-
-function venueFallback(game) {
-  const typ = (game.home_away_neutral || "NEUTRAL").toUpperCase();
-  const name = typ === "HOME" ? "fallback_home"
-            : typ === "AWAY" ? "fallback_away"
-            : "fallback_neutral";
-  return `images/stadiums/${name}.jpg`;
-}
-
-/* Try jpg → jpeg → png; fallback by venue type if manifest says we don't have it */
-function setBgWithFallbacks(game) {
-  const base = (game.bg_file_basename || game.bg_key || "fallback").replace(/\s+/g, "-");
-  const candidates = [
-    `images/stadiums/${base}.jpg`,
-    `images/stadiums/${base}.jpeg`,
-    `images/stadiums/${base}.png`,
-  ];
-  const fallbackUrl = venueFallback(game);
-  const has = manifest?.items?.[game.bg_key]?.exists;
-
-  if (!has) {
-    $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`;
-    return;
-  }
-
-  let i = 0;
-  const img = new Image();
-  img.onload  = () => { $("#next-bg").style.backgroundImage = `url("${candidates[i]}")`; };
-  img.onerror = () => { i += 1; (i < candidates.length) ? img.src = candidates[i]
-                                                      : $("#next-bg").style.backgroundImage = `url("${fallbackUrl}")`; };
-  img.src = candidates[i];
-}
-
-/* ---------------- Hero (next-game) view ---------------- */
-function setNextGameView(game) {
-  const oppName = game.opponent || "TBD";
-  const divider = (game.divider || "vs.").trim();
-  const matchupStr = `Nebraska ${divider} ${oppName}`;
-
-  const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
-  const cityStr = game.city_display || "—";
-
-  $("#divider").textContent = divider;
-  $("#next-opponent").textContent = matchupStr;
-  $("#next-datetime").textContent = dateStr;
-  $("#next-venue").textContent = cityStr || "—";
-
-  $("#ne-logo").src  = game.ne_logo  || "";
-  $("#opp-logo").src = game.opp_logo || "";
-
-  const tv = $("#next-tv");
-  tv.innerHTML = "";
-  if (game.tv_logo) {
-    const chip = document.createElement("span");
-    chip.className = "tv-chip";
-    const img = document.createElement("img");
-    img.src = game.tv_logo;
-    chip.appendChild(img);
-    tv.appendChild(chip);
-  } else {
-    tv.textContent = "TV: TBD";
-  }
-
-  setBgWithFallbacks(game);
-}
-
-/* ---------------- Schedule row builder ---------------- */
-
-function isTimeKnown(t) {
-  if (!t) return false;
-  const x = t.trim().toUpperCase();
-  return x !== "—" && x !== "TBA" && x !== "TBD";
-}
-
-function dowFromText(weekday) {
-  return (weekday || "").slice(0,3).charAt(0).toUpperCase() + (weekday || "").slice(1,3).toLowerCase();
-}
-
-function chip(text, extraClass) {
-  if (!text) return null;
-  const s = document.createElement("span");
-  s.className = `chip ${extraClass||""}`.trim();
-  s.textContent = text;
-  return s;
-}
-
-function tvChip(logoUrl) {
-  if (!logoUrl) return null;
-  const s = document.createElement("span");
-  s.className = "chip tv";
-  const img = document.createElement("img");
-  img.src = logoUrl;
-  s.appendChild(img);
-  return s;
-}
-
-function buildGameRow(g) {
-  const row = document.createElement("div");
-  const ven = (g.home_away_neutral || "").toUpperCase();
-  row.className = `game-row ${ven === "HOME" ? "is-home" : "is-away"}`;
-
-  const when = document.createElement("div");
-  when.className = "when";
-  const date = document.createElement("div");
-  date.className = "date";
-  date.textContent = g.date_text || "";
-  const dow  = document.createElement("div");
-  dow.className = "dow";
-  dow.textContent = dowFromText(g.weekday || "");
-  when.appendChild(date); when.appendChild(dow);
-  row.appendChild(when);
-
-  const line = document.createElement("div");
-  line.className = "line";
-
-  // result (only if final)
-  if (g.status === "final" && g.outcome && g.score) {
-    const r = document.createElement("span");
-    r.className = `result ${g.outcome}`;
-    r.textContent = `${g.outcome} ${g.score}`;
-    line.appendChild(r);
-  }
-
-  if (g.ne_logo) { const ne = document.createElement("img"); ne.className = "mark ne"; ne.src = g.ne_logo; line.appendChild(ne); }
-  const divSpan = document.createElement("span");
-  divSpan.className = "divider";
-  divSpan.textContent = (g.divider || "vs.").trim();
-  line.appendChild(divSpan);
-  if (g.opp_logo) { const ol = document.createElement("img"); ol.className = "mark opp"; ol.src = g.opp_logo; line.appendChild(ol); }
-
-  const opp = document.createElement("span");
-  opp.className = "opp-name";
-  opp.textContent = g.opponent || "TBD";
-  line.appendChild(opp);
-
-  if (isTimeKnown(g.kickoff_display)) line.appendChild(chip(g.kickoff_display, "time"));
-  const cityChipEl = chip(g.city_display || "—", "city");
-  if (cityChipEl) line.appendChild(cityChipEl);
-  const tvC = tvChip(g.tv_logo);
-  if (tvC) line.appendChild(tvC);
-
-  row.appendChild(line);
-  return row;
-}
-
-/* ---------------- Render: ALWAYS 2 columns ---------------- */
-function renderScheduleView(games) {
-  const wrap = $("#view-all .all-wrap");
-  wrap.innerHTML = "";
-
-  const colsWanted = 2; // <- force two columns
-
-  // Split list in reading order: left col gets first half, right col gets second half
-  const mid = Math.ceil(games.length / 2);
-  const left  = games.slice(0, mid);
-  const right = games.slice(mid);
-
-  const grid = document.createElement("div");
-  grid.className = "cols";          // MUST match CSS
-
-  const colL = document.createElement("div");
-  colL.className = "col";
-  left.forEach(g => colL.appendChild(buildGameRow(g)));
-
-  const colR = document.createElement("div");
-  colR.className = "col";
-  right.forEach(g => colR.appendChild(buildGameRow(g)));
-
-  grid.appendChild(colL);
-  grid.appendChild(colR);
-  wrap.appendChild(grid);
-}
-
-/* ---------------- Load + boot (unchanged except calls renderScheduleView) ---------------- */
-
-async function load() {
-  const dataUrl     = window.DATA_URL     || "data/huskers_schedule_normalized.json";
-  const manifestUrl = window.MANIFEST_URL || "data/stadium_manifest.json";
-
-  const [s, m] = await Promise.all([
-    fetch(dataUrl,     { cache:"no-store" }).then(r=>r.json()),
-    fetch(manifestUrl, { cache:"no-store" }).then(r=>r.json())
-  ]);
-
-  schedule = s; manifest = m;
-
-  const next = pickNextGame(schedule);
-  if (next) setNextGameView(next);
-
-  renderScheduleView(schedule);
-
-  if (window.debug) {
-    const d = $("#debug");
-    d.classList.remove("hidden");
-    d.textContent = `Loaded ${new Date().toLocaleString()} • games=${schedule.length}`;
-  }
-
-  rotate();
-  setInterval(rotate, window.UI.rotateSeconds * 1000);
-}
-
-(function init() {
+  // -------- URL params / switches ----------
   const params = new URLSearchParams(location.search);
-  window.lockView = params.get("view");
-  window.debug = params.get("debug") === "1";
 
-  window.addEventListener("keydown", (e)=>{
-    if (e.key.toLowerCase() === "r") load().catch(console.error);
-  });
-  load().catch(console.error);
+  // Rotate view seconds
+  const rot = parseInt(params.get("rot"), 10);
+  if (!isNaN(rot) && rot > 0) UI.rotateSeconds = rot;
+
+  // Lock to "next" or "all"
+  const lockView = params.get("view"); // "next" | "all"
+
+  // Debug overlay
+  const debug = params.get("debug") === "1";
+
+  // Dense mode: default ON; pass ?dense=0 to disable
+  const denseParam = params.get("dense");
+  if (denseParam === "1" || denseParam === null) document.body.classList.add("dense");
+
+  // NEW: Global scale knob (uniformly scales the entire schedule view)
+  // Example: ?scale=0.88  (clamped to 0.6–1.3)
+  const scaleParam = parseFloat(params.get("scale"));
+  if (!isNaN(scaleParam)) {
+    const s = Math.max(0.6, Math.min(1.3, scaleParam));
+    document.documentElement.style.setProperty("--ui-scale", String(s));
+  }
+
+  // -------- Fetch data ----------
+  const sched = await fetch(DATA_URL).then(r => r.json()).then(d => d.items || []).catch(() => []);
+  const manifest = await fetch(MANIFEST_URL).then(r => r.json()).catch(() => ({}));
+  const arenas = Object.fromEntries(((manifest && manifest.arenas) || []).map(a => [a.arena_key, a]));
+
+  // -------- Helpers ----------
+  const dividerFor = (han) => (han === "A" ? "at" : "vs"); // no dot here
+  const homeClass = (han) => (han === "H" ? "is-home" : "is-away");
+  const rowResult = (g) => (g.result ? (g.result.split(" ")[0] || "") : ""); // "W"/"L"/"T"
+
+  // Abbreviate time strings for chips
+  function abbrevTime(s) {
+    if (!s || typeof s !== "string") return s;
+    s = s.replace(/\s+/g, " ").trim();
+    const orMatch = s.match(/^(\d{1,2})(?::00)?\s*OR\s*(\d{1,2})(?::00)?\s*(AM|PM)\s+([A-Z]{3})$/i);
+    if (orMatch) {
+      const h1 = String(+orMatch[1]);
+      const h2 = String(+orMatch[2]);
+      const ampm = orMatch[3].toUpperCase();
+      const tz = orMatch[4].toUpperCase();
+      return `${h1} or ${h2} ${ampm} ${tz}`;
+    }
+    const fullMatch = s.match(/^(\d{1,2})(?::(\d{2}))\s*(AM|PM)\s+([A-Z]{3})$/i);
+    if (fullMatch) {
+      const hour = String(+fullMatch[1]);
+      const mins = fullMatch[2];
+      const ampm = fullMatch[3].toUpperCase();
+      const tz = fullMatch[4].toUpperCase();
+      return mins === "00" ? `${hour} ${ampm} ${tz}` : `${hour}:${mins} ${ampm} ${tz}`;
+    }
+    const noTZ = s.match(/^(\d{1,2})(?::(\d{2}))\s*(AM|PM)$/i);
+    if (noTZ) {
+      const hour = String(+noTZ[1]);
+      const mins = noTZ[2];
+      const ampm = noTZ[3].toUpperCase();
+      return mins === "00" ? `${hour} ${ampm}` : `${hour}:${mins} ${ampm}`;
+    }
+    return s;
+  }
+
+  const fmtHero = (iso, time) => {
+    if (!iso) return time ? abbrevTime(time) : "";
+    const d = new Date(iso + "T00:00:00");
+    const weekday = d.toLocaleDateString("en-US", { weekday: "long" }).toUpperCase();
+    const mon = d.toLocaleDateString("en-US", { month: "short" });
+    const day = d.getDate();
+    return [weekday, `${mon} ${day}`, abbrevTime(time || "")].filter(Boolean).join(" • ");
+  };
+  const fmtDay = (iso) =>
+    new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
+      weekday: "short", month: "short", day: "numeric",
+    });
+
+  // Choose "next" game: first not-final with a date; else last item
+  const upcoming = sched.filter(g => g.status !== "final" && g.date).sort((a,b) => a.date.localeCompare(b.date));
+  const nextGame = upcoming[0] || sched[sched.length - 1];
+
+  // ----- HERO (next game) -----
+  const nextBg = $("#next-bg");
+  const neLogo = $("#ne-logo");
+  const oppLogo = $("#opp-logo");
+  const nextOpp = $("#next-opponent");
+  const nextDT  = $("#next-datetime");
+  const nextVenue = $("#next-venue");
+  const nextTV  = $("#next-tv");
+
+  if (nextGame) {
+    if (nextGame.arena_key) nextBg.style.backgroundImage = `url(images/arenas/${nextGame.arena_key}.jpg)`;
+    if (nextGame.nu_logo) neLogo.src  = nextGame.nu_logo;
+    if (nextGame.opp_logo) oppLogo.src = nextGame.opp_logo;
+
+    const divider = dividerFor(nextGame.home_away);
+    $("#divider").textContent = UI.showDividerLiteral ? (divider + ".") : "";
+
+    // Use opponent name only (no "#rank")
+    const headline =
+      (nextGame.home_away === "A" ? "Nebraska at " : "Nebraska vs. ") +
+      (nextGame.opponent || nextGame.title || "");
+    nextOpp.textContent = headline;
+
+    nextDT.textContent = fmtHero(nextGame.date, nextGame.time_local);
+    const city = nextGame.city || "";
+    const arena = nextGame.arena || "";
+    nextVenue.textContent = UI.showCityOnly || !arena ? city : `${city} • ${arena}`;
+
+    // TV chip
+    nextTV.innerHTML = "";
+    if (nextGame.tv_logo) {
+      const chip = document.createElement("span");
+      chip.className = "tv-chip";
+      const img = new Image();
+      img.src = nextGame.tv_logo; img.alt = "TV";
+      img.onerror = () => chip.remove();
+      chip.appendChild(img);
+      nextTV.appendChild(chip);
+    } else if (Array.isArray(nextGame.tv) && nextGame.tv.length) {
+      const chip = document.createElement("span");
+      chip.className = "tv-chip";
+      chip.textContent = nextGame.tv.join(" • ");
+      nextTV.appendChild(chip);
+    }
+
+    // Rank pills (hero)
+    const neRankEl  = $("#ne-rank");
+    const oppRankEl = $("#opp-rank");
+    const setRank = (el, rank) => {
+      if (rank && Number(rank) > 0) { el.textContent = `#${rank}`; el.classList.remove("hidden"); }
+      else el.classList.add("hidden");
+    };
+    setRank(neRankEl, nextGame.nu_rank);
+    setRank(oppRankEl, nextGame.opp_rank);
+  }
+
+  // ----- COMPACT TWO-COLUMN VIEW -----
+  const wrap = $("#view-all .all-wrap");
+  const cols = document.createElement("div");
+  cols.className = "cols";
+  const colA = document.createElement("div");
+  const colB = document.createElement("div");
+  colA.className = "col"; colB.className = "col";
+  cols.appendChild(colA); cols.appendChild(colB);
+  wrap.appendChild(cols);
+
+  // Helper: create a logo with optional tiny rank dot
+  function createLogoWithRank(src, alt, rank) {
+    const box = document.createElement("span");
+    box.className = "logo-badge";
+    const img = new Image();
+    img.className = "mark";
+    img.src = src || "";
+    img.alt = alt || "";
+    box.appendChild(img);
+    if (rank && Number(rank) > 0) {
+      const dot = document.createElement("span");
+      dot.className = "rank-dot";
+      dot.textContent = `#${rank}`;
+      box.appendChild(dot);
+    }
+    return box;
+  }
+
+  // Build one schedule row
+  const makeRow = (g) => {
+    const row = document.createElement("div");
+    row.className = `game-row ${homeClass(g.home_away)}`;
+
+    // left date stack
+    const when = document.createElement("div");
+    when.className = "when";
+    const dayStr = g.date ? fmtDay(g.date) : "";
+    const [dow, mmmdd] = dayStr ? [dayStr.split(", ")[0], dayStr.split(", ")[1]] : ["",""];
+    when.innerHTML = `<div class="date">${mmmdd || ""}</div><div class="dow">${dow || ""}</div>`;
+
+    // sentence line
+    const line = document.createElement("div");
+    line.className = "line";
+
+    // Nebraska logo + rank
+    line.appendChild(createLogoWithRank(g.nu_logo || "", "Nebraska", g.nu_rank));
+
+    // divider
+    const divEl = document.createElement("span");
+    divEl.className = "divider";
+    divEl.textContent = UI.showDividerLiteral ? dividerFor(g.home_away) : "";
+    line.appendChild(divEl);
+
+    // opponent name (no rank in text)
+    const oppSpan = document.createElement("span");
+    oppSpan.className = "opp-name";
+    oppSpan.textContent = g.opponent || g.title || "";
+    line.appendChild(oppSpan);
+
+    // opponent logo + rank
+    line.appendChild(createLogoWithRank(g.opp_logo || "", g.opponent || "Opponent", g.opp_rank));
+
+    // chips cluster
+    const chips = document.createElement("div");
+
+    // result pill
+    if (g.status === "final" && g.result) {
+      const res = document.createElement("span");
+      res.className = `result ${rowResult(g)}`;
+      res.textContent = g.result;
+      chips.appendChild(res);
+    }
+
+    // time chip (abbreviated)
+    if (g.time_local) {
+      const t = document.createElement("span");
+      t.className = "chip";
+      t.textContent = abbrevTime(g.time_local);
+      chips.appendChild(t);
+    }
+
+    // city/arena chip
+    const city = g.city || "";
+    const arena = g.arena || "";
+    if (city) {
+      const c = document.createElement("span");
+      c.className = "chip city";
+      c.textContent = UI.showCityOnly || !arena ? city : `${city} • ${arena}`;
+      chips.appendChild(c);
+    }
+
+    // TV chip — fixed pill size; remove if logo fails
+    if (g.tv_logo) {
+      const tv = document.createElement("span");
+      tv.className = "chip tv";
+      const img = new Image();
+      img.src = g.tv_logo; img.alt = "TV";
+      img.onerror = () => tv.remove();
+      tv.appendChild(img);
+      chips.appendChild(tv);
+    } else if (Array.isArray(g.tv) && g.tv.length) {
+      const tv = document.createElement("span");
+      tv.className = "chip tv";
+      tv.textContent = g.tv[0];
+      chips.appendChild(tv);
+    }
+
+    row.appendChild(when);
+    row.appendChild(line);
+    row.appendChild(chips);
+    return row;
+  };
+
+  // Fill FIRST column top-down, then SECOND column (top-down)
+  const half = Math.ceil(sched.length / 2);
+  const firstColGames = sched.slice(0, half);
+  const secondColGames = sched.slice(half);
+
+  firstColGames.forEach(g => colA.appendChild(makeRow(g)));
+  secondColGames.forEach(g => colB.appendChild(makeRow(g)));
+
+  // ----- view rotation / debug -----
+  const vNext = $("#view-next");
+  const vAll  = $("#view-all");
+  const dbg   = $("#debug");
+
+  function show(which) {
+    vNext.classList.toggle("hidden", which !== "next");
+    vAll.classList.toggle("hidden", which !== "all");
+  }
+
+  if (lockView === "next") show("next");
+  else if (lockView === "all") show("all");
+  else {
+    let mode = "next"; show(mode);
+    setInterval(() => {
+      mode = mode === "next" ? "all" : "next";
+      show(mode);
+    }, (UI.rotateSeconds || 15) * 1000);
+  }
+
+  if (debug) {
+    dbg.classList.remove("hidden");
+    dbg.textContent = `games: ${sched.length} • next: ${nextGame ? (nextGame.opponent || "") : "n/a"}`;
+  }
 })();
