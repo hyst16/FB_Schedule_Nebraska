@@ -116,10 +116,6 @@
         "href": "https://huskers.com/documents/bee054ed-2f4e-4f7f-80c0-2dc287ec51d9.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=604792"
-      },
-      {
         "title": "Box Score",
         "href": "https://huskers.com/boxscore/4245"
       },
@@ -132,10 +128,10 @@
   {
     "date_text": "Sep 20",
     "weekday": "SATURDAY",
-    "kickoff_display": "2:30 PM CDT",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "L",
+    "score": "27-30",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Michigan",
@@ -154,12 +150,24 @@
         "href": "https://www.cbs.com/"
       },
       {
-        "title": "Sold Out! Buy on SeatGeek",
-        "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-09-20-2-30-pm/17307266?aid=16101&pid=sell_out_page_social&rid=45920&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/092ea78b-fe32-4771-9901-6239d6d80dc4.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=604793"
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/9/20/fb-vs-michigan-photos"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/93e72cec-5299-4a2e-8487-ed5ba0f96182.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21832"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/09/20/huskers-fall-by-field-goal-to-no-21-michigan"
       }
     ]
   },
