@@ -174,7 +174,7 @@
   {
     "date_text": "Oct 4",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
+    "kickoff_display": "3:00 PM CDT",
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -184,13 +184,18 @@
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/PIVROnKwSt44Qly7Uo0wRyQ_q5z1s_yPZ4RnQMIs-3k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Opens in a new window",
+        "href": "https://www.foxsports.com/live"
+      }
+    ]
   },
   {
     "date_text": "Oct 11",

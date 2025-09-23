@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-22T08:36:14.365338+00:00",
+  "scraped_at": "2025-09-23T07:30:34.298286+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -168,14 +168,19 @@
       "date_text": "OCT 4",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "3:00 PM CDT",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
       "opponent_name": "Michigan State",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/PIVROnKwSt44Qly7Uo0wRyQ_q5z1s_yPZ4RnQMIs-3k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
+      "links": [
+        {
+          "title": "Opens in a new window",
+          "href": "https://www.foxsports.com/live"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
