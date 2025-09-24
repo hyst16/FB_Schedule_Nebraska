@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-23T08:33:45.702808+00:00",
+  "scraped_at": "2025-09-24T07:24:23.470673+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -99,7 +99,7 @@
       "links": [
         {
           "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/4baa6232-bd3c-4f49-9b9d-bb5c30d954c2.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2025/09/23/99qgj0y9XUWSZDPOG4vF90yKxegbPAA2xJcm0b7F.pdf"
         },
         {
           "title": "Photos",
