@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-09-29T08:39:14.663377+00:00",
+  "scraped_at": "2025-09-30T07:24:34.152146+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -179,6 +179,10 @@
         {
           "title": "Opens in a new window",
           "href": "https://www.foxsports.com/live"
+        },
+        {
+          "title": "Listen",
+          "href": "https://huskers.com/listen"
         }
       ]
     },
@@ -188,14 +192,23 @@
       "date_text": "OCT 11",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "2:30 PM CDT",
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/ckTPjX0bKvYj5KB1p9hAJSOCO7AGA5nbrXGR4JD7.svg",
       "opponent_name": "Maryland",
       "location": "College Park, Md.",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/1Dsb_dIet_Zh4V52NHpk2P6twI38akA8iEaIWPZpVDs/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "links": [
+        {
+          "title": "",
+          "href": "http://foxsports.com/live"
+        },
+        {
+          "title": "Listen",
+          "href": "https://huskers.com/listen"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
