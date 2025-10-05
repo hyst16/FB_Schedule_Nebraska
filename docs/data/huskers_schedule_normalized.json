@@ -174,10 +174,10 @@
   {
     "date_text": "Oct 4",
     "weekday": "SATURDAY",
-    "kickoff_display": "3:00 PM CDT",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "W",
+    "score": "38-27",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Michigan State",
@@ -200,8 +200,24 @@
         "href": "https://huskers.com/listen"
       },
       {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=604794"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/5e2f3f16-d407-4710-9b6d-f895616aa362.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
+      },
+      {
+        "title": "Postgame Notes (PDF)",
+        "href": "https://huskers.com/documents/a46de184-84d5-4c1e-acdc-1a3af2810bac.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21834"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/10/5/huskers-erupt-for-24-straight-late-to-stop-spartans"
       }
     ]
   },

@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-10-04T08:30:55.649092+00:00",
+  "scraped_at": "2025-10-05T07:20:50.582053+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -166,9 +166,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "OCT 4",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "3:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "38-27"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
@@ -185,8 +188,24 @@
           "href": "https://huskers.com/listen"
         },
         {
-          "title": "Live Stats",
-          "href": "https://stats.statbroadcast.com/broadcast/?id=604794"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/5e2f3f16-d407-4710-9b6d-f895616aa362.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
+        },
+        {
+          "title": "Postgame Notes (PDF)",
+          "href": "https://huskers.com/documents/a46de184-84d5-4c1e-acdc-1a3af2810bac.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21834"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2025/10/5/huskers-erupt-for-24-straight-late-to-stop-spartans"
         }
       ]
     },
