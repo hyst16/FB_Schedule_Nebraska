@@ -274,10 +274,10 @@
   {
     "date_text": "Oct 17",
     "weekday": "FRIDAY",
-    "kickoff_display": "7:00 PM CDT",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "L",
+    "score": "6-24",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Minnesota",
@@ -298,6 +298,22 @@
       {
         "title": "Live Stats",
         "href": "https://stats.statbroadcast.com/broadcast/?id=604645"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/f5f0af4e-dc6f-46e4-8fd6-4eeaa1664a47.pdf"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/0f640fe0-fe99-4332-b203-76bd908cfe5f.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21851"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/10/18/huskers-fall-at-minnesota-24-6"
       }
     ]
   },

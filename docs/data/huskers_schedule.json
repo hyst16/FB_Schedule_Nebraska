@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-10-17T08:35:56.803290+00:00",
+  "scraped_at": "2025-10-18T07:19:45.142825+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -260,9 +260,12 @@
       "venue_type": "AWAY",
       "weekday": "FRIDAY",
       "date_text": "OCT 17",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "7:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "6-24"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/C3Z8GJ3Nxf8uQOj0yM8sNk4HpOGW5qVREe71F2Ao.svg",
@@ -277,6 +280,22 @@
         {
           "title": "Live Stats",
           "href": "https://stats.statbroadcast.com/broadcast/?id=604645"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/f5f0af4e-dc6f-46e4-8fd6-4eeaa1664a47.pdf"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/0f640fe0-fe99-4332-b203-76bd908cfe5f.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21851"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2025/10/18/huskers-fall-at-minnesota-24-6"
         }
       ]
     },
