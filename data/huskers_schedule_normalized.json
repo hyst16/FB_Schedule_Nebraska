@@ -330,18 +330,23 @@
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/PIVROnKwSt44Qly7Uo0wRyQ_q5z1s_yPZ4RnQMIs-3k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/1UQISSq3eRDnRJIAjeXGWar8aTYdy9GWB56k0WDg.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Opens in a new window",
+        "href": "https://www.foxsports.com/live"
+      }
+    ]
   },
   {
     "date_text": "Nov 1",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
+    "kickoff_display": "6:30 PM CDT",
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -351,7 +356,7 @@
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/ZhWncpRZd0IkmXdHA-Ji8yhJIupJPwrv_8TTHqZ-ifE/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/UahJy09xytmTXBAdfHeKv65Npu0KNztpHnkwIgsh.svg",
     "ne_logo": "https://huskers.com/imgproxy/2f6lOAAbu7hSZMM8ACWLRQQg-jfngK-kty2-v32U38k/rs:fit:1980:0:0/g:ce/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
@@ -361,6 +366,14 @@
       {
         "title": "Sold Out! Buy on SeatGeek",
         "href": "https://seatgeek.com/nebraska-cornhuskers-football-tickets/ncaa-football/2025-11-01-3-30-am/17307274?aid=16101&pid=sell_out_page_social&rid=45962&utm_campaign=integration&utm_medium=partnership&utm_source=nebraska_sponsorship"
+      },
+      {
+        "title": "Watch",
+        "href": "https://www.peacocktv.com/?cid=2401libgenpkpdsearch16851&utm_campaign=2401libgen&utm_source=pk_ggl&utm_medium=pd_search_acq_srcpy&utm_term=6481429429&utm_content=73015049690_718162897395&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqY"
+      },
+      {
+        "title": "Listen",
+        "href": "https://huskers.com/listen"
       }
     ]
   },
