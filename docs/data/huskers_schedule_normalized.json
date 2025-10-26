@@ -196,10 +196,6 @@
         "href": "https://www.foxsports.com/live"
       },
       {
-        "title": "Listen",
-        "href": "https://huskers.com/listen"
-      },
-      {
         "title": "Final Stats (PDF)",
         "href": "https://huskers.com/documents/5e2f3f16-d407-4710-9b6d-f895616aa362.pdf"
       },
@@ -208,7 +204,7 @@
         "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
       },
       {
-        "title": "Postgame Notes (PDF)",
+        "title": "Postgame Notes",
         "href": "https://huskers.com/documents/a46de184-84d5-4c1e-acdc-1a3af2810bac.pdf"
       },
       {
@@ -242,24 +238,20 @@
     "bg_filename": "Maryland-SECU-Stadium-MD.jpg",
     "links": [
       {
-        "title": "Boxscore",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/11/EmfUSqivcbwkdQfY5qQpz4HpR1ud6h3f1qO6Iskw.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/39fc1f09-806c-4ab8-9ae3-7062e2dd6272.pdf"
-      },
-      {
         "title": "",
         "href": "http://foxsports.com/live"
       },
       {
-        "title": "Listen",
-        "href": "https://huskers.com/listen"
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/11/EmfUSqivcbwkdQfY5qQpz4HpR1ud6h3f1qO6Iskw.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=604610"
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/10/11/football-vs-maryland-photos"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/39fc1f09-806c-4ab8-9ae3-7062e2dd6272.pdf"
       },
       {
         "title": "Box Score",
@@ -296,16 +288,12 @@
         "href": "https://www.foxsports.com/live"
       },
       {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=604645"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/0f640fe0-fe99-4332-b203-76bd908cfe5f.pdf"
       },
       {
         "title": "Postgame Notes",
         "href": "https://huskers.com/documents/f5f0af4e-dc6f-46e4-8fd6-4eeaa1664a47.pdf"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://huskers.com/documents/0f640fe0-fe99-4332-b203-76bd908cfe5f.pdf"
       },
       {
         "title": "Box Score",
@@ -320,10 +308,10 @@
   {
     "date_text": "Oct 25",
     "weekday": "SATURDAY",
-    "kickoff_display": "11:00 AM CDT",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "W",
+    "score": "28-21",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Northwestern",
@@ -340,6 +328,34 @@
       {
         "title": "Opens in a new window",
         "href": "https://www.foxsports.com/live"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/25/ZEnkL9lIJUSGJZXgmLumv6DBwuYMkaRbQxAb1uEK.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/10/25/fb-vs-northwestern-photo"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/25/2GlevUn675NmNp48cJ4iKVjgYGojs8TGSZJ7QODx.pdf"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://stats.statbroadcast.com/statmonitr/?id=604795&_gl=1*18hv3s9*_ga*MzM1NjQwODI3LjE3NTc3MDg0NjE.*_ga_2ZWVK1X7BJ*czE3NjE0MjI4MzEkbzckZzAkdDE3NjE0MjI4MzEkajYwJGwwJGgw"
+      },
+      {
+        "title": "Listen",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21838"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/10/25/huskers-work-past-wildcats"
       }
     ]
   },
