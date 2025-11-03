@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-11-02T07:22:36.721776+00:00",
+  "scraped_at": "2025-11-03T07:24:30.216764+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -350,10 +350,6 @@
         {
           "title": "Watch",
           "href": "https://www.peacocktv.com/?cid=2401libgenpkpdsearch16851&utm_campaign=2401libgen&utm_source=pk_ggl&utm_medium=pd_search_acq_srcpy&utm_term=6481429429&utm_content=73015049690_718162897395&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqY"
-        },
-        {
-          "title": "Listen",
-          "href": "https://huskers.com/listen"
         },
         {
           "title": "Final Stats (PDF)",
