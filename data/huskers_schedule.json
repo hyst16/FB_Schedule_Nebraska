@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-11-08T08:38:22.981882+00:00",
+  "scraped_at": "2025-11-09T07:23:36.140576+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -377,9 +377,12 @@
       "venue_type": "AWAY",
       "weekday": "SATURDAY",
       "date_text": "NOV 8",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "8:00 PM CST",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "28-21"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/HRd1Q70l0yQpZeYQ1h4eRyyBye4Cp06Nn1icMkjm.svg",
@@ -398,6 +401,22 @@
         {
           "title": "Live Stats",
           "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/11/8/fb-vs-ucla-photos"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/09/x2cnnyXQiL75t4GinlYiYO2x6V6pXozypt06jEp1.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21859"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2025/11/9/huskers-top-bruins-28-21-for-seventh-win"
         }
       ]
     },

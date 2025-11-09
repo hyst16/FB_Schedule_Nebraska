@@ -400,10 +400,10 @@
   {
     "date_text": "Nov 8",
     "weekday": "SATURDAY",
-    "kickoff_display": "8:00 PM CST",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "W",
+    "score": "28-21",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "UCLA",
@@ -428,6 +428,22 @@
       {
         "title": "Live Stats",
         "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/11/8/fb-vs-ucla-photos"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/09/x2cnnyXQiL75t4GinlYiYO2x6V6pXozypt06jEp1.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21859"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/11/9/huskers-top-bruins-28-21-for-seventh-win"
       }
     ]
   },
