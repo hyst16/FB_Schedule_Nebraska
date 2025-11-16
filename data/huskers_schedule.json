@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-11-15T08:31:47.023555+00:00",
+  "scraped_at": "2025-11-16T07:22:06.142510+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -426,14 +426,19 @@
       "date_text": "NOV 22",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "6:00 PM CST",
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/eSnEQOMzqgY8gAPCfxR90DNlJ0vOuXDQfhvTLM4h.svg",
       "opponent_name": "Penn State",
       "location": "University Park, Pa.",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/2eBdW7tmsjM5nLTyDB_119NVfFcbgkYhwqRJsa90az0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
+      "links": [
+        {
+          "title": "NBC",
+          "href": "https://www.peacocktv.com/?cid=2301evgpkpdsearch11571&utm_campaign=2301evg&utm_source=pk_ggl_gglsa&utm_medium=pd_search_br_srcpy&utm_term=126778&utm_content=126778_126778&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqYaJrsbnM-hzsDFPQH"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
