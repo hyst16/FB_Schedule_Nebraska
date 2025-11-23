@@ -450,10 +450,10 @@
   {
     "date_text": "Nov 22",
     "weekday": "SATURDAY",
-    "kickoff_display": "6:00 PM CST",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "L",
+    "score": "10-37",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Penn State",
@@ -470,6 +470,18 @@
       {
         "title": "NBC",
         "href": "https://www.peacocktv.com/?cid=2301evgpkpdsearch11571&utm_campaign=2301evg&utm_source=pk_ggl_gglsa&utm_medium=pd_search_br_srcpy&utm_term=126778&utm_content=126778_126778&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqYaJrsbnM-hzsDFPQH"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/23/MzzPwEchHtvVO6kuhQX1OoOwXow89pXDseDaWfOA.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21854"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/11/23/huskers-bested-in-state-college"
       }
     ]
   },
