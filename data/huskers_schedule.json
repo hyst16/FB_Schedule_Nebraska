@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-11-28T08:37:23.164409+00:00",
+  "scraped_at": "2025-11-29T07:22:58.303853+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -459,9 +459,12 @@
       "venue_type": "HOME",
       "weekday": "FRIDAY",
       "date_text": "NOV 28",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:00 AM CST",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "16-40"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9YsBNIeewYRZVuMYp8PzCPprdai9tksp5CFtqtT.svg",
@@ -472,6 +475,34 @@
         {
           "title": "Opens in a new window",
           "href": "https://bigten.org/fb/article/blt8eb3dde899ebe558/"
+        },
+        {
+          "title": "Listen",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/75ee1a83-23b6-4d5d-9385-94cce1d44b76.pdf"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/554109a8-fd3f-45b8-865d-bb18f008b85e.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/11/28/fb-vs-iowa-2025-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21827"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2025/11/28/huskers-vs-hawkeyes"
         }
       ]
     }

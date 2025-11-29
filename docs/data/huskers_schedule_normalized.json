@@ -488,10 +488,10 @@
   {
     "date_text": "Nov 28",
     "weekday": "FRIDAY",
-    "kickoff_display": "11:00 AM CST",
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "status": "final",
+    "outcome": "L",
+    "score": "16-40",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Iowa",
@@ -508,6 +508,34 @@
       {
         "title": "Opens in a new window",
         "href": "https://bigten.org/fb/article/blt8eb3dde899ebe558/"
+      },
+      {
+        "title": "Listen",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/75ee1a83-23b6-4d5d-9385-94cce1d44b76.pdf"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/554109a8-fd3f-45b8-865d-bb18f008b85e.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2025/11/28/fb-vs-iowa-2025-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21827"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2025/11/28/huskers-vs-hawkeyes"
       }
     ]
   }
