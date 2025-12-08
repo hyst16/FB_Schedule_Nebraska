@@ -108,6 +108,17 @@
           "venue": "AWAY"
         }
       ]
+    },
+    "Utah-Allegiant Stadium-NEV.": {
+      "suggested_filename": "Utah-Allegiant-Stadium-NEV..jpg",
+      "exists": false,
+      "used_by": [
+        {
+          "date": "Dec 31",
+          "opponent": "Utah",
+          "venue": "NEUTRAL"
+        }
+      ]
     }
   }
 }

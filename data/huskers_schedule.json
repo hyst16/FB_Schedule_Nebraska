@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2025-12-07T08:33:25.635696+00:00",
+  "scraped_at": "2025-12-08T07:28:34.252891+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -503,6 +503,26 @@
         {
           "title": "Recap",
           "href": "https://huskers.com/news/2025/11/28/huskers-vs-hawkeyes"
+        }
+      ]
+    },
+    {
+      "venue_type": "NEUTRAL",
+      "weekday": "WEDNESDAY",
+      "date_text": "DEC 31",
+      "status": "upcoming",
+      "result": null,
+      "kickoff": "2:30 PM CST",
+      "divider_text": "vs.",
+      "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+      "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/fupeaHUCX04EFj09sEOovTn8h5Ugk9oO96kU5doO.svg",
+      "opponent_name": "Utah",
+      "location": "Las Vegas, Nev. / Allegiant Stadium",
+      "tv_network_logo_url": "https://huskers.com/imgproxy/v0y8iI71-fj74eBmLsajyo6JrbBUTtvgXXwYRY-8RnE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC85UmdQQm1GU0pSMmJqNnQxV2RCS1FpSXRMZklreGNtYWpFZEVvd3ZrLnBuZw.png",
+      "links": [
+        {
+          "title": "Opens in a new window",
+          "href": "https://www.espn.com/watch/"
         }
       ]
     }
