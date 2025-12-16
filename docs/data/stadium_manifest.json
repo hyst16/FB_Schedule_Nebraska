@@ -111,7 +111,7 @@
     },
     "Utah-Allegiant Stadium-NEV.": {
       "suggested_filename": "Utah-Allegiant-Stadium-NEV..jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Dec 31",
