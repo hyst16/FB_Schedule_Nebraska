@@ -562,6 +562,18 @@
       {
         "title": "Opens in a new window",
         "href": "https://www.espn.com/watch/"
+      },
+      {
+        "title": "Listen",
+        "href": "http://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://stats.statbroadcast.com/broadcast/?id=626236&vislive=neb"
+      },
+      {
+        "title": "Preview",
+        "href": "https://huskers.com/news/2025/12/23/fb-preview-las-vegas-bowl"
       }
     ]
   }
