@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-01-13T07:29:49.700987+00:00",
+  "scraped_at": "2026-01-14T07:30:52.860870+00:00",
   "games": [
     {
       "venue_type": "NEUTRAL",
@@ -17,19 +17,23 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/x0HA6JX0sW4nx4tQFnFjwlcrpJLUH1fTjzr0nYdd.svg",
       "opponent_name": "Cincinnati",
       "location": "Kansas City, Mo. / Arrowhead Stadium",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/2dhIZGxQYCnxokbXFteqjYro0eh0_1mImhIFnrwyPvg/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9TbXpTTjJ0Tml4bFo2Z1hlN05yR1VIYmJEUTNLZktNcW9nYm5BdHRLLnBuZw.png",
       "links": [
         {
-          "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/08/29/18p1FjCKSR3NWN7PYTx3erPsVrvbAweMgqvI2B5N.pdf"
+          "title": "Opens in a new window",
+          "href": "https://www.espn.com/watch/"
         },
         {
-          "title": "Photos",
-          "href": "https://huskers.com/news/2025/8/28/fb-vs-cincinnati-photos"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/2bIhUWfRLOYPoWAazWkUn9Q3zqA6LxMWhBpyvBah.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://storage.googleapis.com/huskers-com-prod/2025/08/29/SBXAHn7uROHHFPxqZA2Wnw2biwjukDZLNQfVK0OR.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/8/28/fb-vs-cincinnati-photos"
         },
         {
           "title": "Box Score",
@@ -56,19 +60,23 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/qiyDkomiF829arGteqOMYww0QITUNGaRSyvufu9f.svg",
       "opponent_name": "Akron",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
       "links": [
         {
-          "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/bcf6bf10-1743-4f64-a2ae-0d237214262a.pdf"
+          "title": "Opens in a new window",
+          "href": "https://www.foxsports.com/live"
         },
         {
-          "title": "Photos",
-          "href": "https://huskers.com/news/2025/9/6/fb-vs-akron-photo"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/Bon5Oxh1sZVAjc7u0WWjaH6z9wFDi0QTPH3OnmsX.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/c57adfc6-dbd4-4ae0-b734-6d521d72c537.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/9/6/fb-vs-akron-photo"
         },
         {
           "title": "Box Score",
@@ -95,19 +103,23 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/Em7yr9sqhB1PwNThkAUUoRLK5e0TDJvTmmXiLmdU.svg",
       "opponent_name": "Houston Christian",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
       "links": [
         {
-          "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/09/23/99qgj0y9XUWSZDPOG4vF90yKxegbPAA2xJcm0b7F.pdf"
+          "title": "Opens in a new window",
+          "href": "https://www.foxsports.com/live"
         },
         {
-          "title": "Photos",
-          "href": "https://huskers.com/news/2025/9/13/fb-vs-houston-christian-photo"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/3HzrHZrIVzGuG8dOkOULOwJkPQri777k99N1ttlO.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/bee054ed-2f4e-4f7f-80c0-2dc287ec51d9.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/9/13/fb-vs-houston-christian-photo"
         },
         {
           "title": "Box Score",
@@ -142,15 +154,15 @@
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/092ea78b-fe32-4771-9901-6239d6d80dc4.pdf"
-        },
-        {
-          "title": "Photos",
-          "href": "https://huskers.com/news/2025/9/20/fb-vs-michigan-photos"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/FTUtETGiq7zoULSYKUYop6ZGQKGBvIUcRK8kQ01J.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/93e72cec-5299-4a2e-8487-ed5ba0f96182.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/9/20/fb-vs-michigan-photos"
         },
         {
           "title": "Box Score",
@@ -185,15 +197,15 @@
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/5e2f3f16-d407-4710-9b6d-f895616aa362.pdf"
-        },
-        {
-          "title": "Photos",
-          "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/bbXHoUQKAV20hvsRocnczQZUV38s6dABAZcLTENi.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/a46de184-84d5-4c1e-acdc-1a3af2810bac.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
         },
         {
           "title": "Box Score",
@@ -228,7 +240,7 @@
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/11/EmfUSqivcbwkdQfY5qQpz4HpR1ud6h3f1qO6Iskw.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/YE1GbD7VgdxpQd33GvQzOl0ZDDYhDzjrCvdrLgmW.pdf"
         },
         {
           "title": "Photos",
@@ -271,7 +283,7 @@
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/0f640fe0-fe99-4332-b203-76bd908cfe5f.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/KRZRh6cZs8jwv3UYxbNQwQBUrYaLSnurHHS25P68.pdf"
         },
         {
           "title": "Postgame Notes",
@@ -310,7 +322,7 @@
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/25/ZEnkL9lIJUSGJZXgmLumv6DBwuYMkaRbQxAb1uEK.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/ieFnhnP7HoQfojjccgtTt1Y0oaJrKhkElXZ3Z41s.pdf"
         },
         {
           "title": "Photos",
@@ -348,12 +360,12 @@
       "tv_network_logo_url": "https://huskers.com/imgproxy/2eBdW7tmsjM5nLTyDB_119NVfFcbgkYhwqRJsa90az0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
       "links": [
         {
-          "title": "Watch",
+          "title": "",
           "href": "https://www.peacocktv.com/?cid=2401libgenpkpdsearch16851&utm_campaign=2401libgen&utm_source=pk_ggl&utm_medium=pd_search_acq_srcpy&utm_term=6481429429&utm_content=73015049690_718162897395&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqY"
         },
         {
           "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/02/nolaW6udkNWsWutqcI7RffXCRvVrG8p9oOu5MofH.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/LkiJx3KJUI4r0Uzt8Sl1cZFmYLBcvuW8tcPzgQNe.pdf"
         },
         {
           "title": "Photos",
@@ -391,24 +403,20 @@
       "tv_network_logo_url": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
       "links": [
         {
-          "title": "Watch",
+          "title": "",
           "href": "https://www.foxsports.com/live"
         },
         {
-          "title": "Listen",
-          "href": "https://huskers.com/listen"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/82IHCkbSXO4crMvDfTcDp3aciMOG5oOrWL2Pthb7.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Postgame Notes",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/JN8Uj2KzQgwKxdUIfrLdn6oM2BobV9Nx0alG82ng.pdf"
         },
         {
           "title": "Photos",
           "href": "https://huskers.com/news/2025/11/8/fb-vs-ucla-photos"
-        },
-        {
-          "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/09/x2cnnyXQiL75t4GinlYiYO2x6V6pXozypt06jEp1.pdf"
         },
         {
           "title": "Box Score",
@@ -438,12 +446,20 @@
       "tv_network_logo_url": "https://huskers.com/imgproxy/2eBdW7tmsjM5nLTyDB_119NVfFcbgkYhwqRJsa90az0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
       "links": [
         {
-          "title": "NBC",
+          "title": "",
           "href": "https://www.peacocktv.com/?cid=2301evgpkpdsearch11571&utm_campaign=2301evg&utm_source=pk_ggl_gglsa&utm_medium=pd_search_br_srcpy&utm_term=126778&utm_content=126778_126778&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqYaJrsbnM-hzsDFPQH"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/y3rsdfLAMIIfbGmCa7M1bJ5sERfmVjw5HTOGqiJH.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/23/MzzPwEchHtvVO6kuhQX1OoOwXow89pXDseDaWfOA.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2025/11/22/fb-vs-penn-st-photos"
         },
         {
           "title": "Box Score",
@@ -477,20 +493,12 @@
           "href": "https://bigten.org/fb/article/blt8eb3dde899ebe558/"
         },
         {
-          "title": "Listen",
-          "href": "https://huskers.com/listen"
-        },
-        {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/CLbowJdpzoJyP3Jhzuf6X0t9Fndni17FxRmA1lsv.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/75ee1a83-23b6-4d5d-9385-94cce1d44b76.pdf"
-        },
-        {
-          "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/554109a8-fd3f-45b8-865d-bb18f008b85e.pdf"
         },
         {
           "title": "Photos",
@@ -528,12 +536,8 @@
           "href": "https://www.espn.com/watch/"
         },
         {
-          "title": "Listen",
-          "href": "http://huskers.com/listen"
-        },
-        {
           "title": "Final Stats (PDF)",
-          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/01/LV5U2Jxe22LmxT4WnugGwCgyPYUwkafShlLaMSPa.pdf"
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/rf1mjzdKQrf1zsbsdZkY7zHNWOyrDjtmkt2NmxG9.pdf"
         },
         {
           "title": "Postgame Notes",
