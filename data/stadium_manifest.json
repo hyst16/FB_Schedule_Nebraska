@@ -1,110 +1,99 @@
 {
   "images_directory": "images/stadiums",
   "items": {
-    "Cincinnati-Arrowhead Stadium-MO": {
-      "suggested_filename": "Cincinnati-Arrowhead-Stadium-MO.jpg",
-      "exists": false,
-      "used_by": [
-        {
-          "date": "Aug 28",
-          "opponent": "Cincinnati",
-          "venue": "NEUTRAL"
-        }
-      ]
-    },
     "Nebraska-Memorial Stadium-NE": {
       "suggested_filename": "Nebraska-Memorial-Stadium-NE.jpg",
       "exists": true,
       "used_by": [
         {
-          "date": "Sep 6",
-          "opponent": "Akron",
+          "date": "Sep 5",
+          "opponent": "Ohio",
           "venue": "HOME"
         },
         {
-          "date": "Sep 13",
-          "opponent": "Houston Christian",
+          "date": "Sep 12",
+          "opponent": "Bowling Green",
           "venue": "HOME"
         },
         {
-          "date": "Sep 20",
-          "opponent": "Michigan",
+          "date": "Sep 19",
+          "opponent": "North Dakota",
           "venue": "HOME"
         },
         {
-          "date": "Oct 4",
-          "opponent": "Michigan State",
+          "date": "Oct 3",
+          "opponent": "Maryland",
           "venue": "HOME"
         },
         {
-          "date": "Oct 25",
-          "opponent": "Northwestern",
+          "date": "Oct 10",
+          "opponent": "Indiana",
           "venue": "HOME"
         },
         {
-          "date": "Nov 1",
-          "opponent": "USC",
+          "date": "Oct 31",
+          "opponent": "Washington",
           "venue": "HOME"
         },
         {
-          "date": "Nov 28",
-          "opponent": "Iowa",
+          "date": "Nov 21",
+          "opponent": "Ohio State",
           "venue": "HOME"
         }
       ]
     },
-    "Maryland-SECU Stadium-MD": {
-      "suggested_filename": "Maryland-SECU-Stadium-MD.jpg",
-      "exists": true,
+    "Michigan State-Stadium-MICH.": {
+      "suggested_filename": "Michigan-State-Stadium-MICH..jpg",
+      "exists": false,
       "used_by": [
         {
-          "date": "Oct 11",
-          "opponent": "Maryland",
+          "date": "Sep 26",
+          "opponent": "Michigan State",
           "venue": "AWAY"
         }
       ]
     },
-    "Minnesota-Huntington Bank Stadium-MN": {
-      "suggested_filename": "Minnesota-Huntington-Bank-Stadium-MN.jpg",
-      "exists": true,
+    "Oregon-Stadium-ORE.": {
+      "suggested_filename": "Oregon-Stadium-ORE..jpg",
+      "exists": false,
       "used_by": [
         {
           "date": "Oct 17",
-          "opponent": "Minnesota",
+          "opponent": "Oregon",
           "venue": "AWAY"
         }
       ]
     },
-    "UCLA-Rose Bowl-CA": {
-      "suggested_filename": "UCLA-Rose-Bowl-CA.jpg",
-      "exists": true,
+    "Illinois-Stadium-ILL.": {
+      "suggested_filename": "Illinois-Stadium-ILL..jpg",
+      "exists": false,
       "used_by": [
         {
-          "date": "Nov 8",
-          "opponent": "UCLA",
+          "date": "Nov 7",
+          "opponent": "Illinois",
           "venue": "AWAY"
         }
       ]
     },
-    "Penn State-Beaver Stadium-PA": {
-      "suggested_filename": "Penn-State-Beaver-Stadium-PA.jpg",
-      "exists": true,
+    "Rutgers-Stadium-N.J.": {
+      "suggested_filename": "Rutgers-Stadium-N.J..jpg",
+      "exists": false,
       "used_by": [
         {
-          "date": "Nov 22",
-          "opponent": "Penn State",
+          "date": "Nov 14",
+          "opponent": "Rutgers",
           "venue": "AWAY"
         }
       ]
     },
-    "Utah-Allegiant Stadium-NEV.": {
-      "suggested_filename": "Utah-Allegiant-Stadium-NEV..jpg",
-      "exists": true,
+    "Iowa-Stadium-IA": {
+      "suggested_filename": "Iowa-Stadium-IA.jpg",
+      "exists": false,
       "used_by": [
         {
-          "date": "Dec 31",
-          "opponent": "Utah",
-          "venue": "NEUTRAL"
+          "date": "Nov 27",
+          "opponent": "Iowa",
+          "venue": "AWAY"
         }
       ]
     }

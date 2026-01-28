@@ -1,596 +1,254 @@
 [
   {
-    "date_text": "Aug 28",
-    "weekday": "THURSDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "20-17",
-    "home_away_neutral": "NEUTRAL",
-    "divider": "vs.",
-    "opponent": "Cincinnati",
-    "city": "Kansas City",
-    "state": "MO",
-    "city_display": "Kansas City, MO",
-    "tv_logo": "https://huskers.com/imgproxy/2dhIZGxQYCnxokbXFteqjYro0eh0_1mImhIFnrwyPvg/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9TbXpTTjJ0Tml4bFo2Z1hlN05yR1VIYmJEUTNLZktNcW9nYm5BdHRLLnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/x0HA6JX0sW4nx4tQFnFjwlcrpJLUH1fTjzr0nYdd.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Cincinnati-Arrowhead Stadium-MO",
-    "bg_file_basename": "Cincinnati-Arrowhead-Stadium-MO",
-    "bg_filename": "Cincinnati-Arrowhead-Stadium-MO.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.espn.com/watch/"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/2bIhUWfRLOYPoWAazWkUn9Q3zqA6LxMWhBpyvBah.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2025/08/29/SBXAHn7uROHHFPxqZA2Wnw2biwjukDZLNQfVK0OR.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/8/28/fb-vs-cincinnati-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/4244"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/08/29/huskers-open-season-with-20-17-victory"
-      }
-    ]
-  },
-  {
-    "date_text": "Sep 6",
+    "date_text": "Sep 5",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "68-0",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "HOME",
     "divider": "vs.",
-    "opponent": "Akron",
+    "opponent": "Ohio",
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/qiyDkomiF829arGteqOMYww0QITUNGaRSyvufu9f.svg",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/HrWgp7hTLsW1vBrzWBp40oSRchgVq352hoSZ5RqX.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/Bon5Oxh1sZVAjc7u0WWjaH6z9wFDi0QTPH3OnmsX.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/c57adfc6-dbd4-4ae0-b734-6d521d72c537.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/9/6/fb-vs-akron-photo"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/4243"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/09/7/huskers-blast-akron"
-      }
-    ]
+    "links": []
   },
   {
-    "date_text": "Sep 13",
+    "date_text": "Sep 12",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "59-7",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "HOME",
     "divider": "vs.",
-    "opponent": "Houston Christian",
+    "opponent": "Bowling Green",
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/Em7yr9sqhB1PwNThkAUUoRLK5e0TDJvTmmXiLmdU.svg",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/L39MlSPBBMpSFXfRpMQWWQpMUGJCbGDbJ2jJ9Z7H.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/3HzrHZrIVzGuG8dOkOULOwJkPQri777k99N1ttlO.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/bee054ed-2f4e-4f7f-80c0-2dc287ec51d9.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/9/13/fb-vs-houston-christian-photo"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/4245"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/09/13/huskers-race-past-huskies"
-      }
-    ]
+    "links": []
   },
   {
-    "date_text": "Sep 20",
+    "date_text": "Sep 19",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "27-30",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "HOME",
     "divider": "vs.",
-    "opponent": "Michigan",
+    "opponent": "North Dakota",
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/0BFjgPsmU4eISMkXWWy__2QV5IbvvI980lhr3nIy4TM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9kMEZKOGpCSGxOejJ5a3hHM0ExVmZvSVlsWkY2VGdsUGtJdXRvWDM3LnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/VfZOPfPJ8Ps9IldV9Wlg3gdY47UFgUjU17DI6zZE.svg",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/eSu7n0RFEafc47fiDhWGmW9x0pXXwtfGUyT3hH2y.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.cbs.com/"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/FTUtETGiq7zoULSYKUYop6ZGQKGBvIUcRK8kQ01J.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/93e72cec-5299-4a2e-8487-ed5ba0f96182.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/9/20/fb-vs-michigan-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21832"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/09/20/huskers-fall-by-field-goal-to-no-21-michigan"
-      }
-    ]
+    "links": []
   },
   {
-    "date_text": "Oct 4",
+    "date_text": "Sep 26",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "38-27",
-    "home_away_neutral": "HOME",
-    "divider": "vs.",
-    "opponent": "Michigan State",
-    "city": "Lincoln",
-    "state": "NE",
-    "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
-    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/bbXHoUQKAV20hvsRocnczQZUV38s6dABAZcLTENi.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/a46de184-84d5-4c1e-acdc-1a3af2810bac.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/10/4/fb-vs-msu-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21834"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/10/5/huskers-erupt-for-24-straight-late-to-stop-spartans"
-      }
-    ]
-  },
-  {
-    "date_text": "Oct 11",
-    "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "34-31",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "AWAY",
     "divider": "at",
+    "opponent": "Michigan State",
+    "city": "East Lansing",
+    "state": "MICH.",
+    "city_display": "East Lansing, MICH.",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
+    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+    "bg_key": "Michigan State-Stadium-MICH.",
+    "bg_file_basename": "Michigan-State-Stadium-MICH.",
+    "bg_filename": "Michigan-State-Stadium-MICH..jpg",
+    "links": []
+  },
+  {
+    "date_text": "Oct 3",
+    "weekday": "SATURDAY",
+    "kickoff_display": "\u2014",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "HOME",
+    "divider": "vs.",
     "opponent": "Maryland",
-    "city": "College Park",
-    "state": "MD",
-    "city_display": "College Park, MD",
-    "tv_logo": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+    "city": "Lincoln",
+    "state": "NE",
+    "city_display": "Lincoln, NE",
+    "tv_logo": null,
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/ckTPjX0bKvYj5KB1p9hAJSOCO7AGA5nbrXGR4JD7.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Maryland-SECU Stadium-MD",
-    "bg_file_basename": "Maryland-SECU-Stadium-MD",
-    "bg_filename": "Maryland-SECU-Stadium-MD.jpg",
-    "links": [
-      {
-        "title": "",
-        "href": "http://foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/YE1GbD7VgdxpQd33GvQzOl0ZDDYhDzjrCvdrLgmW.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/10/11/football-vs-maryland-photos"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/39fc1f09-806c-4ab8-9ae3-7062e2dd6272.pdf"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21850"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/10/11/huskers-rally-for-34-31-win-at-maryland"
-      }
-    ]
+    "bg_key": "Nebraska-Memorial Stadium-NE",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
+    "links": []
+  },
+  {
+    "date_text": "Oct 10",
+    "weekday": "SATURDAY",
+    "kickoff_display": "\u2014",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "HOME",
+    "divider": "vs.",
+    "opponent": "Indiana",
+    "city": "Lincoln",
+    "state": "NE",
+    "city_display": "Lincoln, NE",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/x7OWZFHnQkE6RLMJeEnOT6Lz4NZiLtRmlAGr8w1h.svg",
+    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+    "bg_key": "Nebraska-Memorial Stadium-NE",
+    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
+    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
+    "links": []
   },
   {
     "date_text": "Oct 17",
-    "weekday": "FRIDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "6-24",
-    "home_away_neutral": "AWAY",
-    "divider": "at",
-    "opponent": "Minnesota",
-    "city": "Minneapolis",
-    "state": "MN",
-    "city_display": "Minneapolis, MN",
-    "tv_logo": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/C3Z8GJ3Nxf8uQOj0yM8sNk4HpOGW5qVREe71F2Ao.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Minnesota-Huntington Bank Stadium-MN",
-    "bg_file_basename": "Minnesota-Huntington-Bank-Stadium-MN",
-    "bg_filename": "Minnesota-Huntington-Bank-Stadium-MN.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/KRZRh6cZs8jwv3UYxbNQwQBUrYaLSnurHHS25P68.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/f5f0af4e-dc6f-46e4-8fd6-4eeaa1664a47.pdf"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21851"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/10/18/huskers-fall-at-minnesota-24-6"
-      }
-    ]
-  },
-  {
-    "date_text": "Oct 25",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "28-21",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "AWAY",
+    "divider": "at",
+    "opponent": "Oregon",
+    "city": "Eugene",
+    "state": "ORE.",
+    "city_display": "Eugene, ORE.",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/Ob70zmtdWJk9Fs4HQsNtn4eRa5s5H2ZzHFRmxQS0.svg",
+    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+    "bg_key": "Oregon-Stadium-ORE.",
+    "bg_file_basename": "Oregon-Stadium-ORE.",
+    "bg_filename": "Oregon-Stadium-ORE..jpg",
+    "links": []
+  },
+  {
+    "date_text": "Oct 31",
+    "weekday": "SATURDAY",
+    "kickoff_display": "\u2014",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "HOME",
     "divider": "vs.",
-    "opponent": "Northwestern",
+    "opponent": "Washington",
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/1UQISSq3eRDnRJIAjeXGWar8aTYdy9GWB56k0WDg.svg",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/aduluAGeTcF8UtJgQe2OQ8NPQ4RdWHL5CNunZmOf.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/ieFnhnP7HoQfojjccgtTt1Y0oaJrKhkElXZ3Z41s.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/10/25/fb-vs-northwestern-photo"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2025/10/25/2GlevUn675NmNp48cJ4iKVjgYGojs8TGSZJ7QODx.pdf"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21838"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/10/25/huskers-work-past-wildcats"
-      }
-    ]
+    "links": []
   },
   {
-    "date_text": "Nov 1",
+    "date_text": "Nov 7",
     "weekday": "SATURDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "17-21",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "AWAY",
+    "divider": "at",
+    "opponent": "Illinois",
+    "city": "Champaign",
+    "state": "ILL.",
+    "city_display": "Champaign, ILL.",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/Zep4SdUeuEV4udWIkJM7nyVEYXvtzXpcT85gMfBm.svg",
+    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+    "bg_key": "Illinois-Stadium-ILL.",
+    "bg_file_basename": "Illinois-Stadium-ILL.",
+    "bg_filename": "Illinois-Stadium-ILL..jpg",
+    "links": []
+  },
+  {
+    "date_text": "Nov 14",
+    "weekday": "SATURDAY",
+    "kickoff_display": "\u2014",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "AWAY",
+    "divider": "at",
+    "opponent": "Rutgers",
+    "city": "Piscataway",
+    "state": "N.J.",
+    "city_display": "Piscataway, N.J.",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/zoaT74wAKvqfSxj4O4pH1n54sO1ObHTHYuqMNWmp.svg",
+    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+    "bg_key": "Rutgers-Stadium-N.J.",
+    "bg_file_basename": "Rutgers-Stadium-N.J.",
+    "bg_filename": "Rutgers-Stadium-N.J..jpg",
+    "links": []
+  },
+  {
+    "date_text": "Nov 21",
+    "weekday": "SATURDAY",
+    "kickoff_display": "\u2014",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
     "home_away_neutral": "HOME",
     "divider": "vs.",
-    "opponent": "USC",
+    "opponent": "Ohio State",
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/2eBdW7tmsjM5nLTyDB_119NVfFcbgkYhwqRJsa90az0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/UahJy09xytmTXBAdfHeKv65Npu0KNztpHnkwIgsh.svg",
+    "tv_logo": null,
+    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/ZypwLlH96dLBs8GTvlqdMhyWpV4IgVGyCUAQpTrb.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "",
-        "href": "https://www.peacocktv.com/?cid=2401libgenpkpdsearch16851&utm_campaign=2401libgen&utm_source=pk_ggl&utm_medium=pd_search_acq_srcpy&utm_term=6481429429&utm_content=73015049690_718162897395&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqY"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/LkiJx3KJUI4r0Uzt8Sl1cZFmYLBcvuW8tcPzgQNe.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/11/1/fb-vs-usc-2025-photos"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/02/wSL1NeuUI6GbWkuLwwbGGcqADlesf4S47Cfir7ID.pdf"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21840"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/11/2/huskers-tripped-up-by-no-23-trojans"
-      }
-    ]
+    "links": []
   },
   {
-    "date_text": "Nov 8",
-    "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "W",
-    "score": "28-21",
-    "home_away_neutral": "AWAY",
-    "divider": "at",
-    "opponent": "UCLA",
-    "city": "Pasadena",
-    "state": "CA",
-    "city_display": "Pasadena, CA",
-    "tv_logo": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/HRd1Q70l0yQpZeYQ1h4eRyyBye4Cp06Nn1icMkjm.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "UCLA-Rose Bowl-CA",
-    "bg_file_basename": "UCLA-Rose-Bowl-CA",
-    "bg_filename": "UCLA-Rose-Bowl-CA.jpg",
-    "links": [
-      {
-        "title": "",
-        "href": "https://www.foxsports.com/live"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/82IHCkbSXO4crMvDfTcDp3aciMOG5oOrWL2Pthb7.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/JN8Uj2KzQgwKxdUIfrLdn6oM2BobV9Nx0alG82ng.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/11/8/fb-vs-ucla-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21859"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/11/10/huskers-top-bruins-28-21-for-seventh-win"
-      }
-    ]
-  },
-  {
-    "date_text": "Nov 22",
-    "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "10-37",
-    "home_away_neutral": "AWAY",
-    "divider": "at",
-    "opponent": "Penn State",
-    "city": "University Park",
-    "state": "PA",
-    "city_display": "University Park, PA",
-    "tv_logo": "https://huskers.com/imgproxy/2eBdW7tmsjM5nLTyDB_119NVfFcbgkYhwqRJsa90az0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNC8wOC8xOS9RcjB3TDhzMkd4VXBmZHF3enZFd2hBZnVwYnpmMFU1eXVLcnRLUUt2LnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/eSnEQOMzqgY8gAPCfxR90DNlJ0vOuXDQfhvTLM4h.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Penn State-Beaver Stadium-PA",
-    "bg_file_basename": "Penn-State-Beaver-Stadium-PA",
-    "bg_filename": "Penn-State-Beaver-Stadium-PA.jpg",
-    "links": [
-      {
-        "title": "",
-        "href": "https://www.peacocktv.com/?cid=2301evgpkpdsearch11571&utm_campaign=2301evg&utm_source=pk_ggl_gglsa&utm_medium=pd_search_br_srcpy&utm_term=126778&utm_content=126778_126778&gclsrc=aw.ds&gad_source=1&gad_campaignid=6481429429&gbraid=0AAAAACqYaJrsbnM-hzsDFPQH"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/y3rsdfLAMIIfbGmCa7M1bJ5sERfmVjw5HTOGqiJH.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2025/11/23/MzzPwEchHtvVO6kuhQX1OoOwXow89pXDseDaWfOA.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/11/22/fb-vs-penn-st-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21854"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/11/23/huskers-bested-in-state-college"
-      }
-    ]
-  },
-  {
-    "date_text": "Nov 28",
+    "date_text": "Nov 27",
     "weekday": "FRIDAY",
     "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "16-40",
-    "home_away_neutral": "HOME",
-    "divider": "vs.",
+    "status": "upcoming",
+    "outcome": null,
+    "score": null,
+    "home_away_neutral": "AWAY",
+    "divider": "at",
     "opponent": "Iowa",
-    "city": "Lincoln",
-    "state": "NE",
-    "city_display": "Lincoln, NE",
-    "tv_logo": "https://huskers.com/imgproxy/0BFjgPsmU4eISMkXWWy__2QV5IbvvI980lhr3nIy4TM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9kMEZKOGpCSGxOejJ5a3hHM0ExVmZvSVlsWkY2VGdsUGtJdXRvWDM3LnBuZw.png",
+    "city": "Iowa City",
+    "state": "IA",
+    "city_display": "Iowa City, IA",
+    "tv_logo": null,
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9YsBNIeewYRZVuMYp8PzCPprdai9tksp5CFtqtT.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
-    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://bigten.org/fb/article/blt8eb3dde899ebe558/"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/CLbowJdpzoJyP3Jhzuf6X0t9Fndni17FxRmA1lsv.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/75ee1a83-23b6-4d5d-9385-94cce1d44b76.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/11/28/fb-vs-iowa-2025-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/21827"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/11/28/huskers-vs-hawkeyes"
-      }
-    ]
-  },
-  {
-    "date_text": "Dec 31",
-    "weekday": "WEDNESDAY",
-    "kickoff_display": "\u2014",
-    "status": "final",
-    "outcome": "L",
-    "score": "22-44",
-    "home_away_neutral": "NEUTRAL",
-    "divider": "vs.",
-    "opponent": "Utah",
-    "city": "Las Vegas",
-    "state": "NEV.",
-    "city_display": "Las Vegas, NEV.",
-    "tv_logo": "https://huskers.com/imgproxy/v0y8iI71-fj74eBmLsajyo6JrbBUTtvgXXwYRY-8RnE/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC85UmdQQm1GU0pSMmJqNnQxV2RCS1FpSXRMZklreGNtYWpFZEVvd3ZrLnBuZw.png",
-    "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/fupeaHUCX04EFj09sEOovTn8h5Ugk9oO96kU5doO.svg",
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Utah-Allegiant Stadium-NEV.",
-    "bg_file_basename": "Utah-Allegiant-Stadium-NEV.",
-    "bg_filename": "Utah-Allegiant-Stadium-NEV..jpg",
-    "links": [
-      {
-        "title": "Opens in a new window",
-        "href": "https://www.espn.com/watch/"
-      },
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/01/13/rf1mjzdKQrf1zsbsdZkY7zHNWOyrDjtmkt2NmxG9.pdf"
-      },
-      {
-        "title": "Postgame Notes",
-        "href": "https://huskers.com/documents/0438024b-1cb1-496c-bbd9-6b90b2225892.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2025/12/31/fb-vs-utah-2025-photos"
-      },
-      {
-        "title": "Box Score",
-        "href": "https://huskers.com/boxscore/24512"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2025/12/31/huskers-fall-to-no-15-utah-in-las-vegas-bowl"
-      }
-    ]
+    "bg_key": "Iowa-Stadium-IA",
+    "bg_file_basename": "Iowa-Stadium-IA",
+    "bg_filename": "Iowa-Stadium-IA.jpg",
+    "links": []
   }
 ]
