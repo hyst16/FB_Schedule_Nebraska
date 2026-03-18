@@ -1,7 +1,39 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-03-17T09:01:51.843479+00:00",
+  "scraped_at": "2026-03-18T07:56:45.618455+00:00",
   "games": [
+    {
+      "venue_type": "HOME",
+      "weekday": "SATURDAY",
+      "date_text": "MAR 28",
+      "status": "upcoming",
+      "result": null,
+      "kickoff": "11:00 AM CDT",
+      "divider_text": null,
+      "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
+      "opponent_logo_url": null,
+      "opponent_name": "Red/White Spring Game",
+      "location": "Lincoln, Neb. / Memorial Stadium",
+      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "links": [
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/events/SG"
+        },
+        {
+          "title": "Listen Live",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "Opens in a new window",
+          "href": "https://www.foxsports.com/"
+        }
+      ]
+    },
     {
       "venue_type": "HOME",
       "weekday": "SATURDAY",
