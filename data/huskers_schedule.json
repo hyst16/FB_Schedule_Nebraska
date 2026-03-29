@@ -1,36 +1,32 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-03-28T08:52:26.363225+00:00",
+  "scraped_at": "2026-03-29T07:54:07.324165+00:00",
   "games": [
     {
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "MAR 28",
-      "status": "upcoming",
+      "status": "tbd",
       "result": null,
-      "kickoff": "11:00 AM CDT",
+      "kickoff": null,
       "divider_text": null,
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": null,
       "opponent_name": "Red/White Spring Game",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "tv_network_logo_url": null,
       "links": [
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/events/SG"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/03/28/HBSPGCpqrh2jYsNw14A05i2HvsvwRnRju2KgssAC.pdf"
         },
         {
-          "title": "Listen Live",
-          "href": "https://huskers.com/listen"
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/3/28/nebraska-football-spring-game-2026-photos"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
-        },
-        {
-          "title": "Opens in a new window",
-          "href": "https://www.foxsports.com/"
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/03/28/huskers-cap-solid-spring-with-red-white-game"
         }
       ]
     },
