@@ -202,9 +202,9 @@
     "links": []
   },
   {
-    "date_text": "Nov 7",
-    "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
+    "date_text": "Nov 6",
+    "weekday": "FRIDAY",
+    "kickoff_display": "7:00 PM CST",
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -214,13 +214,18 @@
     "city": "Champaign",
     "state": "ILL.",
     "city_display": "Champaign, ILL.",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/Zep4SdUeuEV4udWIkJM7nyVEYXvtzXpcT85gMfBm.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Illinois-Stadium-ILL.",
     "bg_file_basename": "Illinois-Stadium-ILL.",
     "bg_filename": "Illinois-Stadium-ILL..jpg",
-    "links": []
+    "links": [
+      {
+        "title": "",
+        "href": "https://www.foxsports.com/live"
+      }
+    ]
   },
   {
     "date_text": "Nov 14",

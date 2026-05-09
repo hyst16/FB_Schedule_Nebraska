@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-05-08T09:46:51.972923+00:00",
+  "scraped_at": "2026-05-09T08:44:29.213977+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -152,18 +152,23 @@
     },
     {
       "venue_type": "AWAY",
-      "weekday": "SATURDAY",
-      "date_text": "NOV 7",
+      "weekday": "FRIDAY",
+      "date_text": "NOV 6",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "7:00 PM CST",
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/Zep4SdUeuEV4udWIkJM7nyVEYXvtzXpcT85gMfBm.svg",
       "opponent_name": "Illinois",
       "location": "Champaign, Ill.",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
+      "links": [
+        {
+          "title": "",
+          "href": "https://www.foxsports.com/live"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
