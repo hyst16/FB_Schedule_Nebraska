@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-05-27T11:45:36.580706+00:00",
+  "scraped_at": "2026-05-28T10:58:57.291851+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -36,14 +36,19 @@
       "date_text": "SEP 5",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "11:00 AM CDT",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/HrWgp7hTLsW1vBrzWBp40oSRchgVq352hoSZ5RqX.svg",
       "opponent_name": "Ohio",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
+      "links": [
+        {
+          "title": "",
+          "href": "https://foxsports.com/live"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -51,14 +56,19 @@
       "date_text": "SEP 12",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "6:00 PM CDT",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/L39MlSPBBMpSFXfRpMQWWQpMUGJCbGDbJ2jJ9Z7H.svg",
       "opponent_name": "Bowling Green",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/abOCZPjFk7retFiHI95TY3B_5ZW8xUStFfv9g8xtN5g/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8zMC9TVjZNRmIwUGtaM3BRRmZ5M1BQN0RVeGNDVDROQTdYN2JFNFNNZmI5LmpwZw.jpg",
+      "links": [
+        {
+          "title": "",
+          "href": "https://foxsports.com/live"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -66,14 +76,19 @@
       "date_text": "SEP 19",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "6:15 PM CDT",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/eSu7n0RFEafc47fiDhWGmW9x0pXXwtfGUyT3hH2y.svg",
       "opponent_name": "North Dakota",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "links": [
+        {
+          "title": "",
+          "href": "https://foxsports.com/live"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
@@ -206,14 +221,19 @@
       "date_text": "NOV 27",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "11:00 AM CST",
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9YsBNIeewYRZVuMYp8PzCPprdai9tksp5CFtqtT.svg",
       "opponent_name": "Iowa",
       "location": "Iowa City, Iowa",
-      "tv_network_logo_url": null,
-      "links": []
+      "tv_network_logo_url": "https://huskers.com/imgproxy/0BFjgPsmU4eISMkXWWy__2QV5IbvvI980lhr3nIy4TM/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9kMEZKOGpCSGxOejJ5a3hHM0ExVmZvSVlsWkY2VGdsUGtJdXRvWDM3LnBuZw.png",
+      "links": [
+        {
+          "title": "",
+          "href": "https://www.paramountplus.com/?&gclsrc=aw.ds&ds_rl=1289065&ftag=PPM-02-10cbi8j&vndid=google$null$null$paramount%20plus&gad_source=1&gad_campaignid=17873670690&gbraid=0AAAAADtO7xEz1oFDctiKjPmOlJqYf7t1E&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO05rKwimonh_mkvP64OHZ20W"
+        }
+      ]
     }
   ]
 }
