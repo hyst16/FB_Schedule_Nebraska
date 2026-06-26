@@ -22,14 +22,25 @@ html,body {
   font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
 }
 
-.hidden { display:none; }
+.hidden { display:none !important; }
 .view { position:relative; width:100vw; height:100vh; overflow:hidden; }
 
 /* ---------------- HERO (next-game) ---------------- */
 .bg { position:absolute; inset:0; background:#000 center/cover no-repeat; filter:brightness(0.5); }
 
+.next-stack {
+  position: absolute;
+  left: var(--safe);
+  top: var(--safe);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: calc(100vw - (2 * var(--safe)));
+}
+
 .next-card {
-  position:absolute; left:var(--safe); right:auto; top:var(--safe);
+  position: relative;
   padding:16px 18px; background:rgba(0,0,0,.55); backdrop-filter: blur(2px);
   border:1px solid rgba(255,255,255,.15); border-radius:16px; max-width:760px;
 }
@@ -59,6 +70,61 @@ html,body {
   height: 20px;                     
   width: auto;
   display: block;
+}
+
+/* Live countdown shown in its own box below the matchup card */
+.countdown-card {
+  width: 356px;
+  max-width: 100%;
+  padding: 12px 14px 14px;
+  background: rgba(0,0,0,.68);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,.28);
+}
+
+.countdown-heading {
+  margin-bottom: 10px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.countdown-unit {
+  min-width: 0;
+  text-align: center;
+}
+
+.countdown-label {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.countdown-value {
+  margin-top: 3px;
+  font-size: 34px;
+  font-weight: 850;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-status {
+  padding: 10px 0 6px;
+  font-size: 27px;
+  font-weight: 850;
+  line-height: 1.1;
+  text-align: center;
 }
 
 /* ---------------- COMPACT SCHEDULE (always 2 columns) ---------------- */
@@ -198,6 +264,11 @@ html,body {
   :root { --safe:64px; }
   .logo { width:96px; height:96px; } 
   .vs { font-size:40px; } .opponent { font-size:48px; } .detail { font-size:26px; }
+  .countdown-card { width: 460px; padding: 16px 18px 18px; }
+  .countdown-heading { font-size: 15px; }
+  .countdown-label { font-size: 13px; }
+  .countdown-value { font-size: 46px; }
+  .countdown-status { font-size: 36px; }
 
   #view-all .game-row { min-height: 56px; padding: 10px 14px; }
   #view-all .when { width: 84px; }

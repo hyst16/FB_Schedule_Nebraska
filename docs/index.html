@@ -7,7 +7,7 @@
   <title>Husker Football — Auto Schedule</title>
 
   <!-- Cache-bust CSS so the player can’t serve an old copy -->
-  <link rel="stylesheet" href="assets/styles.css?v=2026-06-26-1" />
+  <link rel="stylesheet" href="assets/styles.css?v=2026-06-26-2" />
 
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
@@ -16,16 +16,42 @@
 <body>
   <div id="view-next" class="view hidden">
     <div class="bg" id="next-bg"></div>
-    <div class="next-card">
-      <div class="row logos">
-        <img id="ne-logo" class="logo" alt="Nebraska" />
-        <div class="vs" id="divider">vs.</div>
-        <img id="opp-logo" class="logo" alt="Opponent" />
+
+    <div class="next-stack">
+      <div class="next-card">
+        <div class="row logos">
+          <img id="ne-logo" class="logo" alt="Nebraska" />
+          <div class="vs" id="divider">vs.</div>
+          <img id="opp-logo" class="logo" alt="Opponent" />
+        </div>
+        <div id="next-opponent" class="opponent"></div>
+        <div id="next-datetime" class="detail"></div>
+        <div id="next-venue" class="detail"></div>
+        <div id="next-tv" class="detail"></div>
       </div>
-      <div id="next-opponent" class="opponent"></div>
-      <div id="next-datetime" class="detail"></div>
-      <div id="next-venue" class="detail"></div>
-      <div id="next-tv" class="detail"></div>
+
+      <div id="countdown-card" class="countdown-card hidden">
+        <div id="countdown-heading" class="countdown-heading">COUNTDOWN TO KICKOFF</div>
+        <div id="countdown-grid" class="countdown-grid">
+          <div class="countdown-unit">
+            <div class="countdown-label">DAYS</div>
+            <div id="countdown-days" class="countdown-value">00</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-label">HOURS</div>
+            <div id="countdown-hours" class="countdown-value">00</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-label">MINUTES</div>
+            <div id="countdown-minutes" class="countdown-value">00</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-label">SECONDS</div>
+            <div id="countdown-seconds" class="countdown-value">00</div>
+          </div>
+        </div>
+        <div id="countdown-status" class="countdown-status hidden"></div>
+      </div>
     </div>
   </div>
 
@@ -55,6 +81,6 @@
   </script>
 
   <!-- Cache-bust JS so new scaling logic definitely loads -->
-  <script src="assets/app.js?v=2026-06-26-1"></script>
+  <script src="assets/app.js?v=2026-06-26-2"></script>
 </body>
 </html>

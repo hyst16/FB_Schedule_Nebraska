@@ -18,10 +18,17 @@ Decisions (per Trent):
 import json, re
 from pathlib import Path
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 RAW = Path("data/huskers_schedule.json")
 OVR = Path("data/stadium_overrides.json")
 OUT = Path("data/huskers_schedule_normalized.json")
+
+CENTRAL_TZ = ZoneInfo("America/Chicago")
+MONTH_NUMBERS = {
+    "JAN": 1, "FEB": 2, "MAR": 3, "APR": 4, "MAY": 5, "JUN": 6,
+    "JUL": 7, "AUG": 8, "SEP": 9, "OCT": 10, "NOV": 11, "DEC": 12,
+}
 
 STATE_MAP = {
     "Neb.": "NE", "Mo.": "MO", "Md.": "MD", "Minn.": "MN", "Calif.": "CA", "Pa.": "PA", "Iowa": "IA",
@@ -71,6 +78,53 @@ def month_title_case(date_text: str) -> str:
 def is_excluded_event(opponent: str) -> bool:
     """Exclude exhibition events that should not appear in either UI view."""
     return bool(re.search(r"\bspring\s+game\b", opponent or "", flags=re.IGNORECASE))
+
+def parse_kickoff_datetime(year: int, date_text: str, kickoff: str):
+    """Return a timezone-aware America/Chicago datetime for an exact kickoff.
+
+    Huskers.com displays kickoff times in Central Time. TBA/TBD values return None.
+    The browser receives both ISO text and epoch milliseconds so it never has to
+    parse abbreviations such as CDT/CST itself.
+    """
+    kickoff_text = (kickoff or "").strip().upper()
+    if not kickoff_text or kickoff_text in {"TBA", "TBD", "—"}:
+        return None
+
+    date_parts = (date_text or "").strip().upper().split()
+    if len(date_parts) != 2:
+        return None
+
+    month = MONTH_NUMBERS.get(date_parts[0][:3])
+    try:
+        day = int(date_parts[1])
+    except (TypeError, ValueError):
+        return None
+    if not month:
+        return None
+
+    # Supports common forms such as "11:00 AM CDT", "6 PM CST", and "NOON CT".
+    if kickoff_text.startswith("NOON"):
+        hour, minute = 12, 0
+    elif kickoff_text.startswith("MIDNIGHT"):
+        hour, minute = 0, 0
+    else:
+        match = re.match(r"^(\d{1,2})(?::(\d{2}))?\s*(AM|PM)(?:\s+[A-Z]{2,4})?$", kickoff_text)
+        if not match:
+            return None
+        hour = int(match.group(1))
+        minute = int(match.group(2) or 0)
+        meridiem = match.group(3)
+        if hour < 1 or hour > 12 or minute > 59:
+            return None
+        if meridiem == "AM":
+            hour = 0 if hour == 12 else hour
+        else:
+            hour = 12 if hour == 12 else hour + 12
+
+    try:
+        return datetime(year, month, day, hour, minute, tzinfo=CENTRAL_TZ)
+    except ValueError:
+        return None
 
 def build_game_key(year_guess: int, date_text: str, divider_text: str, opponent: str) -> str:
     # Key format for overrides: "YYYY-MMM-DD <divider> <Opponent>"
@@ -138,6 +192,9 @@ def normalize():
 
         kickoff = g.get("kickoff") or "—"
         kickoff_display = "—" if kickoff.upper() in ("TBA","TBD") else kickoff
+        kickoff_dt = parse_kickoff_datetime(year_guess, date_text, kickoff)
+        kickoff_iso = kickoff_dt.isoformat() if kickoff_dt else None
+        kickoff_epoch_ms = int(kickoff_dt.timestamp() * 1000) if kickoff_dt else None
 
         status = g.get("status") or "tbd"
         outcome = g.get("result",{}).get("outcome") if status == "final" else None
@@ -169,6 +226,8 @@ def normalize():
             "date_text": date_display,
             "weekday": weekday,
             "kickoff_display": kickoff_display,
+            "kickoff_iso": kickoff_iso,       # exact Central Time kickoff, or null
+            "kickoff_epoch_ms": kickoff_epoch_ms,  # robust browser countdown target
             "status": status,                 # "final" | "upcoming" | "tbd"
             "outcome": outcome,               # "W" | "L" | "T" | null
             "score": score,                   # "20-17" | null
