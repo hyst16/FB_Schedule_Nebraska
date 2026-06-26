@@ -11,6 +11,7 @@ It’s built to run on GitHub Pages and is great for TVs/digital signage (Poster
   - **Next Game** – hero background with a compact info overlay (opponent, date/time, city, TV).
   - **Full Schedule** – a one-screen grid of the whole season.
 - **Automatic nightly update** – the repo refreshes data each night and republishes the page.
+- **Regular-season focus** – exhibition events such as the Red/White Spring Game are excluded from both views.
 - **Zero setup on your computer** – everything runs in GitHub.
 
 ---
