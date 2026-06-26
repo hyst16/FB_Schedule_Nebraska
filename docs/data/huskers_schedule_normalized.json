@@ -1,39 +1,5 @@
 [
   {
-    "date_text": "Mar 28",
-    "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "status": "tbd",
-    "outcome": null,
-    "score": null,
-    "home_away_neutral": "HOME",
-    "divider": "vs.",
-    "opponent": "Red/White Spring Game",
-    "city": "Lincoln",
-    "state": "NE",
-    "city_display": "Lincoln, NE",
-    "tv_logo": null,
-    "opp_logo": null,
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
-    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Final Stats (PDF)",
-        "href": "https://storage.googleapis.com/huskers-com-prod/2026/03/28/HBSPGCpqrh2jYsNw14A05i2HvsvwRnRju2KgssAC.pdf"
-      },
-      {
-        "title": "Photos",
-        "href": "https://huskers.com/news/2026/3/28/nebraska-football-spring-game-2026-photos"
-      },
-      {
-        "title": "Recap",
-        "href": "https://huskers.com/news/2026/03/28/huskers-cap-solid-spring-with-red-white-game"
-      }
-    ]
-  },
-  {
     "date_text": "Sep 5",
     "weekday": "SATURDAY",
     "kickoff_display": "11:00 AM CDT",

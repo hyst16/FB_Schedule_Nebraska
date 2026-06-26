@@ -68,6 +68,10 @@ def month_title_case(date_text: str) -> str:
         return f"{parts[0].title()} {parts[1]}"
     return (date_text or "").title()
 
+def is_excluded_event(opponent: str) -> bool:
+    """Exclude exhibition events that should not appear in either UI view."""
+    return bool(re.search(r"\bspring\s+game\b", opponent or "", flags=re.IGNORECASE))
+
 def build_game_key(year_guess: int, date_text: str, divider_text: str, opponent: str) -> str:
     # Key format for overrides: "YYYY-MMM-DD <divider> <Opponent>"
     parts = (date_text or "").split()
@@ -124,6 +128,11 @@ def normalize():
         date_text = (g.get("date_text") or "").strip()
         divider = (g.get("divider_text") or "vs.").strip()    # literal "vs." / "at"
         opponent = (g.get("opponent_name") or "").strip()
+
+        # Huskers.com includes the Red/White Spring Game in the football schedule.
+        # Keep the raw scrape intact, but omit exhibitions from the normalized UI data.
+        if is_excluded_event(opponent):
+            continue
 
         date_display = month_title_case(date_text)
 

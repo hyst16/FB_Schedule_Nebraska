@@ -14,6 +14,7 @@ const $$ = (s)=>document.querySelectorAll(s);
 let schedule = [];
 let manifest = null;
 let viewIndex = 0;
+let rotationTimer = null;
 const views = ["#view-next","#view-all"];
 
 /* ---------------- Rotation between views ---------------- */
@@ -27,6 +28,10 @@ function rotate() {
 }
 
 /* ---------------- Helpers shared across views ---------------- */
+function isExcludedGame(game) {
+  return /\bspring\s+game\b/i.test(game?.opponent || "");
+}
+
 function pickNextGame(games) {
   return games.find(g => g.status !== "final") || games[games.length - 1] || null;
 }
@@ -219,7 +224,10 @@ async function load() {
     fetch(manifestUrl, { cache:"no-store" }).then(r=>r.json())
   ]);
 
-  schedule = s; manifest = m;
+  // The normalizer removes exhibitions, and this client-side filter is a
+  // defensive fallback in case an older/stale normalized file is served.
+  schedule = (Array.isArray(s) ? s : []).filter(g => !isExcludedGame(g));
+  manifest = m;
 
   const next = pickNextGame(schedule);
   if (next) setNextGameView(next);
@@ -233,7 +241,8 @@ async function load() {
   }
 
   rotate();
-  setInterval(rotate, window.UI.rotateSeconds * 1000);
+  if (rotationTimer) clearInterval(rotationTimer);
+  rotationTimer = setInterval(rotate, window.UI.rotateSeconds * 1000);
 }
 
 (function init() {
