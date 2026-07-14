@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-07-13T11:22:21.094540+00:00",
+  "scraped_at": "2026-07-14T09:07:55.581826+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -47,6 +47,10 @@
         {
           "title": "",
           "href": "https://foxsports.com/live"
+        },
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/01"
         }
       ]
     },
@@ -67,6 +71,10 @@
         {
           "title": "",
           "href": "https://foxsports.com/live"
+        },
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/02"
         }
       ]
     },
@@ -87,6 +95,10 @@
         {
           "title": "",
           "href": "https://foxsports.com/live"
+        },
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/03"
         }
       ]
     },
@@ -118,7 +130,12 @@
       "opponent_name": "Maryland",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/04"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -133,7 +150,12 @@
       "opponent_name": "Indiana",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/05"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
@@ -163,7 +185,12 @@
       "opponent_name": "Washington",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/06"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",
@@ -213,7 +240,12 @@
       "opponent_name": "Ohio State",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Buy Tickets",
+          "href": "https://huskers.evenue.net/event/F26/07"
+        }
+      ]
     },
     {
       "venue_type": "AWAY",

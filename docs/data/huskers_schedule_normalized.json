@@ -24,6 +24,10 @@
       {
         "title": "",
         "href": "https://foxsports.com/live"
+      },
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/01"
       }
     ]
   },
@@ -52,6 +56,10 @@
       {
         "title": "",
         "href": "https://foxsports.com/live"
+      },
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/02"
       }
     ]
   },
@@ -80,6 +88,10 @@
       {
         "title": "",
         "href": "https://foxsports.com/live"
+      },
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/03"
       }
     ]
   },
@@ -127,7 +139,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/04"
+      }
+    ]
   },
   {
     "date_text": "Oct 10",
@@ -150,7 +167,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/05"
+      }
+    ]
   },
   {
     "date_text": "Oct 17",
@@ -196,7 +218,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/06"
+      }
+    ]
   },
   {
     "date_text": "Nov 6",
@@ -270,7 +297,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Buy Tickets",
+        "href": "https://huskers.evenue.net/event/F26/07"
+      }
+    ]
   },
   {
     "date_text": "Nov 27",
