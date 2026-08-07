@@ -20,7 +20,12 @@
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Fan Day Info",
+        "href": "https://huskers.com/news/2026/08/6/information-for-nebraska-football-fan-day"
+      }
+    ]
   },
   {
     "date_text": "Sep 5",

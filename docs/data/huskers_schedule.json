@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-08-06T10:47:00.454414+00:00",
+  "scraped_at": "2026-08-07T08:17:10.167807+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -15,7 +15,12 @@
       "opponent_name": "Fan Day",
       "location": "Hawks Championship Center",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Fan Day Info",
+          "href": "https://huskers.com/news/2026/08/6/information-for-nebraska-football-fan-day"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
