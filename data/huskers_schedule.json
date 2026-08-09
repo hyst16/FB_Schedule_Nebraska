@@ -1,27 +1,7 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-08-08T08:52:09.839283+00:00",
+  "scraped_at": "2026-08-09T07:55:19.697535+00:00",
   "games": [
-    {
-      "venue_type": "HOME",
-      "weekday": "SATURDAY",
-      "date_text": "AUG 8",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "2:00 PM CDT",
-      "divider_text": null,
-      "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-      "opponent_logo_url": null,
-      "opponent_name": "Fan Day",
-      "location": "Hawks Championship Center",
-      "tv_network_logo_url": null,
-      "links": [
-        {
-          "title": "Fan Day Info",
-          "href": "https://huskers.com/news/2026/08/6/information-for-nebraska-football-fan-day"
-        }
-      ]
-    },
     {
       "venue_type": "HOME",
       "weekday": "SATURDAY",

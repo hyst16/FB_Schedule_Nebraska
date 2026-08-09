@@ -1,33 +1,5 @@
 [
   {
-    "date_text": "Aug 8",
-    "weekday": "SATURDAY",
-    "kickoff_display": "2:00 PM CDT",
-    "kickoff_iso": "2026-08-08T14:00:00-05:00",
-    "kickoff_epoch_ms": 1786215600000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
-    "home_away_neutral": "HOME",
-    "divider": "vs.",
-    "opponent": "Fan Day",
-    "city": "Hawks Championship Center",
-    "state": null,
-    "city_display": "Hawks Championship Center",
-    "tv_logo": null,
-    "opp_logo": null,
-    "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-    "bg_key": "Nebraska-Memorial Stadium-NE",
-    "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
-    "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
-    "links": [
-      {
-        "title": "Fan Day Info",
-        "href": "https://huskers.com/news/2026/08/6/information-for-nebraska-football-fan-day"
-      }
-    ]
-  },
-  {
     "date_text": "Sep 5",
     "weekday": "SATURDAY",
     "kickoff_display": "11:00 AM CDT",
