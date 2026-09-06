@@ -1,14 +1,17 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-05T11:47:46.160552+00:00",
+  "scraped_at": "2026-09-06T11:35:09.109682+00:00",
   "games": [
     {
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "SEP 5",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:00 AM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "49-21"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/HrWgp7hTLsW1vBrzWBp40oSRchgVq352hoSZ5RqX.svg",
@@ -21,8 +24,28 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/01"
+          "title": "Radio Broadcast",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/2b774e19-ffaf-443a-8327-9031c26442ff.pdf"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/e947e9c2-f809-4bef-b25d-cbd19f42002f.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/09/05/football-vs-ohio-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/4246"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/09/5/huskers-roll-in-second-half-to-beat-bobcats"
         }
       ]
     },

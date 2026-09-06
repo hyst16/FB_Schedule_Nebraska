@@ -2,12 +2,12 @@
   {
     "date_text": "Sep 5",
     "weekday": "SATURDAY",
-    "kickoff_display": "11:00 AM CDT",
-    "kickoff_iso": "2026-09-05T11:00:00-05:00",
-    "kickoff_epoch_ms": 1788624000000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "49-21",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Ohio",
@@ -26,8 +26,28 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/01"
+        "title": "Radio Broadcast",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/2b774e19-ffaf-443a-8327-9031c26442ff.pdf"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/e947e9c2-f809-4bef-b25d-cbd19f42002f.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/09/05/football-vs-ohio-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/4246"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/09/5/huskers-roll-in-second-half-to-beat-bobcats"
       }
     ]
   },
