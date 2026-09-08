@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-07T14:11:39.874092+00:00",
+  "scraped_at": "2026-09-08T12:02:55.844457+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -70,6 +70,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/02"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
         }
       ]
     },
