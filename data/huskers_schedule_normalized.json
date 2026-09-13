@@ -26,10 +26,6 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Radio Broadcast",
-        "href": "https://huskers.com/listen"
-      },
-      {
         "title": "Final Stats (PDF)",
         "href": "https://huskers.com/documents/2b774e19-ffaf-443a-8327-9031c26442ff.pdf"
       },
@@ -54,12 +50,12 @@
   {
     "date_text": "Sep 12",
     "weekday": "SATURDAY",
-    "kickoff_display": "6:00 PM CDT",
-    "kickoff_iso": "2026-09-12T18:00:00-05:00",
-    "kickoff_epoch_ms": 1789254000000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "56-7",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Bowling Green",
@@ -78,16 +74,28 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/02"
-      },
-      {
         "title": "Live Stats",
         "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       },
       {
         "title": "Live Audio",
         "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/db840b61-3098-4766-a706-8813d6c1b059.pdf"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/0e8b8a95-b0c5-4c3b-bdab-fce6ca94ba1a.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/23412"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/09/13/big-red-blasts-bowling-green"
       }
     ]
   },

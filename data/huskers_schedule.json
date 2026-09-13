@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-12T12:06:47.994217+00:00",
+  "scraped_at": "2026-09-13T12:38:14.403893+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -22,10 +22,6 @@
         {
           "title": "",
           "href": "https://foxsports.com/live"
-        },
-        {
-          "title": "Radio Broadcast",
-          "href": "https://huskers.com/listen"
         },
         {
           "title": "Final Stats (PDF)",
@@ -53,9 +49,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "SEP 12",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "6:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "56-7"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/L39MlSPBBMpSFXfRpMQWWQpMUGJCbGDbJ2jJ9Z7H.svg",
@@ -68,16 +67,28 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/02"
-        },
-        {
           "title": "Live Stats",
           "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         },
         {
           "title": "Live Audio",
           "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/db840b61-3098-4766-a706-8813d6c1b059.pdf"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/0e8b8a95-b0c5-4c3b-bdab-fce6ca94ba1a.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/23412"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/09/13/big-red-blasts-bowling-green"
         }
       ]
     },
