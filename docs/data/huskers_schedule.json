@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-14T13:46:59.652526+00:00",
+  "scraped_at": "2026-09-14T14:57:52.630462+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -109,6 +109,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/03"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -125,7 +133,16 @@
       "opponent_name": "Michigan State",
       "location": "East Lansing, Mich.",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -144,6 +161,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/04"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -164,6 +189,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/05"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -180,7 +213,16 @@
       "opponent_name": "Oregon",
       "location": "Eugene, Ore.",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -199,6 +241,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/06"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -219,6 +269,14 @@
         {
           "title": "",
           "href": "https://www.foxsports.com/live"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -235,7 +293,16 @@
       "opponent_name": "Rutgers",
       "location": "Piscataway, N.J.",
       "tv_network_logo_url": null,
-      "links": []
+      "links": [
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        }
+      ]
     },
     {
       "venue_type": "HOME",
@@ -254,6 +321,14 @@
         {
           "title": "Buy Tickets",
           "href": "https://huskers.evenue.net/event/F26/07"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     },
@@ -274,6 +349,14 @@
         {
           "title": "",
           "href": "https://www.paramountplus.com/?&gclsrc=aw.ds&ds_rl=1289065&ftag=PPM-02-10cbi8j&vndid=google$null$null$paramount%20plus&gad_source=1&gad_campaignid=17873670690&gbraid=0AAAAADtO7xEz1oFDctiKjPmOlJqYf7t1E&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO05rKwimonh_mkvP64OHZ20W"
+        },
+        {
+          "title": "Live Audio",
+          "href": "https://huskers.com/listen"
+        },
+        {
+          "title": "Live Stats",
+          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
         }
       ]
     }

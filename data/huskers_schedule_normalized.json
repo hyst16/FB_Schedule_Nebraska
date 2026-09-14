@@ -124,6 +124,14 @@
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/03"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -148,7 +156,16 @@
     "bg_key": "Michigan State-Stadium-MICH.",
     "bg_file_basename": "Michigan-State-Stadium-MICH.",
     "bg_filename": "Michigan-State-Stadium-MICH..jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      }
+    ]
   },
   {
     "date_text": "Oct 3",
@@ -175,6 +192,14 @@
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/04"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -203,6 +228,14 @@
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/05"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -227,7 +260,16 @@
     "bg_key": "Oregon-Stadium-ORE.",
     "bg_file_basename": "Oregon-Stadium-ORE.",
     "bg_filename": "Oregon-Stadium-ORE..jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      }
+    ]
   },
   {
     "date_text": "Oct 31",
@@ -254,6 +296,14 @@
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/06"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -282,6 +332,14 @@
       {
         "title": "",
         "href": "https://www.foxsports.com/live"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -306,7 +364,16 @@
     "bg_key": "Rutgers-Stadium-N.J.",
     "bg_file_basename": "Rutgers-Stadium-N.J.",
     "bg_filename": "Rutgers-Stadium-N.J..jpg",
-    "links": []
+    "links": [
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      }
+    ]
   },
   {
     "date_text": "Nov 21",
@@ -333,6 +400,14 @@
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/07"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   },
@@ -361,6 +436,14 @@
       {
         "title": "",
         "href": "https://www.paramountplus.com/?&gclsrc=aw.ds&ds_rl=1289065&ftag=PPM-02-10cbi8j&vndid=google$null$null$paramount%20plus&gad_source=1&gad_campaignid=17873670690&gbraid=0AAAAADtO7xEz1oFDctiKjPmOlJqYf7t1E&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO05rKwimonh_mkvP64OHZ20W"
+      },
+      {
+        "title": "Live Audio",
+        "href": "https://huskers.com/listen"
+      },
+      {
+        "title": "Live Stats",
+        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
       }
     ]
   }
