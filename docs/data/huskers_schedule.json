@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-13T13:16:03.088169+00:00",
+  "scraped_at": "2026-09-14T13:46:59.652526+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -67,20 +67,16 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
-        },
-        {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
-        },
-        {
           "title": "Final Stats (PDF)",
-          "href": "https://huskers.com/documents/db840b61-3098-4766-a706-8813d6c1b059.pdf"
+          "href": "https://huskers.com/documents/a06bc7b2-0171-4593-82c2-09ad038889e9.pdf"
         },
         {
           "title": "Postgame Notes",
           "href": "https://huskers.com/documents/0e8b8a95-b0c5-4c3b-bdab-fce6ca94ba1a.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/09/12/fb-vs-bowling-green-2026-photos"
         },
         {
           "title": "Box Score",
