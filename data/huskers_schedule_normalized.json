@@ -138,9 +138,9 @@
   {
     "date_text": "Sep 26",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "kickoff_iso": null,
-    "kickoff_epoch_ms": null,
+    "kickoff_display": "4:00 PM CDT",
+    "kickoff_iso": "2026-09-26T16:00:00-05:00",
+    "kickoff_epoch_ms": 1790456400000,
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -150,13 +150,17 @@
     "city": "East Lansing",
     "state": "MICH.",
     "city_display": "East Lansing, MICH.",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/V9lNQEH7qMyFnbplkvJZlFgTfYn4p67blAA6S4D4.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Michigan State-Stadium-MICH.",
     "bg_file_basename": "Michigan-State-Stadium-MICH.",
     "bg_filename": "Michigan-State-Stadium-MICH..jpg",
     "links": [
+      {
+        "title": "",
+        "href": "https://foxsports.com/live"
+      },
       {
         "title": "Live Audio",
         "href": "https://huskers.com/listen"
