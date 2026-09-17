@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-16T13:24:32.976399+00:00",
+  "scraped_at": "2026-09-17T12:30:25.000843+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -185,7 +185,7 @@
       "kickoff": "TBA",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
-      "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/x7OWZFHnQkE6RLMJeEnOT6Lz4NZiLtRmlAGr8w1h.svg",
+      "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/t8w660qGEZZcwH7ABD9w1iDy2lD33klnqvEaQpBD.svg",
       "opponent_name": "Indiana",
       "location": "Lincoln, Neb. / Memorial Stadium",
       "tv_network_logo_url": null,
