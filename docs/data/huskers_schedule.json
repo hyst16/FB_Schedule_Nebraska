@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-19T12:26:42.776119+00:00",
+  "scraped_at": "2026-09-20T12:09:14.139205+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -92,9 +92,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "SEP 19",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "6:15 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "34-7"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/XFEBR62AM2qCELJZE9xAlEOfNVZLeoKc266upox1.svg",
@@ -107,16 +110,28 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/03"
-        },
-        {
           "title": "Live Audio",
           "href": "https://huskers.com/listen"
         },
         {
           "title": "Live Stats",
           "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/570b5bbe-e435-4609-a3ea-1f7bf15913df.pdf"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/e4b3883a-9628-4d51-8f2c-98fc4dd28738.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/4248"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/09/20/huskers-fight-past-hawks"
         }
       ]
     },

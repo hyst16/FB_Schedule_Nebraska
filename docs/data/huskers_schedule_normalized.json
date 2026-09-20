@@ -98,12 +98,12 @@
   {
     "date_text": "Sep 19",
     "weekday": "SATURDAY",
-    "kickoff_display": "6:15 PM CDT",
-    "kickoff_iso": "2026-09-19T18:15:00-05:00",
-    "kickoff_epoch_ms": 1789859700000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "34-7",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "North Dakota",
@@ -122,16 +122,28 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/03"
-      },
-      {
         "title": "Live Audio",
         "href": "https://huskers.com/listen"
       },
       {
         "title": "Live Stats",
         "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      },
+      {
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/570b5bbe-e435-4609-a3ea-1f7bf15913df.pdf"
+      },
+      {
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/e4b3883a-9628-4d51-8f2c-98fc4dd28738.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/4248"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/09/20/huskers-fight-past-hawks"
       }
     ]
   },
