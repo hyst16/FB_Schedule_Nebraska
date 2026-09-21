@@ -44,7 +44,7 @@
     },
     "Michigan State-Stadium-MICH.": {
       "suggested_filename": "Michigan-State-Stadium-MICH..jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Sep 26",
@@ -77,7 +77,7 @@
     },
     "Rutgers-Stadium-N.J.": {
       "suggested_filename": "Rutgers-Stadium-N.J..jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Nov 14",
@@ -88,7 +88,7 @@
     },
     "Iowa-Stadium-IA": {
       "suggested_filename": "Iowa-Stadium-IA.jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Nov 27",
