@@ -182,9 +182,9 @@
   {
     "date_text": "Oct 3",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "kickoff_iso": null,
-    "kickoff_epoch_ms": null,
+    "kickoff_display": "3:00 PM CDT",
+    "kickoff_iso": "2026-10-03T15:00:00-05:00",
+    "kickoff_epoch_ms": 1791057600000,
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -194,13 +194,17 @@
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/zfqIII3zlwNDjDf0HrFIOYiz30TbFsYU664SX4R4RjU/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9YVk9GTXNUaGE1ZVozTmp3dVdjU3ZSdkw3eUpqd3dwZDF0SFRJdkxQLnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/WvrOjv9NoeMGxuG0jkJDeXqetaEPKbc1NhYRxi0x.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
     "bg_file_basename": "Nebraska-Memorial-Stadium-NE",
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
+      {
+        "title": "",
+        "href": "https://foxsports.com/live"
+      },
       {
         "title": "Buy Tickets",
         "href": "https://huskers.evenue.net/event/F26/04"
