@@ -146,12 +146,12 @@
   {
     "date_text": "Sep 26",
     "weekday": "SATURDAY",
-    "kickoff_display": "4:00 PM CDT",
-    "kickoff_iso": "2026-09-26T16:00:00-05:00",
-    "kickoff_epoch_ms": 1790456400000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "31-13",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Michigan State",
@@ -170,12 +170,20 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/34853a01-c1f4-4ff1-a7a7-b057933b59ec.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/09/27/NcCglrGRCPdjYULKORU2D3EX8No3fbBnQidJul6t.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21843"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/09/27/huskers-down-spartans-to-remain-undefeated"
       }
     ]
   },

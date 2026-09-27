@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-09-26T12:58:11.245382+00:00",
+  "scraped_at": "2026-09-27T12:53:10.245353+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -135,9 +135,12 @@
       "venue_type": "AWAY",
       "weekday": "SATURDAY",
       "date_text": "SEP 26",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "4:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "31-13"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/WF2sTM7qKPfYGUx1dh9sIfYAhX2Cad0M1Z9qTlCG.svg",
@@ -150,12 +153,20 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/34853a01-c1f4-4ff1-a7a7-b057933b59ec.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Postgame Notes",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/09/27/NcCglrGRCPdjYULKORU2D3EX8No3fbBnQidJul6t.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21843"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/09/27/huskers-down-spartans-to-remain-undefeated"
         }
       ]
     },
