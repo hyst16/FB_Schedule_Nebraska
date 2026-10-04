@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-03T13:17:07.700759+00:00",
+  "scraped_at": "2026-10-04T13:06:15.519548+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -178,9 +178,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "OCT 3",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "3:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "48-23"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/WvrOjv9NoeMGxuG0jkJDeXqetaEPKbc1NhYRxi0x.svg",
@@ -193,16 +196,24 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/04"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/210d4b93-d414-4d8c-85b3-d8203a76aa31.pdf"
         },
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
+          "title": "Postgame Notes",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/10/04/TikpWNwNJ4ntAHcnEaqLgIRBQqkoNFuNqHQreYJw.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://wmtstats.live/games/6b12b11f-a23f-0753-b8e6-b8b776b29f85"
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/10/03/fb-vs-maryland-2026-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21826"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/10/4/huskers-sprint-past-terps-in-second-half"
         }
       ]
     },

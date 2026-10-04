@@ -194,12 +194,12 @@
   {
     "date_text": "Oct 3",
     "weekday": "SATURDAY",
-    "kickoff_display": "3:00 PM CDT",
-    "kickoff_iso": "2026-10-03T15:00:00-05:00",
-    "kickoff_epoch_ms": 1791057600000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "48-23",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Maryland",
@@ -218,16 +218,24 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/04"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/210d4b93-d414-4d8c-85b3-d8203a76aa31.pdf"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/10/04/TikpWNwNJ4ntAHcnEaqLgIRBQqkoNFuNqHQreYJw.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://wmtstats.live/games/6b12b11f-a23f-0753-b8e6-b8b776b29f85"
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/10/03/fb-vs-maryland-2026-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21826"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/10/4/huskers-sprint-past-terps-in-second-half"
       }
     ]
   },
