@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-10T14:25:11.104587+00:00",
+  "scraped_at": "2026-10-11T13:52:43.204068+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -221,9 +221,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "OCT 10",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:00 AM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "17-20"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/9zwhGLl6hkKGhqy56DEc7rAyUowP1bTAIsIbxtCE.svg",
@@ -236,16 +239,24 @@
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/05"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/10/11/OfoflY6pfpt8QtixdN2VMto7OM9nz5b0jEpBlyUG.pdf"
         },
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/b21e73a7-e279-44f2-9198-78bf21f42cf9.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/10/10/fb-vs-indiana-2026-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21823"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/10/10/huskers-push-no-7-hoosiers-to-limit"
         }
       ]
     },
@@ -255,13 +266,13 @@
       "date_text": "OCT 17",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "10:00 PM CDT",
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/U0dJM09JAXXMat7hoC2dW4NKUIAdYw3bI3xUBWDA.svg",
       "opponent_name": "Oregon",
       "location": "Eugene, Ore.",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
       "links": [
         {
           "title": "Live Audio",
@@ -270,6 +281,10 @@
         {
           "title": "Live Stats",
           "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        },
+        {
+          "title": "",
+          "href": "https://foxsports.com/live"
         }
       ]
     },

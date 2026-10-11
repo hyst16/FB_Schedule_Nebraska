@@ -242,12 +242,12 @@
   {
     "date_text": "Oct 10",
     "weekday": "SATURDAY",
-    "kickoff_display": "11:00 AM CDT",
-    "kickoff_iso": "2026-10-10T11:00:00-05:00",
-    "kickoff_epoch_ms": 1791648000000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "L",
+    "score": "17-20",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Indiana",
@@ -266,25 +266,33 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/05"
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/10/11/OfoflY6pfpt8QtixdN2VMto7OM9nz5b0jEpBlyUG.pdf"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/b21e73a7-e279-44f2-9198-78bf21f42cf9.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/10/10/fb-vs-indiana-2026-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21823"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/10/10/huskers-push-no-7-hoosiers-to-limit"
       }
     ]
   },
   {
     "date_text": "Oct 17",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "kickoff_iso": null,
-    "kickoff_epoch_ms": null,
+    "kickoff_display": "10:00 PM CDT",
+    "kickoff_iso": "2026-10-17T22:00:00-05:00",
+    "kickoff_epoch_ms": 1792292400000,
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -294,7 +302,7 @@
     "city": "Eugene",
     "state": "ORE.",
     "city_display": "Eugene, ORE.",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/U0dJM09JAXXMat7hoC2dW4NKUIAdYw3bI3xUBWDA.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Oregon-Stadium-ORE.",
@@ -308,6 +316,10 @@
       {
         "title": "Live Stats",
         "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      },
+      {
+        "title": "",
+        "href": "https://foxsports.com/live"
       }
     ]
   },
