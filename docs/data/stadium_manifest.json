@@ -55,7 +55,7 @@
     },
     "Oregon-Stadium-ORE.": {
       "suggested_filename": "Oregon-Stadium-ORE..jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Oct 17",
@@ -66,7 +66,7 @@
     },
     "Illinois-Stadium-ILL.": {
       "suggested_filename": "Illinois-Stadium-ILL..jpg",
-      "exists": false,
+      "exists": true,
       "used_by": [
         {
           "date": "Nov 6",
