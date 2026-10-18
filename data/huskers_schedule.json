@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-17T12:06:04.098375+00:00",
+  "scraped_at": "2026-10-18T11:59:42.156992+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -264,9 +264,12 @@
       "venue_type": "AWAY",
       "weekday": "SATURDAY",
       "date_text": "OCT 17",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "10:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "14-17"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/U0dJM09JAXXMat7hoC2dW4NKUIAdYw3bI3xUBWDA.svg",
@@ -285,6 +288,22 @@
         {
           "title": "",
           "href": "https://foxsports.com/live"
+        },
+        {
+          "title": "Final Stats",
+          "href": "https://huskers.com/documents/793cf195-5c68-4341-ab14-fe46778c7939.pdf"
+        },
+        {
+          "title": "Notes",
+          "href": "https://huskers.com/documents/08312a6f-f72c-45fe-99ec-a7dffc3a9835.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21846"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/10/18/fb-recap"
         }
       ]
     },

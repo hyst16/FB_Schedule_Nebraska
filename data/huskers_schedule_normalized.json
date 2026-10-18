@@ -290,12 +290,12 @@
   {
     "date_text": "Oct 17",
     "weekday": "SATURDAY",
-    "kickoff_display": "10:00 PM CDT",
-    "kickoff_iso": "2026-10-17T22:00:00-05:00",
-    "kickoff_epoch_ms": 1792292400000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "L",
+    "score": "14-17",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Oregon",
@@ -320,6 +320,22 @@
       {
         "title": "",
         "href": "https://foxsports.com/live"
+      },
+      {
+        "title": "Final Stats",
+        "href": "https://huskers.com/documents/793cf195-5c68-4341-ab14-fe46778c7939.pdf"
+      },
+      {
+        "title": "Notes",
+        "href": "https://huskers.com/documents/08312a6f-f72c-45fe-99ec-a7dffc3a9835.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21846"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/10/18/fb-recap"
       }
     ]
   },
