@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-19T15:29:58.262051+00:00",
+  "scraped_at": "2026-10-20T12:36:59.998306+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -313,17 +313,17 @@
       "date_text": "OCT 31",
       "status": "upcoming",
       "result": null,
-      "kickoff": "TBA",
+      "kickoff": "7:00 PM CDT",
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/ocEhFWgbDVeZ1GA4wuVCQrLQhD1QF0ORAcNKb78I.svg",
       "opponent_name": "Washington",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
       "links": [
         {
-          "title": "Buy Tickets",
-          "href": "https://huskers.evenue.net/event/F26/06"
+          "title": "",
+          "href": "https://foxsports.com/live"
         },
         {
           "title": "Live Audio",
