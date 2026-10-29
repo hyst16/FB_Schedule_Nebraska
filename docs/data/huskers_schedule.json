@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-28T15:01:22.077446+00:00",
+  "scraped_at": "2026-10-29T14:00:36.003776+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -103,7 +103,7 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/XFEBR62AM2qCELJZE9xAlEOfNVZLeoKc266upox1.svg",
       "opponent_name": "North Dakota",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "tv_network_logo_url": null,
       "links": [
         {
           "title": "",
@@ -146,7 +146,7 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/WF2sTM7qKPfYGUx1dh9sIfYAhX2Cad0M1Z9qTlCG.svg",
       "opponent_name": "Michigan State",
       "location": "East Lansing, Mich.",
-      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "tv_network_logo_url": null,
       "links": [
         {
           "title": "",
@@ -319,7 +319,7 @@
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/ocEhFWgbDVeZ1GA4wuVCQrLQhD1QF0ORAcNKb78I.svg",
       "opponent_name": "Washington",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": "https://huskers.com/imgproxy/MDzkCaaDsbR-fAZyprDYtyUOfLPaDjTNc7LofkEBGn0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8xMC8wMy9JS3JPSFBwbHhPWU5PUHVmdVBvQ1lDTzNnZlp2WFF1YXpFV05qeFhYLmpwZw.jpg",
+      "tv_network_logo_url": null,
       "links": [
         {
           "title": "",
