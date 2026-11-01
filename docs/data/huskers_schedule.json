@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-10-31T14:28:15.575668+00:00",
+  "scraped_at": "2026-11-01T14:09:43.101314+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -278,23 +278,15 @@
       "tv_network_logo_url": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
       "links": [
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
-        },
-        {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
-        },
-        {
           "title": "",
           "href": "https://foxsports.com/live"
         },
         {
-          "title": "Final Stats",
+          "title": "Final Stats (PDF)",
           "href": "https://huskers.com/documents/793cf195-5c68-4341-ab14-fe46778c7939.pdf"
         },
         {
-          "title": "Notes",
+          "title": "Postgame Notes",
           "href": "https://huskers.com/documents/08312a6f-f72c-45fe-99ec-a7dffc3a9835.pdf"
         },
         {
@@ -311,15 +303,18 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "OCT 31",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "7:00 PM CDT",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "17-10"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/ocEhFWgbDVeZ1GA4wuVCQrLQhD1QF0ORAcNKb78I.svg",
       "opponent_name": "Washington",
       "location": "Lincoln, Neb. / Memorial Stadium",
-      "tv_network_logo_url": null,
+      "tv_network_logo_url": "https://huskers.com/imgproxy/4sdAYop298a3pJN2yqAdR-2JLYgEEQcGQeo_VtjQHq0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNS8xMC8yOC9FdFZINkx1VTZMWko0M3VEczI5QWdwYjZQY1NXWkZSM2NXUFAyNDJiLnBuZw.png",
       "links": [
         {
           "title": "",
@@ -330,8 +325,24 @@
           "href": "https://huskers.com/listen"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/8714fb5d-5a3d-48a4-9da2-07ecaaff2218.pdf"
+        },
+        {
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/7c2ab53a-ef07-4b2f-8015-2a1ce76943be.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/10/31/fb-vs-washington-2026-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21837"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/11/1/huskies-rally-to-beat-big-red"
         }
       ]
     },
