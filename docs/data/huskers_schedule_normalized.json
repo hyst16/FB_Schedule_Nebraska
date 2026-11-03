@@ -339,7 +339,7 @@
     "kickoff_epoch_ms": null,
     "status": "final",
     "outcome": "L",
-    "score": "17-10",
+    "score": "10-17",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Washington",
@@ -416,15 +416,19 @@
       {
         "title": "Live Stats",
         "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+      },
+      {
+        "title": "Preview",
+        "href": "https://huskers.com/news/2026/11/2/nebraska-faces-illinois-in-friday-night-road-game"
       }
     ]
   },
   {
     "date_text": "Nov 14",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "kickoff_iso": null,
-    "kickoff_epoch_ms": null,
+    "kickoff_display": "11:30 AM CST",
+    "kickoff_iso": "2026-11-14T11:30:00-06:00",
+    "kickoff_epoch_ms": 1794677400000,
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -434,13 +438,17 @@
     "city": "Piscataway",
     "state": "N.J.",
     "city_display": "Piscataway, N.J.",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/4sdAYop298a3pJN2yqAdR-2JLYgEEQcGQeo_VtjQHq0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyNS8xMC8yOC9FdFZINkx1VTZMWko0M3VEczI5QWdwYjZQY1NXWkZSM2NXUFAyNDJiLnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/bJhaZwlJq9HWXzOX2XLb61CzszhNdIXlNOqheYDD.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Rutgers-Stadium-N.J.",
     "bg_file_basename": "Rutgers-Stadium-N.J.",
     "bg_filename": "Rutgers-Stadium-N.J..jpg",
     "links": [
+      {
+        "title": "Opens in a new window",
+        "href": "https://www.foxsports.com/live"
+      },
       {
         "title": "Live Audio",
         "href": "https://huskers.com/listen"
