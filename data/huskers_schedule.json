@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-11-04T16:08:30.307191+00:00",
+  "scraped_at": "2026-11-05T15:16:42.385376+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -370,7 +370,7 @@
         },
         {
           "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "href": "https://stats.statbroadcast.com/broadcast/?id=672650"
         },
         {
           "title": "Preview",
