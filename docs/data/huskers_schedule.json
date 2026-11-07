@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-11-06T15:51:13.324856+00:00",
+  "scraped_at": "2026-11-07T13:49:54.735465+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -350,9 +350,12 @@
       "venue_type": "AWAY",
       "weekday": "FRIDAY",
       "date_text": "NOV 6",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "7:00 PM CST",
+      "status": "final",
+      "result": {
+        "outcome": "L",
+        "score": "14-23"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/VQRRGWVVHCyN8rN1SKsMEhpmHA1thIRfowmhVXqn.svg",
@@ -373,8 +376,20 @@
           "href": "https://stats.statbroadcast.com/broadcast/?id=672650"
         },
         {
-          "title": "Preview",
-          "href": "https://huskers.com/news/2026/11/2/nebraska-faces-illinois-in-friday-night-road-game"
+          "title": "Stats",
+          "href": "https://huskers.com/documents/89f18371-51d9-47d9-b08d-036ef1e5eb98.pdf"
+        },
+        {
+          "title": "Notes",
+          "href": "https://huskers.com/documents/e7954618-d894-4b9b-8168-f403d7005d35.pdf"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21839"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/11/7/huskers-fall-at-illinois-24-13"
         }
       ]
     },

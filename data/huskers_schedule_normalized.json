@@ -386,12 +386,12 @@
   {
     "date_text": "Nov 6",
     "weekday": "FRIDAY",
-    "kickoff_display": "7:00 PM CST",
-    "kickoff_iso": "2026-11-06T19:00:00-06:00",
-    "kickoff_epoch_ms": 1794013200000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "L",
+    "score": "14-23",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Illinois",
@@ -418,8 +418,20 @@
         "href": "https://stats.statbroadcast.com/broadcast/?id=672650"
       },
       {
-        "title": "Preview",
-        "href": "https://huskers.com/news/2026/11/2/nebraska-faces-illinois-in-friday-night-road-game"
+        "title": "Stats",
+        "href": "https://huskers.com/documents/89f18371-51d9-47d9-b08d-036ef1e5eb98.pdf"
+      },
+      {
+        "title": "Notes",
+        "href": "https://huskers.com/documents/e7954618-d894-4b9b-8168-f403d7005d35.pdf"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21839"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/11/7/huskers-fall-at-illinois-24-13"
       }
     ]
   },
