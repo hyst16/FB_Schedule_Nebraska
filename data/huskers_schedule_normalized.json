@@ -322,6 +322,10 @@
         "href": "https://huskers.com/documents/08312a6f-f72c-45fe-99ec-a7dffc3a9835.pdf"
       },
       {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/10/18/fb-vs-oregon-2026-photos"
+      },
+      {
         "title": "Box Score",
         "href": "https://huskers.com/boxscore/21846"
       },
@@ -358,10 +362,6 @@
         "href": "https://foxsports.com/live"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
-      },
-      {
         "title": "Final Stats (PDF)",
         "href": "https://huskers.com/documents/8714fb5d-5a3d-48a4-9da2-07ecaaff2218.pdf"
       },
@@ -391,7 +391,7 @@
     "kickoff_epoch_ms": null,
     "status": "final",
     "outcome": "L",
-    "score": "14-23",
+    "score": "13-24",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Illinois",
@@ -410,20 +410,16 @@
         "href": "https://www.foxsports.com/live"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
-      },
-      {
-        "title": "Live Stats",
-        "href": "https://stats.statbroadcast.com/broadcast/?id=672650"
-      },
-      {
-        "title": "Stats",
+        "title": "Final Stats (PDF)",
         "href": "https://huskers.com/documents/89f18371-51d9-47d9-b08d-036ef1e5eb98.pdf"
       },
       {
-        "title": "Notes",
+        "title": "Postgame Notes",
         "href": "https://huskers.com/documents/e7954618-d894-4b9b-8168-f403d7005d35.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/11/06/nebraska-illinois-photos"
       },
       {
         "title": "Box Score",
