@@ -153,13 +153,15 @@ function startCountdown(game) {
 function setNextGameView(game) {
   const oppName = game.opponent || "TBD";
   const divider = (game.divider || "vs.").trim();
-  const matchupStr = `Nebraska ${divider} ${oppName}`;
 
-  const dateStr = [game.weekday, game.date_text, game.kickoff_display].filter(Boolean).join(" • ");
+  // "Sat, Nov 14 · 11:30 AM CST" (time left off when it's TBA/TBD)
+  const day = [dowFromText(game.weekday), game.date_text].filter(Boolean).join(", ");
+  const dateStr = [day, isTimeKnown(game.kickoff_display) ? game.kickoff_display : "Time TBA"]
+    .filter(Boolean).join(" · ");
   const cityStr = game.city_display || "—";
 
   $("#divider").textContent = divider;
-  $("#next-opponent").textContent = matchupStr;
+  $("#next-opponent").textContent = oppName;
   $("#next-datetime").textContent = dateStr;
   $("#next-venue").textContent = cityStr || "—";
 
@@ -176,7 +178,10 @@ function setNextGameView(game) {
     chip.appendChild(img);
     tv.appendChild(chip);
   } else {
-    tv.textContent = "TV: TBD";
+    const tbd = document.createElement("span");
+    tbd.className = "tv-tbd";
+    tbd.textContent = "TV: TBD";
+    tv.appendChild(tbd);
   }
 
   setBgWithFallbacks(game);
@@ -228,35 +233,42 @@ function buildGameRow(g) {
   when.appendChild(date); when.appendChild(dow);
   row.appendChild(when);
 
+  // Two lines: matchup on top, time/city/TV underneath
   const line = document.createElement("div");
   line.className = "line";
+  const matchup = document.createElement("div");
+  matchup.className = "matchup";
+  const meta = document.createElement("div");
+  meta.className = "meta";
 
   // result (only if final)
   if (g.status === "final" && g.outcome && g.score) {
     const r = document.createElement("span");
     r.className = `result ${g.outcome}`;
     r.textContent = `${g.outcome} ${g.score}`;
-    line.appendChild(r);
+    matchup.appendChild(r);
   }
 
-  if (g.ne_logo) { const ne = document.createElement("img"); ne.className = "mark ne"; ne.src = g.ne_logo; line.appendChild(ne); }
+  if (g.ne_logo) { const ne = document.createElement("img"); ne.className = "mark ne"; ne.src = g.ne_logo; matchup.appendChild(ne); }
   const divSpan = document.createElement("span");
   divSpan.className = "divider";
   divSpan.textContent = (g.divider || "vs.").trim();
-  line.appendChild(divSpan);
-  if (g.opp_logo) { const ol = document.createElement("img"); ol.className = "mark opp"; ol.src = g.opp_logo; line.appendChild(ol); }
+  matchup.appendChild(divSpan);
+  if (g.opp_logo) { const ol = document.createElement("img"); ol.className = "mark opp"; ol.src = g.opp_logo; matchup.appendChild(ol); }
 
   const opp = document.createElement("span");
   opp.className = "opp-name";
   opp.textContent = g.opponent || "TBD";
-  line.appendChild(opp);
+  matchup.appendChild(opp);
 
-  if (isTimeKnown(g.kickoff_display)) line.appendChild(chip(g.kickoff_display, "time"));
+  if (isTimeKnown(g.kickoff_display)) meta.appendChild(chip(g.kickoff_display, "time"));
   const cityChipEl = chip(g.city_display || "—", "city");
-  if (cityChipEl) line.appendChild(cityChipEl);
+  if (cityChipEl) meta.appendChild(cityChipEl);
   const tvC = tvChip(g.tv_logo);
-  if (tvC) line.appendChild(tvC);
+  if (tvC) meta.appendChild(tvC);
 
+  line.appendChild(matchup);
+  line.appendChild(meta);
   row.appendChild(line);
   return row;
 }
@@ -326,7 +338,19 @@ async function load() {
   rotationTimer = setInterval(rotate, window.UI.rotateSeconds * 1000);
 }
 
+/* ---------------- Fit the 1920x1080 stage to the screen ---------------- */
+const STAGE_W = 1920, STAGE_H = 1080;
+function fitStage() {
+  const stage = $("#stage");
+  if (!stage) return;
+  const scale = Math.min(window.innerWidth / STAGE_W, window.innerHeight / STAGE_H);
+  stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
 (function init() {
+  fitStage();
+  window.addEventListener("resize", fitStage);
+
   const params = new URLSearchParams(location.search);
   window.lockView = params.get("view");
   window.debug = params.get("debug") === "1";

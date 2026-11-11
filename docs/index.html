@@ -7,27 +7,38 @@
   <title>Husker Football — Auto Schedule</title>
 
   <!-- Cache-bust CSS so the player can’t serve an old copy -->
-  <link rel="stylesheet" href="assets/styles.css?v=2026-06-26-2" />
+  <link rel="stylesheet" href="assets/styles.css?v=2026-11-11-tv" />
 
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 </head>
 <body>
+  <!-- Fixed 1920x1080 stage; app.js scales it to fit the screen -->
+  <div id="stage">
   <div id="view-next" class="view hidden">
     <div class="bg" id="next-bg"></div>
 
     <div class="next-stack">
       <div class="next-card">
-        <div class="row logos">
-          <img id="ne-logo" class="logo" alt="Nebraska" />
+        <div class="faceoff">
+          <div class="team">
+            <img id="ne-logo" class="logo" alt="Nebraska" />
+            <div class="team-name">Nebraska</div>
+          </div>
           <div class="vs" id="divider">vs.</div>
-          <img id="opp-logo" class="logo" alt="Opponent" />
+          <div class="team">
+            <img id="opp-logo" class="logo" alt="Opponent" />
+            <div id="next-opponent" class="team-name"></div>
+          </div>
         </div>
-        <div id="next-opponent" class="opponent"></div>
-        <div id="next-datetime" class="detail"></div>
-        <div id="next-venue" class="detail"></div>
-        <div id="next-tv" class="detail"></div>
+        <div class="next-meta">
+          <div>
+            <div id="next-datetime" class="detail"></div>
+            <div id="next-venue" class="detail sub"></div>
+          </div>
+          <div id="next-tv"></div>
+        </div>
       </div>
 
       <div id="countdown-card" class="countdown-card hidden">
@@ -58,6 +69,7 @@
   <div id="view-all" class="view hidden">
     <div class="all-wrap"><!-- JS injects .rows and .game-row here --></div>
   </div>
+  </div><!-- /#stage -->
 
   <div id="debug" class="debug hidden"></div>
 
@@ -81,6 +93,6 @@
   </script>
 
   <!-- Cache-bust JS so new scaling logic definitely loads -->
-  <script src="assets/app.js?v=2026-06-26-2"></script>
+  <script src="assets/app.js?v=2026-11-11-tv"></script>
 </body>
 </html>
