@@ -434,12 +434,12 @@
   {
     "date_text": "Nov 14",
     "weekday": "SATURDAY",
-    "kickoff_display": "11:30 AM CST",
-    "kickoff_iso": "2026-11-14T11:30:00-06:00",
-    "kickoff_epoch_ms": 1794677400000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "31-0",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Rutgers",
@@ -458,12 +458,20 @@
         "href": "https://www.foxsports.com/live"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/14/aQPuXMFVQFYC88rrdrJWbs0EbTh5ryicJ3azHPMq.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/11/14/football-at-rutgers-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21847"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/11/14/huskers-blank-rutgers-31-0"
       }
     ]
   },

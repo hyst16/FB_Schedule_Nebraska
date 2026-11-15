@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-11-14T14:56:32.445598+00:00",
+  "scraped_at": "2026-11-15T14:37:15.880403+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -393,9 +393,12 @@
       "venue_type": "AWAY",
       "weekday": "SATURDAY",
       "date_text": "NOV 14",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:30 AM CST",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "31-0"
+      },
+      "kickoff": null,
       "divider_text": "at",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/bJhaZwlJq9HWXzOX2XLb61CzszhNdIXlNOqheYDD.svg",
@@ -408,12 +411,20 @@
           "href": "https://www.foxsports.com/live"
         },
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
+          "title": "Final Stats (PDF)",
+          "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/14/aQPuXMFVQFYC88rrdrJWbs0EbTh5ryicJ3azHPMq.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/11/14/football-at-rutgers-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21847"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/11/14/huskers-blank-rutgers-31-0"
         }
       ]
     },
