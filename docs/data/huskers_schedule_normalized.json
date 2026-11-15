@@ -462,6 +462,10 @@
         "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/14/aQPuXMFVQFYC88rrdrJWbs0EbTh5ryicJ3azHPMq.pdf"
       },
       {
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/14/iyGftNE2YFEuwiyfkPJbnEMegf5G86ZMY5gRCFFg.pdf"
+      },
+      {
         "title": "Photos",
         "href": "https://huskers.com/news/2026/11/14/football-at-rutgers-photos"
       },
@@ -478,9 +482,9 @@
   {
     "date_text": "Nov 21",
     "weekday": "SATURDAY",
-    "kickoff_display": "\u2014",
-    "kickoff_iso": null,
-    "kickoff_epoch_ms": null,
+    "kickoff_display": "11:00 AM CST",
+    "kickoff_iso": "2026-11-21T11:00:00-06:00",
+    "kickoff_epoch_ms": 1795280400000,
     "status": "upcoming",
     "outcome": null,
     "score": null,
@@ -490,7 +494,7 @@
     "city": "Lincoln",
     "state": "NE",
     "city_display": "Lincoln, NE",
-    "tv_logo": null,
+    "tv_logo": "https://huskers.com/imgproxy/gM1A2rToEddNlu0RoRGpq7mgxF02xg2DOhpLQNTQbRA/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8zMC9SUTBlVHVRNHM0R1dSQVJ6ZVRibXFNS2tGZ01VS0ZvbHJSeVpMM21oLnBuZw.png",
     "opp_logo": "https://storage.googleapis.com/huskers-com-prod/school_logos/fg3weSTLCHNuqYnnVVA9001FVzzMsOhslaCByc9r.svg",
     "ne_logo": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
     "bg_key": "Nebraska-Memorial Stadium-NE",
@@ -498,8 +502,8 @@
     "bg_filename": "Nebraska-Memorial-Stadium-NE.jpg",
     "links": [
       {
-        "title": "Buy Tickets",
-        "href": "https://huskers.evenue.net/event/F26/07"
+        "title": "",
+        "href": "https://huskers.com/sports/football/foxsports.com/live"
       },
       {
         "title": "Live Audio",
