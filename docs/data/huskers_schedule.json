@@ -1,6 +1,6 @@
 {
   "source_url": "https://huskers.com/sports/football/schedule",
-  "scraped_at": "2026-11-21T16:03:37.423491+00:00",
+  "scraped_at": "2026-11-22T15:09:20.345015+00:00",
   "games": [
     {
       "venue_type": "HOME",
@@ -436,9 +436,12 @@
       "venue_type": "HOME",
       "weekday": "SATURDAY",
       "date_text": "NOV 21",
-      "status": "upcoming",
-      "result": null,
-      "kickoff": "11:00 AM CST",
+      "status": "final",
+      "result": {
+        "outcome": "W",
+        "score": "31-28"
+      },
+      "kickoff": null,
       "divider_text": "vs.",
       "nebraska_logo_url": "https://huskers.com/imgproxy/ZiJjtEqnKPA1myTuNSKlu9ZwOxzMNJsiQimqg6svKs0/rs:fit:1980:0:0:0/g:ce:0:0/q:90/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2h1c2tlcnMtY29tLXByb2QvMjAyMy8wNi8yNy9xVkd3OVJidUZIQmxSTDU2VFBvZHBTMWhWNU5sVGlIVGt2Tk44RURlLnBuZw.png",
       "opponent_logo_url": "https://storage.googleapis.com/huskers-com-prod/school_logos/fg3weSTLCHNuqYnnVVA9001FVzzMsOhslaCByc9r.svg",
@@ -451,12 +454,24 @@
           "href": "https://huskers.com/sports/football/foxsports.com/live"
         },
         {
-          "title": "Live Audio",
-          "href": "https://huskers.com/listen"
+          "title": "Final Stats (PDF)",
+          "href": "https://huskers.com/documents/71f41592-bc3c-4130-8717-ec80dd4c9648.pdf"
         },
         {
-          "title": "Live Stats",
-          "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+          "title": "Postgame Notes",
+          "href": "https://huskers.com/documents/cffef914-9faf-443e-99df-d62c5d448fbf.pdf"
+        },
+        {
+          "title": "Photos",
+          "href": "https://huskers.com/news/2026/11/21/fb-vs-ohio-state-2026-photos"
+        },
+        {
+          "title": "Box Score",
+          "href": "https://huskers.com/boxscore/21833"
+        },
+        {
+          "title": "Recap",
+          "href": "https://huskers.com/news/2026/11/21/huskers-upset-no-16-buckeyes"
         }
       ]
     },

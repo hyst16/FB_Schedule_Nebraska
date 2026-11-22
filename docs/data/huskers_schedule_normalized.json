@@ -482,12 +482,12 @@
   {
     "date_text": "Nov 21",
     "weekday": "SATURDAY",
-    "kickoff_display": "11:00 AM CST",
-    "kickoff_iso": "2026-11-21T11:00:00-06:00",
-    "kickoff_epoch_ms": 1795280400000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "W",
+    "score": "31-28",
     "home_away_neutral": "HOME",
     "divider": "vs.",
     "opponent": "Ohio State",
@@ -506,12 +506,24 @@
         "href": "https://huskers.com/sports/football/foxsports.com/live"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Final Stats (PDF)",
+        "href": "https://huskers.com/documents/71f41592-bc3c-4130-8717-ec80dd4c9648.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        "title": "Postgame Notes",
+        "href": "https://huskers.com/documents/cffef914-9faf-443e-99df-d62c5d448fbf.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/11/21/fb-vs-ohio-state-2026-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21833"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/11/21/huskers-upset-no-16-buckeyes"
       }
     ]
   },
