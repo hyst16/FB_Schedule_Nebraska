@@ -530,12 +530,12 @@
   {
     "date_text": "Nov 27",
     "weekday": "FRIDAY",
-    "kickoff_display": "11:00 AM CST",
-    "kickoff_iso": "2026-11-27T11:00:00-06:00",
-    "kickoff_epoch_ms": 1795798800000,
-    "status": "upcoming",
-    "outcome": null,
-    "score": null,
+    "kickoff_display": "\u2014",
+    "kickoff_iso": null,
+    "kickoff_epoch_ms": null,
+    "status": "final",
+    "outcome": "L",
+    "score": "7-31",
     "home_away_neutral": "AWAY",
     "divider": "at",
     "opponent": "Iowa",
@@ -554,12 +554,24 @@
         "href": "https://www.paramountplus.com/?&gclsrc=aw.ds&ds_rl=1289065&ftag=PPM-02-10cbi8j&vndid=google$null$null$paramount%20plus&gad_source=1&gad_campaignid=17873670690&gbraid=0AAAAADtO7xEz1oFDctiKjPmOlJqYf7t1E&gclid=CjwKCAjwrNrQBhBjEiwAoR4VO05rKwimonh_mkvP64OHZ20W"
       },
       {
-        "title": "Live Audio",
-        "href": "https://huskers.com/listen"
+        "title": "Final Stats (PDF)",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/27/c4z8JyIUFokLYS02wKmk9LwA6l0rAvXDMJLo4gvh.pdf"
       },
       {
-        "title": "Live Stats",
-        "href": "https://www.statbroadcast.com/events/statmonitr.php?gid=neb"
+        "title": "Postgame Notes",
+        "href": "https://storage.googleapis.com/huskers-com-prod/2026/11/27/uZVECIzr4Ud0cDr974vMcsMYuqVAdVZQI8NvgYr8.pdf"
+      },
+      {
+        "title": "Photos",
+        "href": "https://huskers.com/news/2026/11/27/football-iowa-photos"
+      },
+      {
+        "title": "Box Score",
+        "href": "https://huskers.com/boxscore/21841"
+      },
+      {
+        "title": "Recap",
+        "href": "https://huskers.com/news/2026/11/27/fb-vs-iowa-recap"
       }
     ]
   }
